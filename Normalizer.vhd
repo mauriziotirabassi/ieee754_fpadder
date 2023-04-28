@@ -3,9 +3,9 @@ use ieee.std_logic_1164.all;
 
 entity Normalizer is
 	port(
-		MAN_IN	: std_logic_vector(22 downto 0);
+		MAN_IN	: std_logic_vector(23 downto 0);
 		EXP_IN	: std_logic_vector(7 downto 0);
-		MAN_OUT	: std_logic_vector(22 downto 0);
+		MAN_OUT	: std_logic_vector(23 downto 0);
 		EXP_OUT	: std_logic_vector(7 downto 0);
 	);
 	
@@ -18,7 +18,7 @@ architecture RTL of Normalizer is
 	--Mi dice di quanto deve shiftare la mantissa risultato per essere normalizzata
 	component ReversePriorityEncoder is
 		port(
-				INPUT 	: in 	std_logic_vector(22 downto 0);
+				INPUT 	: in 	std_logic_vector(23 downto 0);
 				OUTPUT 	: out	std_logic_vector(4 downto 0)
 		);
 	end component;
@@ -26,7 +26,7 @@ architecture RTL of Normalizer is
 	--Shifter Left per shiftare effettivamente la mantissa risultato
 	component ShifterL is
 		port(
-				INPUT			: in 	std_logic_vector(22 downto 0); --TODO: Shifter prende in ingresso 24 bit, non 23...
+				INPUT			: in 	std_logic_vector(23 downto 0); --TODO: Shifter prende in ingresso 24 bit, non 23...
 				OFFSET		: in 	std_logic_vector(4 downto 0); 
 				SHIFTED		: out std_logic_vector(23 downto 0)
 		);
@@ -82,10 +82,9 @@ begin
 
 		port map( 
 			A		=> EXP_IN,
-			B		=> MAN_OFF, --TODO: Forse non è lo stesso input
+			B		=> MAN_OFF,
 			SUB		=> '1', --Sottrazione
-			S		=> EXP_OUT,
-			--Cout	=> --TODO: Gestione eccezione overflow esponente: infinito
+			S		=> EXP_OUT, --TODO: se S == 0 => underflow
 		);
 
 end RTL;
