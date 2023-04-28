@@ -7,7 +7,7 @@ entity ReversePriorityEncoder is
 			INPUT 	: in 	std_logic_vector(22 downto 0);
 			OUTPUT 	: out	std_logic_vector(4 downto 0)
 	);
-end PriorityEncoder;
+end ReversePriorityEncoder;
 
 architecture RTL of ReversePriorityEncoder is
 
