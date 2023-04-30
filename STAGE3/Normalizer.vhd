@@ -26,14 +26,14 @@ architecture RTL of Normalizer is
 	--Shifter Left per shiftare effettivamente la mantissa risultato
 	component ShifterL is
 		port(
-				INPUT			: in 	std_logic_vector(23 downto 0); --TODO: Shifter prende in ingresso 24 bit, non 23...
+				INPUT			: in 	std_logic_vector(23 downto 0);
 				OFFSET		: in 	std_logic_vector(4 downto 0); 
 				SHIFTED		: out std_logic_vector(23 downto 0)
 		);
 	
 	end component;
 
-	--Sub/Adder per decrementare eventualmente l'esponente
+	--Sub/Adder per decrementare eventualmente l'esponente: gestire caso underflow esponente
 	component add_sub_EXP is
 		generic(
 				N:integer := 8
@@ -55,7 +55,7 @@ architecture RTL of Normalizer is
 
 begin
 
-	--Calcolo posizione primo 1
+	--Calcolo posizione primo '1'
 	RPE: ReversePriorityEncoder
 		port map(
 			INPUT		=> MAN_IN,
@@ -69,7 +69,7 @@ begin
 		port map(
 			INPUT		=> MAN_IN,
 			OFFSET	=> MAN_OFF,
-			OUTPUT	=> MAN_OUT
+			SHIFTED	=> MAN_OUT
 		);
 
 	--TODO: Verifica se esponente decrementabile con eventuale gestione eccezioni

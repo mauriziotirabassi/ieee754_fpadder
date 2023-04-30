@@ -1,9 +1,0 @@
-0. Stream di bit in ingresso già supposti in codifica IEEE754 oppure binaria?
-1. Modulo per paragonare i due numeri per il salvataggio del segno del risultato dell'operazione (bisogna decodificarli oppure esiste metodo per paragonare due numeri codificati in IEEE754)
-2. Il meno è quello per il calcolo dell'esponente oppure il contatore delle posizioni da shiftare l'esponente più piccolo (sottrazione tra i due esponenti)?
-3. 16 bit come nelle slide o 32 come ha detto a lezione?
-4. Circuito combinatorio con ingresso operazione segno primo numero e segno secondo secondo numero per decidere operazione fatta dalla alu (in binario o complemento a 2).
-5. Stage 3 solo nel caso di una sottrazione. Ottimizzazione: saltare uno stage di pipeline con segnale di controllo se l'operazione è un'addizione.
-
-TODO
-1. Componenti discrete: comparatore, sommatore/sottrattore, flip flop e registri.
