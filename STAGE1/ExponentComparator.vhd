@@ -13,24 +13,25 @@ end ExponentComparator;
 
 architecture RTL of ExponentComparator is
 
---signals between 4bit comparators
-signal C1,C2,C3,C4,C5,C6: std_logic;
+    --signals between 4bit comparators
+    signal C1,C2,C3,C4,C5,C6: std_logic;
 
 	component comparator4bit_RTL is
-	port(
-		A     : in  std_logic_vector(3 downto 0);
-		B     : in  std_logic_vector(3 downto 0);
-		SMLIN : in std_logic;
-		EQIN  : in std_logic;
-		GRTIN : in std_logic;
-		SML   : out std_logic;
-		EQ    : out std_logic;
-		GRT   : out std_logic);
-			  
+        port(
+            A     : in  std_logic_vector(3 downto 0);
+            B     : in  std_logic_vector(3 downto 0);
+            SMLIN : in std_logic;
+            EQIN  : in std_logic;
+            GRTIN : in std_logic;
+            SML   : out std_logic;
+            EQ    : out std_logic;
+            GRT   : out std_logic
+        );
 	end component;
 
 begin
 
+    --REGION COMPARATOR
 	--LSB comparator
 	COMP0: comparator4bit_RTL 
 		port map(
@@ -56,6 +57,9 @@ begin
 			EQ => EQ,
 			GRT => GRT
 		);
+	--ENDREGION
+
+
 
 end RTL;
 

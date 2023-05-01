@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity RCA is
 	generic(
-		N	: integer := 8
+		N	: integer := 24
 	);
 
 	port( 
@@ -11,7 +11,8 @@ entity RCA is
 		INPUT2	: in	std_logic_vector(N-1 downto 0);
 		OP		: in	std_logic; --1 se sottrazione, 0 se addizione
 		OUTPUT	: out	std_logic_vector(N-1 downto 0);
-		COUT		: out	std_logic); --sgn control for overflow of mantissa module ...shift R
+		COUT		: out	std_logic --sgn control for overflow of mantissa module ...shift R
+	);
 end RCA;
 
 architecture RTL of add_sub_EXP is
