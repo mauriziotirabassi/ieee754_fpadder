@@ -1,0 +1,17 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/kryzha/Documents/proj-reti-2023/test1/TB_Comparator_isim_beh.exe -prj /home/kryzha/Documents/proj-reti-2023/test1/TB_Comparator_beh.prj work.TB_Comparator 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 16
+Turning on mult-threading, number of parallel sub-compilation jobs: 32 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/FourBitComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/EightBitComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/MantissaComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/Comparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/TB_Comparator.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 83360 KB
+Fuse CPU Usage: 1130 ms
+Compiling package standard
+Compiling package std_logic_1164
+FATAL_ERROR:Simulator:CompilerUtils.cpp:570:1.51 - /usr/bin/gcc not found, please install GCC for your Linux distribution   For technical support on this issue, please visit http://www.xilinx.com/support.

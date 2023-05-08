@@ -1,0 +1,5 @@
+vhdl isim_temp "FourBitComparator.vhd"
+vhdl isim_temp "EightBitComparator.vhd"
+vhdl isim_temp "MantissaComparator.vhd"
+vhdl isim_temp "Comparator.vhd"
+vhdl isim_temp "TB_Comparator.vhd"

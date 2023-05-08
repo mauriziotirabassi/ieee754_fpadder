@@ -1,0 +1,4 @@
+work	"Comparator.vhd"
+work	"EightBitComparator.vhd"
+work	"FourBitComparator.vhd"
+work	"MantissaComparator.vhd"

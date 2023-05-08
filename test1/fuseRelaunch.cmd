@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/kryzha/Documents/proj-reti-2023/test1/TB_Comparator_isim_beh.exe" -prj "/home/kryzha/Documents/proj-reti-2023/test1/TB_Comparator_beh.prj" "work.TB_Comparator" 
