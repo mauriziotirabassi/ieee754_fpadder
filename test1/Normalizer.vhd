@@ -17,7 +17,7 @@ architecture RTL of Normalizer is
 	--REGION SIGNALS
 	signal MAN_OFF : std_logic_vector(4 downto 0);
 	signal SUB_EXP	: std_logic_vector(7 downto 0);
-	signal REM_EXP	: std_logic;
+	signal REM_EXP, EXP_UF	: std_logic;
 	--ENDREGION
 	
 	--REGION COMPONENTS
@@ -33,6 +33,16 @@ architecture RTL of Normalizer is
 				INPUT			: in 	std_logic_vector(23 downto 0);
 				OFFSET		: in 	std_logic_vector(4 downto 0); 
 				SHIFTED		: out std_logic_vector(23 downto 0)
+		);
+	end component;
+	
+	component EightBitComparator is
+		port(
+			E1    : in std_logic_vector(7 downto 0); 
+			E2    : in std_logic_vector(7 downto 0);
+			SML   : out std_logic;
+			EQ    : out std_logic;
+			GRT   : out std_logic
 		);
 	end component;
 
@@ -70,11 +80,19 @@ begin
 			SHIFTED	=> MAN_OUT
 		);
 
-	--TODO: Verifica se esponente decrementabile con eventuale gestione eccezioni
+	--Verifico se esponente decrementabile
+	SUB_EXP	<= "000"	& MAN_OFF; --Comparatore e RCA/CLA prendono parole di 8 bit
+	
+	CMP_EXP:	EightBitComparator
+		port map(
+			E1		=> EXP_IN,
+			E2		=> SUB_EXP,
+			SML	=> EXP_UF
+			--EQ --TODO: Si può lasciare appeso?
+			--GRT --TODO: Si può lasciare appeso?
+		);
 
 	--Decremento l'esponente
-	SUB_EXP	<= "000"	& MAN_OFF; --Sottrattore esponente prende parole di 8 bit
-	
 	OP:	RCA
 		generic map(
 			N => 8
@@ -87,7 +105,7 @@ begin
 			COUT		=> REM_EXP --TODO: Inutile, è una sottrazione, decidere come togliere
 		);
 		
-	--TODO: Gestione caso underflow (per il momento sputo il risultato)
-	EXP_OUT	<= SUB_EXP;
+	--TODO: Gestione caso underflow (per il momento sputo 0)
+	EXP_OUT	<= SUB_EXP	when EXP_UF = '0'	else "00000000";
 
 end RTL;
