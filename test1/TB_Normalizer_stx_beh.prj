@@ -1,0 +1,6 @@
+vhdl isim_temp "FullAdder.vhd"
+vhdl isim_temp "ShifterL.vhd"
+vhdl isim_temp "ReversePriorityEncoder.vhd"
+vhdl isim_temp "RCA.vhd"
+vhdl isim_temp "Normalizer.vhd"
+vhdl isim_temp "TB_Normalizer.vhd"

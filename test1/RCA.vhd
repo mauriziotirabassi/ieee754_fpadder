@@ -9,7 +9,7 @@ entity RCA is
 	port( 
 		INPUT1	: in	std_logic_vector(N-1 downto 0);
 		INPUT2	: in	std_logic_vector(N-1 downto 0);
-		OP		: in	std_logic; --1 se sottrazione, 0 se addizione
+		OP			: in	std_logic; --1 se sottrazione, 0 se addizione
 		OUTPUT	: out	std_logic_vector(N-1 downto 0);
 		COUT		: out	std_logic --sgn control for overflow of mantissa module ...shift R
 	);

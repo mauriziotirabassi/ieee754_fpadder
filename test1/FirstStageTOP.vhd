@@ -1,29 +1,29 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
---Il primo stadio della pipeline prende in ingresso i due numeri da sommare e si occupa di:
+--Il primo stadio della pipeline prende in ingresso i due numeri e l'operazione da effettuare e si occupa di:
 --1. Gestire caso speciale in cui un operando sia 0
 --2. Restituire le due mantisse tale che M1 > M2
---3. Restituire la differenza tra gli esponenti delle due mantisse il cui valore è l'offset dello shift di M2
---4. Gestire caso speciale per cui la differenza degli esponenti ecceda 23 (in quanto i segnali di offset per gli shifter sono di 5 bit)
+--3. Restituire la differenza tra gli esponenti il cui valore è l'offset dello shift di M2
+--4. Gestire caso speciale per cui la differenza degli esponenti sia un valore maggiore della lunghezza delle mantisse
 
---Gestione dello slicing delle parole di bit necessarie, il loro ordine e generazione offset e segnali di casi particolari
 entity FirstStageTOP is
 	port(
-		INPUT1  : in	std_logic_vector(31 downto 0);
-		INPUT2  : in	std_logic_vector(31 downto 0);
+		INPUT1	: in	std_logic_vector(31 downto 0);
+		INPUT2	: in	std_logic_vector(31 downto 0);
 		
-		OP_IN   : in	std_logic; --0 se somma, 1 se sottrazione
+		OP_IN 	: in	std_logic; --0 se somma, 1 se sottrazione
 		
-		GRT_MAN	: out	std_logic_vector(23 downto 0); --TODO: Decidere se la mantissa più grande già consideri il significant esplicitamente
-		SML_MAN	: out   std_logic_vector(22 downto 0); --la mantissa più piccola verrà shiftata ed estesa di un bit da ShifterMANT
+		GRT_MAN	: out	std_logic_vector(22 downto 0); --TODO: Decidere se la mantissa più grande già consideri il significant esplicitamente
+		SML_MAN	: out	std_logic_vector(22 downto 0); --la mantissa più piccola verrà shiftata ed estesa di un bit da ShifterMANT
 		GRT_EXP	: out	std_logic_vector(7 downto 0);
-		SML_EXP	: out	std_logic_vector(7 downto 0);
+		SML_EXP	: out	std_logic_vector(7 downto 0); --TODO: Inutile, decidere come rimuovere
 		
-		OP_OUT  : out   std_logic;
-		OFF     : out   std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
+		OP_OUT	: out	std_logic; --0 se somma, 1 se sottrazione
 		
-		ERR     : out   std_logic --1 se la differenza tra gli esponenti eccede 24
+		OFF		: out	std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
+		
+		ERR		: out	std_logic --1 se la differenza tra gli esponenti eccede 24
 	);
 end FirstStageTOP;
 
@@ -39,7 +39,7 @@ architecture RTL of FirstStageTOP is
 	--ENDREGION
 
 	--REGION COMPONENTS
-    component OpPicker is
+	component OpPicker is
         port(
             S1	: in  std_logic; --0: positive, 1: negative
             S2	: in  std_logic; --0: positive, 1: negative
@@ -75,12 +75,12 @@ architecture RTL of FirstStageTOP is
 			COUT		: out	std_logic --sgn control for overflow of mantissa module ...shift R
 		);
 	end component;
-    --ENREGION
+	--ENREGION
 	
 begin
     --TODO: Decidre se cambiare segno o meno
-
-	--TODO: Forse stage precedente di pipeline verificare se un operando sia uguale a 0 così da evitare di dover lavorare su esponenti e segni
+	 
+	 --TODO: Forse stage precedente di pipeline verificare se un operando sia uguale a 0 così da evitare di dover lavorare su esponenti e segni
 
     --Parsing the inputs
     SIG1  <= INPUT1(31);
@@ -90,7 +90,7 @@ begin
 	 MAN1  <= INPUT1(22 downto 0);
 	 MAN2  <= INPUT2(22 downto 0);
 
-	--OpPicker calcola l'operazione che l'RCA dovrà effettivamente eseguire
+	--Calcolo dell'operazione che l'RCA dovrà effettivamente eseguire
 	OP: OpPicker
 		port map(
 			S1		=> SIG1,
@@ -113,11 +113,11 @@ begin
 			SML_EXP	=> E_SML
 		);
 		
+	--Swap
 	GRT_EXP	<= E_GRT;
-	SML_EXP	<= E_SML;
+	SML_EXP	<= E_SML; --TODO: Inutile, decidere come rimuovere
 		
-	--Calcolo differenza esponenti e il più grande, gestione caso in cui la differenza sia maggiore di 23 (si pone mantissa più piccola
-	--nulla e si gestisce il caso come se l'input fosse nullo(?)
+	--Calcolo differenza esponenti
 	ESub:	RCA
 		generic map(
 			N	=> 8
@@ -130,8 +130,12 @@ begin
 			OUTPUT	=> EXP_DIFF
 		);
 	
+	--Gestione caso differenza degli esponenti eccede lunghezza mantissa: si alza flag ERR
 	ERR	<= '0'	when (EXP_DIFF(7 downto 5) = "000")	else '1';
-	OFF	<= EXP_DIFF;
+	
+	--Slicing della dimensione della parola dell'offset a 5 bit
+	OFF	<= EXP_DIFF(4 downto 0);
+	
 	--TODO: Gestione caso mantisse uguali e op è sottrazione
 
 end RTL;

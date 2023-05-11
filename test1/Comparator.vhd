@@ -47,6 +47,7 @@ architecture Behavioral of Comparator is
 	
 begin
 
+	--Paragone degli esponenti
 	EComp:	EightBitComparator
 		port map(
 			E1		=> E1_IN,    
@@ -56,6 +57,7 @@ begin
 			GRT	=> E1_GRT
 		);
 
+	--Paragone delle mantisse
 	MComp:	MantissaComparator
 		port map(
 			M1		=> M1_IN,			

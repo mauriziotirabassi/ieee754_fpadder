@@ -15,7 +15,7 @@ Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.06 secs
  
 --> 
-Reading design: FirstStageTOP.prj
+Reading design: Comparator.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -51,30 +51,18 @@ Parsing architecture <RTL> of entity <eightbitcomparator>.
 Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/MantissaComparator.vhd" into library work
 Parsing entity <MantissaComparator>.
 Parsing architecture <RTL> of entity <mantissacomparator>.
-Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/FullAdder.vhd" into library work
-Parsing entity <FullAdder>.
-Parsing architecture <RTL> of entity <fulladder>.
-Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/RCA.vhd" into library work
-Parsing entity <RCA>.
-Parsing architecture <RTL> of entity <rca>.
-Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/OpPicker.vhd" into library work
-Parsing entity <OpPicker>.
-Parsing architecture <RTL> of entity <oppicker>.
 Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/Comparator.vhd" into library work
 Parsing entity <Comparator>.
 Parsing architecture <Behavioral> of entity <comparator>.
-Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd" into library work
-Parsing entity <FirstStageTOP>.
-Parsing architecture <RTL> of entity <firststagetop>.
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.19 secs
+Total CPU time to Xst completion: 3.05 secs
  
 --> 
 
 
-Total memory usage is 284168 kilobytes
+Total memory usage is 284108 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

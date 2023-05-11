@@ -1,0 +1,6 @@
+vhdl work "FullAdder.vhd"
+vhdl work "ShifterL.vhd"
+vhdl work "ReversePriorityEncoder.vhd"
+vhdl work "RCA.vhd"
+vhdl work "Normalizer.vhd"
+vhdl work "TB_Normalizer.vhd"

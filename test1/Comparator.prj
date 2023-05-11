@@ -1,8 +1,4 @@
 vhdl work "FourBitComparator.vhd"
 vhdl work "EightBitComparator.vhd"
 vhdl work "MantissaComparator.vhd"
-vhdl work "FullAdder.vhd"
-vhdl work "RCA.vhd"
-vhdl work "OpPicker.vhd"
 vhdl work "Comparator.vhd"
-vhdl work "FirstStageTOP.vhd"
