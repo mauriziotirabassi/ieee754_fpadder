@@ -1,4 +1,0 @@
-vhdl work "FourBitComparator.vhd"
-vhdl work "EightBitComparator.vhd"
-vhdl work "MantissaComparator.vhd"
-vhdl work "Comparator.vhd"

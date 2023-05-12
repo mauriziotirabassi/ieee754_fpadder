@@ -14,11 +14,10 @@ entity FirstStageTOP is
 		
 		OP_IN 	: in	std_logic; --0 se somma, 1 se sottrazione
 		
-		GRT_MAN	: out	std_logic_vector(22 downto 0); --TODO: Decidere se la mantissa più grande già consideri il significant esplicitamente
+		GRT_MAN	: out	std_logic_vector(22 downto 0);
 		SML_MAN	: out	std_logic_vector(22 downto 0); --la mantissa più piccola verrà shiftata ed estesa di un bit da ShifterMANT
 		GRT_EXP	: out	std_logic_vector(7 downto 0);
-		SML_EXP	: out	std_logic_vector(7 downto 0); --TODO: Inutile, decidere come rimuovere
-		
+
 		OP_OUT	: out	std_logic; --0 se somma, 1 se sottrazione
 		
 		OFF		: out	std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
@@ -110,12 +109,11 @@ begin
 			GRT_MAN	=> GRT_MAN,
 			SML_MAN	=> SML_MAN,
 			GRT_EXP	=> E_GRT,
-			SML_EXP	=> E_SML
+			SML_EXP	=> E_SML --TODO: Lasciare appeso
 		);
 		
 	--Swap
 	GRT_EXP	<= E_GRT;
-	SML_EXP	<= E_SML; --TODO: Inutile, decidere come rimuovere
 		
 	--Calcolo differenza esponenti
 	ESub:	RCA
@@ -126,7 +124,7 @@ begin
 		port map(
 			INPUT1	=> E_GRT,
 			INPUT2	=> E_SML,
-			OP			=> '1',
+			OP			=> '1', --Sottrazione
 			OUTPUT	=> EXP_DIFF
 		);
 	

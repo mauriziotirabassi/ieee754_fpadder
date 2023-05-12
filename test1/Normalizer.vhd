@@ -70,15 +70,15 @@ begin
 			OUTPUT	=> MAN_OFF
 		);
 
-	--TODO: Verifica se mantissa shiftabile con eventuale gestione eccezioni
-
-	--Shifto a sinistra di tante posizioni quante posizione
+	--Shifto a sinistra di tante posizioni quante offset
 	SHFT:		ShifterL
 		port map(
 			INPUT		=> MAN_IN,
 			OFFSET	=> MAN_OFF,
 			SHIFTED	=> MAN_OUT
 		);
+		
+	--TODO: Il MSB '1' adesso è esplicito: rendere implicito
 
 	--Verifico se esponente decrementabile
 	SUB_EXP	<= "000"	& MAN_OFF; --Comparatore e RCA/CLA prendono parole di 8 bit

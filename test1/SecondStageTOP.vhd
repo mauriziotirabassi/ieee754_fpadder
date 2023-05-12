@@ -11,7 +11,6 @@ entity SecondStageTOP is
 		GRT_MAN	: in	std_logic_vector(22 downto 0); 
 		SML_MAN	: in	std_logic_vector(22 downto 0); --Mantissa da shiftare
 		GRT_EXP	: in	std_logic_vector(7 downto 0);
-		SML_EXP	: in	std_logic_vector(7 downto 0); --TODO: Inutile, decidere come rimuovere
 		
 		OP_IN		: in	std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
 		OFF		: in	std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
@@ -22,7 +21,6 @@ entity SecondStageTOP is
 		EXP_OUT	: out	std_logic_vector(7 downto 0);
 		
 		EXP_OF	: out	std_logic
-		
 	);
 end SecondStageTOP;
 
@@ -61,7 +59,7 @@ architecture RTL of SecondStageTOP is
 begin
 
 	--Estendere di un bit la mantissa più grande in quanto RCA/CLA prende input di 24 bit
-	EXT_M1	<= GRT_MAN	& '0';
+	EXT_M1	<= '1'	& GRT_MAN;
 	
 	--Esplicitare il significant della mantissa più piccola perché shifter prende input di 24 bit perché RCA/CLA prende input di 24 bit
 	EXT_M2	<= '1'	& SML_MAN;
@@ -106,7 +104,7 @@ begin
 			INPUT2	=> PLUS_ONE,
 			OP			=> '0', --Addizione
 			OUTPUT	=> CORR_EXP,
-			COUT		=> REM_EXP		
+			COUT		=> EXP_OF		
 		);
 		
 	--TODO: Gestione overflow esponente (per il momento sputo fuori il risultato)
