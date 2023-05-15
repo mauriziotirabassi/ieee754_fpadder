@@ -1,0 +1,5 @@
+work	"FullAdder.vhd"
+work	"Normalizer.vhd"
+work	"RCA.vhd"
+work	"ReversePriorityEncoder.vhd"
+work	"ShifterL.vhd"
