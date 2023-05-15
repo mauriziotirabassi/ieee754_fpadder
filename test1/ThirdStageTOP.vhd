@@ -6,6 +6,11 @@ use ieee.std_logic_1164.all;
 --2. Gestire casi eccezionali come (?)
 
 entity ThirdStageTOP is
+	port(
+		MAN_IN	: in	std_logic_vector(23 downto 0);
+		EXP_IN	: in	std_logic_vector(7 downto 0);
+		
+		FINAL		: out	std_logic_vector(31 downto 0)
 end ThirdStageTOP;
 
 architecture RTL of ThirdStageTOP is

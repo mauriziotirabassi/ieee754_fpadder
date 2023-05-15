@@ -11,7 +11,7 @@
          <ClosedNode>/ExponentComparator - RTL |home|kryzha|Documents|proj-reti-2023|test1|ExponentComparator.vhd</ClosedNode>
          <ClosedNode>/ExponentPicker - RTL |home|kryzha|Documents|proj-reti-2023|test1|ExponentPicker.vhd</ClosedNode>
          <ClosedNode>/ExponentPicker - RTL |home|kryzha|Documents|proj-reti-2023|test1|ExponentPicker.vhd/COMP0 - EightBitComparator - RTL</ClosedNode>
-         <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/COMP - Comparator - Behavioral/EComp - EightBitComparator - RTL</ClosedNode>
+         <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/COMP - Comparator - Behavioral</ClosedNode>
          <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/COMP - Comparator - Behavioral/MComp - MantissaComparator - RTL</ClosedNode>
          <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/EComp - EightBitComparator - RTL</ClosedNode>
          <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/EComp - ExponentPicker - RTL/COMP0 - EightBitComparator - RTL</ClosedNode>
@@ -26,16 +26,15 @@
          <ClosedNode>/RCA - RTL |home|kryzha|Documents|proj-reti-2023|test1|RCA.vhd</ClosedNode>
          <ClosedNode>/SecondStageTOP - Behavioral |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/OP - RCA - RTL</ClosedNode>
          <ClosedNode>/SecondStageTOP - Behavioral |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/P1 - RCA - RTL</ClosedNode>
-         <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd</ClosedNode>
+         <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/OP - RCA - RTL</ClosedNode>
+         <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/P1 - RCA - RTL</ClosedNode>
       </ClosedNodes>
-      <SelectedItems>
-         <SelectedItem>EComp - EightBitComparator - RTL (/home/kryzha/Documents/proj-reti-2023/test1/EightBitComparator.vhd)</SelectedItem>
-      </SelectedItems>
+      <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000205000000020000000000000000000000000200000064ffffffff000000810000000300000002000002050000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001a1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001a10000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>EComp - EightBitComparator - RTL (/home/kryzha/Documents/proj-reti-2023/test1/EightBitComparator.vhd)</CurrentItem>
+      <CurrentItem>Normalizer - RTL (/home/kryzha/Documents/proj-reti-2023/test1/Normalizer.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>

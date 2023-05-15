@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+--TODO: Cambiare nome
 --Compares two exponent/significant pairs and outputs the bigger and smaller ones
 entity Comparator is
 	port(
@@ -8,11 +9,15 @@ entity Comparator is
 		M2_IN	: in	std_logic_vector(22 downto 0);
 		E1_IN	: in	std_logic_vector(7 downto 0);
 		E2_IN	: in	std_logic_vector(7 downto 0);
+		S1_IN	: in	std_logic;
+		S2_IN	: in	std_logic;
+		OP_IN	: in	std_logic;
 		
 		GRT_MAN	: out	std_logic_vector(22 downto 0);
 		SML_MAN	: out std_logic_vector(22 downto 0);
 		GRT_EXP	: out	std_logic_vector(7 downto 0);
-		SML_EXP	: out	std_logic_vector(7 downto 0)
+		SML_EXP	: out	std_logic_vector(7 downto 0);
+		OUT_SIG	: out	std_logic;
 	);
 	
 end Comparator;
@@ -74,5 +79,10 @@ begin
 	--Il numero più piccolo è quello con esponente minore oppure con esponente uguale e mantissa minore
 	SML_MAN	<= M1_IN	when (E1_SML = '1' or (E1_EQ = '1' and M1_SML = '1'))	else M2_IN;
 	SML_EXP	<= E1_IN	when (E1_SML = '1' or (E1_EQ = '1' and M1_SML = '1'))	else E2_IN;
+	
+	--Scelta segno del risultato finale
+	OUT_SIG	<= S1_IN	when M1_GRT	--Se il più grande in assoluto è il primo sig è segno del più grande indipendentemente dall'operazione
+					else	not S2_IN	when (M2_GRT	and OP_IN	= '1') --Se il più grande in abs è il secondo e l'op è la sottrazione
+					else	S2_IN			when (M2_GRT	and OP_IN	= '0'); --Se il più grande in abs è il secondo e l'op è l'addizione
 		
 end Behavioral;

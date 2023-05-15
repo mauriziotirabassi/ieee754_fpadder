@@ -19,6 +19,7 @@ entity FirstStageTOP is
 		GRT_EXP	: out	std_logic_vector(7 downto 0);
 
 		OP_OUT	: out	std_logic; --0 se somma, 1 se sottrazione
+		SIG_OUT	: out std_logic;
 		
 		OFF		: out	std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
 		
@@ -53,11 +54,15 @@ architecture RTL of FirstStageTOP is
 			M2_IN	: in	std_logic_vector(22 downto 0);
 			E1_IN	: in	std_logic_vector(7 downto 0);
 			E2_IN	: in	std_logic_vector(7 downto 0);
+			S1_IN	: in	std_logic;
+			S2_IN	: in	std_logic;
+			OP_IN	: in	std_logic;
 			
 			GRT_MAN	: out	std_logic_vector(22 downto 0);
 			SML_MAN	: out std_logic_vector(22 downto 0);
 			GRT_EXP	: out	std_logic_vector(7 downto 0);
-			SML_EXP	: out	std_logic_vector(7 downto 0)
+			SML_EXP	: out	std_logic_vector(7 downto 0);
+			OUT_SIG	: out	std_logic;
 		);
 	end component;
 
@@ -105,11 +110,15 @@ begin
 			M2_IN		=> MAN2,
 			E1_IN		=> EXP1,
 			E2_IN		=> EXP2,
+			S1_IN		=> SIG1,
+			S2_IN		=> SIG2,
+			OP_IN		=> OP_IN,
 			
 			GRT_MAN	=> GRT_MAN,
 			SML_MAN	=> SML_MAN,
 			GRT_EXP	=> E_GRT,
-			SML_EXP	=> E_SML --TODO: Lasciare appeso
+			SML_EXP	=> E_SML, --TODO: Lasciare appeso
+			OUT_SIG	=> SIG_OUT
 		);
 		
 	--Swap
