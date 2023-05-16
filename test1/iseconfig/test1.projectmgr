@@ -29,12 +29,14 @@
          <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/OP - RCA - RTL</ClosedNode>
          <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/P1 - RCA - RTL</ClosedNode>
       </ClosedNodes>
-      <SelectedItems/>
+      <SelectedItems>
+         <SelectedItem>ExponentPicker - RTL (/home/kryzha/Documents/proj-reti-2023/test1/ExponentPicker.vhd)</SelectedItem>
+      </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001a1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001a10000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Normalizer - RTL (/home/kryzha/Documents/proj-reti-2023/test1/Normalizer.vhd)</CurrentItem>
+      <CurrentItem>ExponentPicker - RTL (/home/kryzha/Documents/proj-reti-2023/test1/ExponentPicker.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -42,13 +44,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000135000000010000000100000000000000000000000064ffffffff000000810000000000000001000001350000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>

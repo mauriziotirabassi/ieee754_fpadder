@@ -15,12 +15,14 @@ entity SecondStageTOP is
 		OP_IN		: in	std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
 		OFF		: in	std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
 		
-		ERR		: in	std_logic; --TODO: Decidere come gestire azzeramento mantissa nella pipeline
+		SKIP_IN	: out	std_logic_vector(31 downto 0);
+		ERR_IN	: in	std_logic; --TODO: Decidere come gestire azzeramento mantissa nella pipeline
 		
 		MAN_OUT	: out	std_logic_vector(23 downto 0);
 		EXP_OUT	: out	std_logic_vector(7 downto 0);
 		
-		EXP_OF	: out	std_logic
+		SKIP_OUT	: out	std_logic_vector(31 downto 0);
+		ERR_OUT	: out	std_logic_vector(2 downto 0)
 	);
 end SecondStageTOP;
 
@@ -29,7 +31,7 @@ architecture RTL of SecondStageTOP is
 	--REGION SIGNALS
 	signal EXT_M1, EXT_M2, SHFT_M2, RESULT	: std_logic_vector(23 downto 0);
 	signal PLUS_ONE, CORR_EXP	: std_logic_vector(7 downto 0);
-	signal REM_MAN, REM_EXP	: std_logic; --TODO: Gestire caso overflow
+	signal REM_MAN, REM_EXP, EXP_OF	: std_logic; --TODO: Gestire caso overflow
 	--ENDREGION
 
 	--REGION COMPONENTS
@@ -109,6 +111,12 @@ begin
 		
 	--TODO: Gestione overflow esponente (per il momento sputo fuori il risultato)
 	EXP_OUT	<= CORR_EXP;
+	
+	--Forwarding skip
+	SKIP_OUT	<= SKIP_IN
+	
+	--Selezione erroe exp overflow --TODO: Decidere che erroe è effettivamente
+	ERR_OUT	<= "100" when EXP_OF = '1' else ERR_IN;
 	
 end RTL;
 

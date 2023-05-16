@@ -23,7 +23,8 @@ entity FirstStageTOP is
 		
 		OFF		: out	std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
 		
-		ERR		: out	std_logic --1 se la differenza tra gli esponenti eccede 24
+		TMP_SKIP	: out std_logic_vector(31 downto 0); --uno dei due input originari caso in cui uno dei due è 0
+		ERR		: out	std_logic_vector(2 downto 0) --1 se la differenza tra gli esponenti eccede 24
 	);
 end FirstStageTOP;
 
@@ -36,6 +37,8 @@ architecture RTL of FirstStageTOP is
 	
 	signal E_GRT, E_SML	: std_logic_vector(7 downto 0);
 	signal EXP_DIFF		: std_logic_vector(7 downto 0);
+	
+	signal TMP_ERR			: std_logic_vector(2 downto 0);
 	--ENDREGION
 
 	--REGION COMPONENTS
@@ -62,7 +65,16 @@ architecture RTL of FirstStageTOP is
 			SML_MAN	: out std_logic_vector(22 downto 0);
 			GRT_EXP	: out	std_logic_vector(7 downto 0);
 			SML_EXP	: out	std_logic_vector(7 downto 0);
-			OUT_SIG	: out	std_logic;
+			OUT_SIG	: out	std_logic
+		);
+	end component;
+	
+	component CaseManager is
+		port(
+			INPUT1	: in	std_logic_vector(31 downto 0);
+			INPUT2	: in	std_logic_vector(31 downto 0);
+			SKIP		: out	std_logic_vector(31 downto 0);
+			ERR		: out	std_logic_vector(2 downto 0) 
 		);
 	end component;
 
@@ -84,7 +96,14 @@ architecture RTL of FirstStageTOP is
 begin
     --TODO: Decidre se cambiare segno o meno
 	 
-	 --TODO: Forse stage precedente di pipeline verificare se un operando sia uguale a 0 così da evitare di dover lavorare su esponenti e segni
+	 --Verifica presenza di casi speciali
+	 ERR:	CaseManager
+		port map(
+			INPUT1	=> INPUT1,
+			INPUT2	=> INPUT2
+			SKIP		=> SKIP,
+			ERR		=>	TMP_ERR
+		);
 
     --Parsing the inputs
     SIG1  <= INPUT1(31);
@@ -137,8 +156,8 @@ begin
 			OUTPUT	=> EXP_DIFF
 		);
 	
-	--Gestione caso differenza degli esponenti eccede lunghezza mantissa: si alza flag ERR
-	ERR	<= '0'	when (EXP_DIFF(7 downto 5) = "000")	else '1';
+	--Gestione caso differenza degli esponenti eccede lunghezza mantissa
+	ERR	<= "010"	when (EXP_DIFF(7 downto 5) = "000")	else TMP_ERR;
 	
 	--Slicing della dimensione della parola dell'offset a 5 bit
 	OFF	<= EXP_DIFF(4 downto 0);

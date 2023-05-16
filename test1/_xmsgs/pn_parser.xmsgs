@@ -8,6 +8,12 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd</arg>&quot; Line <arg fmt="%d" index="2">79</arg>. <arg fmt="%s" index="3">Syntax error near &quot;others&quot;.</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kryzha/Documents/proj-reti-2023/test1/Comparator.vhd&quot; into library work</arg>
 </msg>
 
@@ -23,19 +29,13 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd</arg>&quot; Line <arg fmt="%d" index="2">66</arg>. <arg fmt="%s" index="3">Syntax error near &quot;)&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd</arg>&quot; Line <arg fmt="%d" index="2">104</arg>. <arg fmt="%s" index="3">Syntax error near &quot;SKIP&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd</arg>&quot; Line <arg fmt="%d" index="2">74</arg>. <arg fmt="%s" index="3">Syntax error near &quot;port&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kryzha/Documents/proj-reti-2023/test1/SecondStageTOP.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.vhd</arg>&quot; Line <arg fmt="%d" index="2">121</arg>. <arg fmt="%s" index="3">Syntax error near &quot;port&quot;.</arg>
-</msg>
-
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.vhd</arg>&quot; Line <arg fmt="%d" index="2">128</arg>. <arg fmt="%s" index="3">Syntax error near &quot;GRT_EXP&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">/home/kryzha/Documents/proj-reti-2023/test1/SecondStageTOP.vhd</arg>&quot; Line <arg fmt="%d" index="2">119</arg>. <arg fmt="%s" index="3">Syntax error near &quot;ERR_OUT&quot;.</arg>
 </msg>
 
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kryzha/Documents/proj-reti-2023/test1/ThirdStageTOP.vhd&quot; into library work</arg>
