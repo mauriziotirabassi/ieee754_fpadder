@@ -15,8 +15,8 @@ entity SecondStageTOP is
 		OP_IN		: in	std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
 		OFF		: in	std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
 		
-		SKIP_IN	: out	std_logic_vector(31 downto 0);
-		ERR_IN	: in	std_logic; --TODO: Decidere come gestire azzeramento mantissa nella pipeline
+		SKIP_IN	: in	std_logic_vector(31 downto 0);
+		ERR_IN	: in	std_logic_vector(2 downto 0);
 		
 		MAN_OUT	: out	std_logic_vector(23 downto 0);
 		EXP_OUT	: out	std_logic_vector(7 downto 0);
@@ -30,8 +30,8 @@ architecture RTL of SecondStageTOP is
 
 	--REGION SIGNALS
 	signal EXT_M1, EXT_M2, SHFT_M2, RESULT	: std_logic_vector(23 downto 0);
-	signal PLUS_ONE, CORR_EXP	: std_logic_vector(7 downto 0);
-	signal REM_MAN, REM_EXP, EXP_OF	: std_logic; --TODO: Gestire caso overflow
+	signal PLUS_ONE	: std_logic_vector(7 downto 0);
+	signal MAN_OF, EXP_OF	: std_logic;
 	--ENDREGION
 
 	--REGION COMPONENTS
@@ -87,14 +87,14 @@ begin
 			INPUT2	=> SHFT_M2,
 			OP			=> OP_IN,
 			OUTPUT	=> RESULT,
-			COUT		=> REM_MAN
+			COUT		=> MAN_OF
 		);
 		
 	--Gestione overflow mantissa
-	MAN_OUT	<=	RESULT	when REM_MAN	= '0'	else	('1' &	RESULT(23 downto 1));
+	MAN_OUT	<=	RESULT	when MAN_OF	= '0'	else	('1' &	RESULT(23 downto 1));
 		
 	--Correzione esponente
-	PLUS_ONE	<= "0000000"	& REM_MAN; -- Input somma con esponente prende parole di 8 bit
+	PLUS_ONE	<= "0000000"	& MAN_OF; -- Input somma con esponente prende parole di 8 bit (1 o 0 in base al cout della mantissa)
 	
 	P1:	RCA
 		generic map(
@@ -105,17 +105,14 @@ begin
 			INPUT1	=> GRT_EXP,
 			INPUT2	=> PLUS_ONE,
 			OP			=> '0', --Addizione
-			OUTPUT	=> CORR_EXP,
+			OUTPUT	=> EXP_OUT, --Valore exp indipendente da eventuale overflow in quanto output viene forzato al terzo stage
 			COUT		=> EXP_OF		
 		);
-		
-	--TODO: Gestione overflow esponente (per il momento sputo fuori il risultato)
-	EXP_OUT	<= CORR_EXP;
 	
 	--Forwarding skip
-	SKIP_OUT	<= SKIP_IN
+	SKIP_OUT	<= SKIP_IN;
 	
-	--Selezione erroe exp overflow --TODO: Decidere che erroe è effettivamente
+	--Selezione errore exp overflow --TODO: Decidere che erroe è effettivamente (adesso è +inf)
 	ERR_OUT	<= "100" when EXP_OF = '1' else ERR_IN;
 	
 end RTL;

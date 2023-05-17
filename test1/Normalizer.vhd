@@ -7,7 +7,8 @@ entity Normalizer is
 		EXP_IN	: in	std_logic_vector(7 downto 0);
 		
 		MAN_OUT	: out	std_logic_vector(23 downto 0);
-		EXP_OUT	: out	std_logic_vector(7 downto 0)
+		EXP_OUT	: out	std_logic_vector(7 downto 0);
+		EXP_UF	: out std_logic --Flag che mi dice se si è verificato un underflow dell'esponente
 	);
 	
 end Normalizer;
@@ -16,8 +17,6 @@ architecture RTL of Normalizer is
 
 	--REGION SIGNALS
 	signal MAN_OFF : std_logic_vector(4 downto 0);
-	signal SUB_EXP	: std_logic_vector(7 downto 0);
-	signal REM_EXP, EXP_UF	: std_logic;
 	--ENDREGION
 	
 	--REGION COMPONENTS
@@ -87,9 +86,9 @@ begin
 		port map(
 			E1		=> EXP_IN,
 			E2		=> SUB_EXP,
-			SML	=> EXP_UF
-			--EQ --TODO: Si può lasciare appeso?
-			--GRT --TODO: Si può lasciare appeso?
+			SML	=> EXP_UF,
+			EQ 	=> open,
+			GRT	=> open
 		);
 
 	--Decremento l'esponente
@@ -100,12 +99,9 @@ begin
 
 		port map( 
 			INPUT1	=> EXP_IN,
-			INPUT2	=> SUB_EXP,
+			INPUT2	=> EXP_OUT,
 			OP			=> '1', --Sottrazione
-			COUT		=> REM_EXP --TODO: Inutile, è una sottrazione, decidere come togliere
+			COUT		=> open --Irrilevante perché sottrazione
 		);
-		
-	--TODO: Gestione caso underflow (per il momento sputo 0)
-	EXP_OUT	<= SUB_EXP	when EXP_UF = '0'	else "00000000";
 
 end RTL;
