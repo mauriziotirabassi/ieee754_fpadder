@@ -1,0 +1,219 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: Pipeline.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Pipeline.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Pipeline"
+Output Format                      : NGC
+Target Device                      : xc6slx4-3-tqg144
+
+---- Source Options
+Top Module Name                    : Pipeline
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/FourBitComparator.vhd" into library work
+Parsing entity <FourBitComparator>.
+Parsing architecture <RTL> of entity <fourbitcomparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/FullAdder.vhd" into library work
+Parsing entity <FullAdder>.
+Parsing architecture <RTL> of entity <fulladder>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/EightBitComparator.vhd" into library work
+Parsing entity <EightBitComparator>.
+Parsing architecture <RTL> of entity <eightbitcomparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/ShifterL.vhd" into library work
+Parsing entity <ShifterL>.
+Parsing architecture <RTL> of entity <shifterl>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/ReversePriorityEncoder.vhd" into library work
+Parsing entity <ReversePriorityEncoder>.
+Parsing architecture <RTL> of entity <reversepriorityencoder>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/RCA.vhd" into library work
+Parsing entity <RCA>.
+Parsing architecture <RTL> of entity <rca>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/MantissaComparator.vhd" into library work
+Parsing entity <MantissaComparator>.
+Parsing architecture <RTL> of entity <mantissacomparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/SpecialOutput.vhd" into library work
+Parsing entity <SpecialOutput>.
+Parsing architecture <RTL> of entity <specialoutput>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/ShifterR.vhd" into library work
+Parsing entity <ShifterR>.
+Parsing architecture <RTL> of entity <shifterr>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/OpPicker.vhd" into library work
+Parsing entity <OpPicker>.
+Parsing architecture <RTL> of entity <oppicker>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/Normalizer.vhd" into library work
+Parsing entity <Normalizer>.
+Parsing architecture <RTL> of entity <normalizer>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/Comparator.vhd" into library work
+Parsing entity <Comparator>.
+Parsing architecture <Behavioral> of entity <comparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" into library work
+Parsing entity <CaseManager>.
+Parsing architecture <RTL> of entity <casemanager>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/ThirdStageTOP.vhd" into library work
+Parsing entity <ThirdStageTOP>.
+Parsing architecture <RTL> of entity <thirdstagetop>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/SecondStageTOP.vhd" into library work
+Parsing entity <SecondStageTOP>.
+Parsing architecture <RTL> of entity <secondstagetop>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd" into library work
+Parsing entity <FirstStageTOP>.
+Parsing architecture <RTL> of entity <firststagetop>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.vhd" into library work
+Parsing entity <Pipeline>.
+Parsing architecture <RTL> of entity <pipeline>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Pipeline> (architecture <RTL>) from library <work>.
+
+Elaborating entity <FirstStageTOP> (architecture <RTL>) from library <work>.
+
+Elaborating entity <OpPicker> (architecture <RTL>) from library <work>.
+
+Elaborating entity <Comparator> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <EightBitComparator> (architecture <RTL>) from library <work>.
+
+Elaborating entity <FourBitComparator> (architecture <RTL>) from library <work>.
+
+Elaborating entity <MantissaComparator> (architecture <RTL>) from library <work>.
+
+Elaborating entity <CaseManager> (architecture <RTL>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" Line 53: Assignment to man1_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" Line 54: Assignment to man2_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" Line 56: Assignment to exp1_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" Line 57: Assignment to exp2_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" Line 58: Assignment to exp1_one ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/test1/CaseManager.vhd" Line 59: Assignment to exp2_one ignored, since the identifier is never used
+
+Elaborating entity <RCA> (architecture <RTL>) with generics from library <work>.
+
+Elaborating entity <FullAdder> (architecture <RTL>) from library <work>.
+WARNING:HDLCompiler:634 - "/home/kryzha/Documents/proj-reti-2023/test1/FirstStageTOP.vhd" Line 47: Net <TMP_GRT_EXP[7]> does not have a driver.
+
+Elaborating entity <SecondStageTOP> (architecture <RTL>) from library <work>.
+
+Elaborating entity <ShifterR> (architecture <RTL>) from library <work>.
+ERROR:HDLCompiler:410 - "/home/kryzha/Documents/proj-reti-2023/test1/ShifterR.vhd" Line 17: Expression has 23 elements ; expected 24
+Netlist ShifterR(RTL) remains a blackbox, due to errors in its contents
+
+Elaborating entity <RCA> (architecture <RTL>) with generics from library <work>.
+
+Elaborating entity <ThirdStageTOP> (architecture <RTL>) from library <work>.
+
+Elaborating entity <Normalizer> (architecture <RTL>) from library <work>.
+
+Elaborating entity <ReversePriorityEncoder> (architecture <RTL>) from library <work>.
+
+Elaborating entity <ShifterL> (architecture <RTL>) from library <work>.
+
+Elaborating entity <SpecialOutput> (architecture <RTL>) from library <work>.
+--> 
+
+
+Total memory usage is 299984 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

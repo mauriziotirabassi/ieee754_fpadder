@@ -16,6 +16,7 @@ end Normalizer;
 architecture RTL of Normalizer is
 
 	--REGION SIGNALS
+	signal SUB_EXP	: std_logic_vector(7 downto 0);
 	signal MAN_OFF : std_logic_vector(4 downto 0);
 	--ENDREGION
 	
@@ -99,7 +100,7 @@ begin
 
 		port map( 
 			INPUT1	=> EXP_IN,
-			INPUT2	=> EXP_OUT,
+			INPUT2	=> SUB_EXP,
 			OP			=> '1', --Sottrazione
 			COUT		=> open --Irrilevante perché sottrazione
 		);

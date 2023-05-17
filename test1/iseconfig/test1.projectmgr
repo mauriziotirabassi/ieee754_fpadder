@@ -11,6 +11,7 @@
          <ClosedNode>/ExponentComparator - RTL |home|kryzha|Documents|proj-reti-2023|test1|ExponentComparator.vhd</ClosedNode>
          <ClosedNode>/ExponentPicker - RTL |home|kryzha|Documents|proj-reti-2023|test1|ExponentPicker.vhd</ClosedNode>
          <ClosedNode>/ExponentPicker - RTL |home|kryzha|Documents|proj-reti-2023|test1|ExponentPicker.vhd/COMP0 - EightBitComparator - RTL</ClosedNode>
+         <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd</ClosedNode>
          <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/COMP - Comparator - Behavioral</ClosedNode>
          <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/COMP - Comparator - Behavioral/MComp - MantissaComparator - RTL</ClosedNode>
          <ClosedNode>/FirstStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|FirstStageTOP.vhd/EComp - EightBitComparator - RTL</ClosedNode>
@@ -27,17 +28,17 @@
          <ClosedNode>/RCA - RTL |home|kryzha|Documents|proj-reti-2023|test1|RCA.vhd</ClosedNode>
          <ClosedNode>/SecondStageTOP - Behavioral |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/OP - RCA - RTL</ClosedNode>
          <ClosedNode>/SecondStageTOP - Behavioral |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/P1 - RCA - RTL</ClosedNode>
+         <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd</ClosedNode>
          <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/OP - RCA - RTL</ClosedNode>
          <ClosedNode>/SecondStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|SecondStageTOP.vhd/P1 - RCA - RTL</ClosedNode>
+         <ClosedNode>/ThirdStageTOP - RTL |home|kryzha|Documents|proj-reti-2023|test1|ThirdStageTOP.vhd</ClosedNode>
       </ClosedNodes>
-      <SelectedItems>
-         <SelectedItem>ThirdStageTOP - RTL (/home/kryzha/Documents/proj-reti-2023/test1/ThirdStageTOP.vhd)</SelectedItem>
-      </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001f9000000020000000000000000000000000200000064ffffffff000000810000000300000002000001f90000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000016c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000016c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>ThirdStageTOP - RTL (/home/kryzha/Documents/proj-reti-2023/test1/ThirdStageTOP.vhd)</CurrentItem>
+      <CurrentItem>NORM - Normalizer - RTL (/home/kryzha/Documents/proj-reti-2023/test1/Normalizer.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>

@@ -6,6 +6,7 @@ entity CaseManager is
 	port(
 		INPUT1	: in	std_logic_vector(31 downto 0);
 		INPUT2	: in	std_logic_vector(31 downto 0);
+		OP			: in	std_logic;
 		
 		SKIP		: out	std_logic_vector(31 downto 0); --TODO: Decidere se spostare direttamente in first stage
 
@@ -29,6 +30,7 @@ architecture RTL of CaseManager is
 	signal EXP1, EXP2		: std_logic_vector(7 downto 0);
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
+	signal ZERO1, ZERO2	: std_logic;
 	signal MAN1_ZERO, MAN2_ZERO	: std_logic;
 	signal EXP1_ZERO, EXP2_ZERO	: std_logic;
 	signal EXP1_ONE, EXP2_ONE		: std_logic;
@@ -73,14 +75,12 @@ begin
 	--Codifica segnale di errore
 	ERR	<=	"001" when (ZERO1	or		ZERO2)	= '1' --uno dei due numeri è 0 --TODO: decidere se ignorare caso in cui uno dei due sia uguale a 0
 		else	"010" when (ZERO1	and	ZERO2)	= '1' --entrambi i numeri sono 0 --TODO: Ridondante?
-		else	"011" when ((PLUS_INF1 and MINUS_INF2)	or	(MINUS_INF1	and PLUS_INF2))	= '1' --caso +inf op -inf e viceversa
-		else	"100" when ((PLUS_INF1 and (not INF2))	or ((not INF1) and PLUS_INF2))	= '1' --caso uno dei due è +inf ma non l'altro
-		else	"101" when ((MINUS_INF1 and (not INF2))or ((not INF1) and MINUS_INF2))	= '1' --caso uno dei due è -inf ma non l'altro
+		else	"011" when ((PLUS_INF1 and MINUS_INF2 and (not OP))	or	(MINUS_INF1	and PLUS_INF2 and (not OP)))	= '1' --caso +inf op -inf e viceversa
+		else	"100" when ((PLUS_INF1 and (not INF2))	or ((not INF1) and PLUS_INF2) or (PLUS_INF1 and PLUS_INF2 and (not OP)) or (PLUS_INF1 and MINUS_INF2 and OP))	= '1' --caso uno dei due è +inf ma non l'altro
+		else	"101" when ((MINUS_INF1 and (not INF2))or ((not INF1) and MINUS_INF2) or (MINUS_INF1 and MINUS_INF2 and (not OP)) or (MINUS_INF1 and PLUS_INF2 and OP))	= '1' --caso uno dei due è -inf ma non l'altro
 		else	"000"; --Nessun errore nel caso in cui nessuna condizione venga verificata
-		
-	--TODO: Implementare num - -inf = +inf e - +inf = -inf?
 	
-	--TODO: Non serve gestire altri casi perché già verificati nella selezione della flag di errore
-	SKIP	<= INPUT1	when ZERO2	= '1' else	INPUT2;
+	--Set dello SKIP: non serve gestire altri casi perché già verificati nella selezione della flag di errore
+	SKIP	<= INPUT2	when ZERO1	= '1' else	INPUT1;
 	
 end RTL;

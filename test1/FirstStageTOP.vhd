@@ -35,10 +35,16 @@ architecture RTL of FirstStageTOP is
 	signal EXP1, EXP2		: std_logic_vector(7 downto 0);
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
-	signal E_GRT			: std_logic_vector(7 downto 0);
+	signal E_GRT, E_SML			: std_logic_vector(7 downto 0);
 	signal EXP_DIFF		: std_logic_vector(7 downto 0);
 	
+	signal TMP_SWAP		: std_logic;
+	
 	signal TMP_ERR			: std_logic_vector(2 downto 0);
+	signal TMP_SIG1, TMP_SIG2	: std_logic;
+	signal TMP_IN1, TMP_IN2	: std_logic_vector(31 downto 0);
+	signal TMP_GRT_MAN, TMP_SML_MAN : std_logic_vector(22 downto 0);
+	signal TMP_GRT_EXP, TMP_SML_EXP : std_logic_vector(7 downto 0);
 	--ENDREGION
 
 	--REGION COMPONENTS
@@ -61,6 +67,8 @@ architecture RTL of FirstStageTOP is
 			S2_IN	: in	std_logic;
 			OP_IN	: in	std_logic;
 			
+			SWAP		: out	std_logic;
+			
 			GRT_MAN	: out	std_logic_vector(22 downto 0);
 			SML_MAN	: out std_logic_vector(22 downto 0);
 			GRT_EXP	: out	std_logic_vector(7 downto 0);
@@ -73,6 +81,7 @@ architecture RTL of FirstStageTOP is
 		port(
 			INPUT1	: in	std_logic_vector(31 downto 0);
 			INPUT2	: in	std_logic_vector(31 downto 0);
+			OP			: in	std_logic;
 			SKIP		: out	std_logic_vector(31 downto 0);
 			ERR		: out	std_logic_vector(2 downto 0) 
 		);
@@ -95,16 +104,6 @@ architecture RTL of FirstStageTOP is
 	
 begin
     --TODO: Decidre se cambiare segno o meno
-	 
-	 --Verifica presenza di casi speciali
-	 ERR:	CaseManager
-		port map(
-			INPUT1	=> INPUT1,
-			INPUT2	=> INPUT2,
-			
-			SKIP		=> SKIP, --Output diretto
-			ERR		=>	TMP_ERR
-		);
 
     --Parsing the inputs
     SIG1  <= INPUT1(31);
@@ -134,16 +133,39 @@ begin
 			S1_IN		=> SIG1,
 			S2_IN		=> SIG2,
 			OP_IN		=> OP_IN,
+		
+			SWAP		=> TMP_SWAP,
 			
-			GRT_MAN	=> GRT_MAN, --Output diretto
-			SML_MAN	=> SML_MAN, --Output diretto
+			GRT_MAN	=> TMP_GRT_MAN, --Output diretto
+			SML_MAN	=> TMP_SML_MAN, --Output diretto
 			GRT_EXP	=> E_GRT,
-			SML_EXP	=> open,
+			SML_EXP	=> E_SML,
 			OUT_SIG	=> SIG_OUT --Output diretto
 		);
 		
 	--Swap
 	GRT_EXP	<= E_GRT;
+	
+	GRT_MAN <= TMP_GRT_MAN;
+	SML_MAN <= TMP_SML_MAN;
+	
+	--
+	TMP_SIG1	<= SIG1 when TMP_SWAP = '0' else SIG2;
+	TMP_SIG2	<= SIG1 when TMP_SWAP = '1' else SIG2;
+	
+	TMP_IN1	<= TMP_SIG1 & TMP_GRT_EXP & TMP_GRT_MAN;
+	TMP_IN2	<= TMP_SIG2 & TMP_SML_EXP & TMP_SML_MAN;
+	
+	--Verifica presenza di casi speciali
+	 MAN:	CaseManager
+		port map(
+			INPUT1	=> TMP_IN1,
+			INPUT2	=> TMP_IN2,
+			OP			=> OP_IN,
+			
+			SKIP		=> SKIP, --Output diretto
+			ERR		=>	TMP_ERR
+		);
 		
 	--Calcolo differenza esponenti
 	ESub:	RCA
@@ -159,7 +181,7 @@ begin
 		);
 	
 	--Gestione caso differenza degli esponenti eccede lunghezza mantissa (propaga err o setta stampa 0)
-	ERR	<= TMP_ERR	when (EXP_DIFF(7 downto 5) = "000")	else "010";
+	ERR	<= TMP_ERR	when ((EXP_DIFF(7 downto 5) = "000") or (not (EXP_DIFF(4 downto 3) = "11")))	else "001"; --TODO: Spostare gestione skip da case manager a first stage top
 	
 	--Slicing della dimensione della parola dell'offset a 5 bit
 	OFF	<= EXP_DIFF(4 downto 0);

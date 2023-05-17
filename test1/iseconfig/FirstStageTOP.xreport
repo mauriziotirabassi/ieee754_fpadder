@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-05-08T16:23:16</DateModified>
-  <ModuleName>MantissaComparator</ModuleName>
+  <DateModified>2023-05-17T17:12:59</DateModified>
+  <ModuleName>Pipeline</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/kryzha/Documents/proj-reti-2023/test1/iseconfig/FirstStageTOP.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/kryzha/Documents/proj-reti-2023/test1</ImplementationReportsDirectory>
-  <DateInitialized>2023-05-08T16:23:16</DateInitialized>
+  <ImplementationReportsDirectory>/home/kryzha/Documents/proj-reti-2023/test1/</ImplementationReportsDirectory>
+  <DateInitialized>2023-05-17T17:12:59</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

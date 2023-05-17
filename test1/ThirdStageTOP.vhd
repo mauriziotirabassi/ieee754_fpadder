@@ -23,6 +23,9 @@ architecture RTL of ThirdStageTOP is
 	--REGION SIGNALS
 	signal TMP_EXP		: std_logic_vector(7 downto 0);
 	signal TMP_MAN		: std_logic_vector(23 downto 0);
+	signal TMP_UF		: std_logic;
+	signal TMP_ERR		: std_logic_vector(2 downto 0);
+	
 	signal TMP_SPECIAL: std_logic_vector(31 downto 0);
 	signal TMP_FLAG	: std_logic;
 	--ENDREGION
@@ -33,7 +36,8 @@ architecture RTL of ThirdStageTOP is
 			MAN_IN	: in	std_logic_vector(23 downto 0);
 			EXP_IN	: in	std_logic_vector(7 downto 0);
 			MAN_OUT	: out	std_logic_vector(23 downto 0);
-			EXP_OUT	: out	std_logic_vector(7 downto 0)
+			EXP_OUT	: out	std_logic_vector(7 downto 0);
+			EXP_UF	: out std_logic
 		);
 	end component;
 	
@@ -42,7 +46,7 @@ architecture RTL of ThirdStageTOP is
 			ERR				: in	std_logic_vector(2 downto 0);
 			SKIP				: in	std_logic_vector(31 downto 0);
 			SPECIAL_OUTPUT	: out	std_logic_vector(31 downto 0);
-			SPECIAL_FLAG	: out	std_logic_vector
+			SPECIAL_FLAG	: out	std_logic
 		);
 	end component;
 	--ENDREGION
@@ -55,13 +59,17 @@ begin
 			MAN_IN	=> MAN_IN,
 			EXP_IN	=> EXP_IN,
 			MAN_OUT	=> TMP_MAN,
-			EXP_OUT	=> TMP_EXP
+			EXP_OUT	=> TMP_EXP,
+			EXP_UF	=> TMP_UF
 		);
+		
+	--Caso underflow esponente oppure segnale di errore da stage precedente
+	TMP_ERR <= "011" when TMP_UF = '1' else ERR; --TODO: ora NaN, capire che caso è
 
 	--Decido l'output speciale nel caso in cui ERR sia diverso da "000" e setto la flag per comandare la forzatura dell'output
-	ERR:	SpecialOutput
+	SPCL:	SpecialOutput
 		port map(
-			ERR				=> ERR,
+			ERR				=> TMP_ERR,
 			SKIP				=> SKIP,
 			SPECIAL_OUTPUT	=> TMP_SPECIAL,
 			SPECIAL_FLAG	=> TMP_FLAG
