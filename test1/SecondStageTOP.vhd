@@ -15,7 +15,7 @@ entity SecondStageTOP is
 		OP_IN		: in	std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
 		OFF		: in	std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
 		
-		SKIP_IN	: out	std_logic_vector(31 downto 0);
+		SKIP_IN	: in	std_logic_vector(31 downto 0);
 		ERR_IN	: in	std_logic; --TODO: Decidere come gestire azzeramento mantissa nella pipeline
 		
 		MAN_OUT	: out	std_logic_vector(23 downto 0);
