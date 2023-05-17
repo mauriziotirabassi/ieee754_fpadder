@@ -23,7 +23,7 @@ entity FirstStageTOP is
 		
 		OFF		: out	std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
 		
-		TMP_SKIP	: out std_logic_vector(31 downto 0); --uno dei due input originari caso in cui uno dei due è 0
+		SKIP		: out std_logic_vector(31 downto 0); --uno dei due input originari caso in cui uno dei due è 0
 		ERR		: out	std_logic_vector(2 downto 0) --1 se la differenza tra gli esponenti eccede 24
 	);
 end FirstStageTOP;
@@ -35,7 +35,7 @@ architecture RTL of FirstStageTOP is
 	signal EXP1, EXP2		: std_logic_vector(7 downto 0);
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
-	signal E_GRT, E_SML	: std_logic_vector(7 downto 0);
+	signal E_GRT			: std_logic_vector(7 downto 0);
 	signal EXP_DIFF		: std_logic_vector(7 downto 0);
 	
 	signal TMP_ERR			: std_logic_vector(2 downto 0);
@@ -100,8 +100,9 @@ begin
 	 ERR:	CaseManager
 		port map(
 			INPUT1	=> INPUT1,
-			INPUT2	=> INPUT2
-			SKIP		=> SKIP,
+			INPUT2	=> INPUT2,
+			
+			SKIP		=> SKIP, --Output diretto
 			ERR		=>	TMP_ERR
 		);
 
@@ -119,10 +120,11 @@ begin
 			S1		=> SIG1,
 			S2		=> SIG2,
 			OP		=> OP_IN,
-			SUB	=> OP_OUT
+			
+			SUB	=> OP_OUT --Output diretto
 		);
 		
-	--Paragone tra i due numeri
+	--Paragone tra i due numeri per lo swap
 	COMP:	Comparator
 		port map(
 			M1_IN		=> MAN1,
@@ -133,11 +135,11 @@ begin
 			S2_IN		=> SIG2,
 			OP_IN		=> OP_IN,
 			
-			GRT_MAN	=> GRT_MAN,
-			SML_MAN	=> SML_MAN,
+			GRT_MAN	=> GRT_MAN, --Output diretto
+			SML_MAN	=> SML_MAN, --Output diretto
 			GRT_EXP	=> E_GRT,
-			SML_EXP	=> E_SML, --TODO: Lasciare appeso
-			OUT_SIG	=> SIG_OUT
+			SML_EXP	=> open,
+			OUT_SIG	=> SIG_OUT --Output diretto
 		);
 		
 	--Swap
@@ -156,12 +158,10 @@ begin
 			OUTPUT	=> EXP_DIFF
 		);
 	
-	--Gestione caso differenza degli esponenti eccede lunghezza mantissa
-	ERR	<= "010"	when (EXP_DIFF(7 downto 5) = "000")	else TMP_ERR;
+	--Gestione caso differenza degli esponenti eccede lunghezza mantissa (propaga err o setta stampa 0)
+	ERR	<= TMP_ERR	when (EXP_DIFF(7 downto 5) = "000")	else "010";
 	
 	--Slicing della dimensione della parola dell'offset a 5 bit
 	OFF	<= EXP_DIFF(4 downto 0);
-	
-	--TODO: Gestione caso mantisse uguali e op è sottrazione
 
 end RTL;

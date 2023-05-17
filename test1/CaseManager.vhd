@@ -76,7 +76,7 @@ begin
 		else	"011" when ((PLUS_INF1 and MINUS_INF2)	or	(MINUS_INF1	and PLUS_INF2))	= '1' --caso +inf op -inf e viceversa
 		else	"100" when ((PLUS_INF1 and (not INF2))	or ((not INF1) and PLUS_INF2))	= '1' --caso uno dei due è +inf ma non l'altro
 		else	"101" when ((MINUS_INF1 and (not INF2))or ((not INF1) and MINUS_INF2))	= '1' --caso uno dei due è -inf ma non l'altro
-		else	"000"	when others;
+		else	"000"; --Nessun errore nel caso in cui nessuna condizione venga verificata
 		
 	--TODO: Implementare num - -inf = +inf e - +inf = -inf?
 	
