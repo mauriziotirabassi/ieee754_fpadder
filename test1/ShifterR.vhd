@@ -14,7 +14,7 @@ architecture RTL of ShifterR is
 begin 
 
 	with OFFSET select
-		SHIFTED <= INPUT(23 downto 0)								   when "00000",
+		SHIFTED <= INPUT												   when "00000",
 				"0" & INPUT(23 downto 1)								when "00001",
 				"00" & INPUT(23 downto 2)								when "00010",
 				"000" & INPUT(23 downto 3)								when "00011",
@@ -36,6 +36,7 @@ begin
 				"0000000000000000000" & INPUT(23 downto 19) 		when "10100",
 				"00000000000000000000" & INPUT(23 downto 20) 	when "10101",
 				"000000000000000000000" & INPUT(23 downto 21)	when "10110",
-				"0000000000000000000000" & INPUT(23)				when "10111",
-				"00000000000000000000000"								when others;
+				"0000000000000000000000" & INPUT(23 downto 22)	when "10111",
+				"00000000000000000000000" & INPUT(23)				when "11000",
+				"000000000000000000000000"								when others;
 end RTL;
