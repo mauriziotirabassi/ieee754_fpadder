@@ -1,0 +1,55 @@
+Running: /opt/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.exe -prj /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_beh.prj work.test_pipeline 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FourBitComparator.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FullAdder.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/EightBitComparator.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterL.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ReversePriorityEncoder.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/RCA.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SpecialOutput.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterR.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/OpPicker.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Comparator.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ThirdStageTOP.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SecondStageTOP.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.vhd" into library work
+Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 84640 KB
+Fuse CPU Usage: 1100 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture rtl of entity OpPicker [oppicker_default]
+Compiling architecture rtl of entity FourBitComparator [fourbitcomparator_default]
+Compiling architecture rtl of entity EightBitComparator [eightbitcomparator_default]
+Compiling architecture rtl of entity MantissaComparator [mantissacomparator_default]
+Compiling architecture behavioral of entity Comparator [comparator_default]
+Compiling architecture rtl of entity CaseManager [casemanager_default]
+Compiling architecture rtl of entity FullAdder [fulladder_default]
+Compiling architecture rtl of entity RCA [\RCA(8)\]
+Compiling architecture rtl of entity FirstStageTOP [firststagetop_default]
+Compiling architecture rtl of entity ShifterR [shifterr_default]
+Compiling architecture rtl of entity RCA [\RCA(24)\]
+Compiling architecture rtl of entity SecondStageTOP [secondstagetop_default]
+Compiling architecture rtl of entity ReversePriorityEncoder [reversepriorityencoder_default]
+Compiling architecture rtl of entity ShifterL [shifterl_default]
+Compiling architecture rtl of entity Normalizer [normalizer_default]
+Compiling architecture rtl of entity SpecialOutput [specialoutput_default]
+Compiling architecture rtl of entity ThirdStageTOP [thirdstagetop_default]
+Compiling architecture rtl of entity Pipeline [pipeline_default]
+Compiling architecture behavior of entity test_pipeline
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 39 VHDL Units
+Built simulation executable /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.exe
+Fuse Memory Usage: 1174812 KB
+Fuse CPU Usage: 1210 ms
+GCC CPU Usage: 2430 ms

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_stage1_isim_beh1.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="test_stage1" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/test_stage1/input1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">input1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input1[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/input2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">input2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input2[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/op_in" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">op_in</obj_property>
+      <obj_property name="ObjectShortName">op_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/grt_man" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">grt_man[22:0]</obj_property>
+      <obj_property name="ObjectShortName">grt_man[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/sml_man" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sml_man[22:0]</obj_property>
+      <obj_property name="ObjectShortName">sml_man[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/grt_exp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">grt_exp[7:0]</obj_property>
+      <obj_property name="ObjectShortName">grt_exp[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/op_out" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">op_out</obj_property>
+      <obj_property name="ObjectShortName">op_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/sig_out" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sig_out</obj_property>
+      <obj_property name="ObjectShortName">sig_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/off" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">off[4:0]</obj_property>
+      <obj_property name="ObjectShortName">off[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/skip" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">skip[31:0]</obj_property>
+      <obj_property name="ObjectShortName">skip[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_stage1/err" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">err[2:0]</obj_property>
+      <obj_property name="ObjectShortName">err[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
