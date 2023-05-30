@@ -21,20 +21,22 @@ architecture RTL of Pipeline is
 	-- i is the stage of the pipeline
 	signal i: std_logic;
 	
-	--First stage signals
-	signal TMP_GRT_MAN, TMP_SML_MAN				: std_logic_vector(22 downto 0);
-	signal TMP_GRT_EXP								: std_logic_vector(7 downto 0);
-	signal TMP_OFF										: std_logic_vector(4 downto 0);
-	signal TMP_OP_OUT, TMP_SIG_OUT, TMP_ERR	: std_logic;
+	-- signals first stage
+	signal S_grt, S_in: std_logic;
+	signal E_grt, E_in, OFFSET_E, OFFSET_rslt: std_logic_vector(7 downto 0);
+	signal M1_in, M2_in: std_logic_vector(22 downto 0);
 	
 	-- signals second stage
-	signal TMP_MAN_OUT : std_logic;
-	signal TMP_EXP_OUT : std_logic_vector(7 downto 0);	
-	signal TMP_EXP_OF  : std_logic_vector(23 downto 0);
+	signal tmp1 : std_logic;
+	signal tmp2 : std_logic_vector(7 downto 0);	
+	signal tmp3, tmp_ALU : std_logic_vector(23 downto 0);
 	
 	-- signals third stage
-	signal TMP_FINAL	 : std_logic_vector(23 downto 0);
-	
+	signal S_out: std_logic;
+	signal E_out: std_logic_vector(7 downto 0);
+	signal M_out: std_logic_vector(22 downto 0);
+	signal tmp_exp_adj : std_logic_vector(7 downto 0);
+	signal tmp_norm : std_logic_vector(22 downto 0);
 	--ENDREGION
 	
 	--REGION COMPONENTS
@@ -67,6 +69,8 @@ architecture RTL of Pipeline is
 			OP_IN		: in	std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
 			OFF		: in	std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
 			
+			ERR		: in	std_logic; --TODO: Decidere come gestire azzeramento mantissa nella pipeline
+			
 			MAN_OUT	: out	std_logic_vector(23 downto 0);
 			EXP_OUT	: out	std_logic_vector(7 downto 0);
 			
@@ -84,47 +88,6 @@ architecture RTL of Pipeline is
 		);
 	end component;
 	--ENDREGION
-		--stage 1	
-		S1:	FirstStageTOP
-			port map(
-				INPUT1	=> INPUT1,	
-				INPUT2	=> INPUT2,	
-				OP_IN		=> OP_IN,
-				
-				GRT_MAN	=> TMP_GRT_MAN,
-				SML_MAN	=> TMP_SML_MAN,
-				GRT_EXP	=> TMP_GRT_EXP,
-
-				OP_OUT	=> TMP_OP_OUT,
-				
-				OFF		=> TMP_OFF,
-				
-				ERR		=> TMP_ERR
-				);	
-			
-		--stage 2
-		S2: SecondStageTOP
-			port map(
-				GRT_MAN	=> TMP_GRT_MAN,
-				SML_MAN	=> TMP_SML_MAN,
-				GRT_EXP	=> TMP_GRT_EXP,
-				
-				OP_IN		=> TMP_OP_OUT,
-				OFF		=> TMP_OFF,
-				
-				MAN_OUT	=> TMP_MAN_OUT,
-				EXP_OUT	=> TMP_EXP_OUT,
-				EXP_OF	=> TMP_EXP_OF
-				);
-				
-			
-		--stage 3
-		S3: ThirdStageTOP
-			port map(
-				MAN_IN	=> TMP_MAN_OUT,
-				EXP_IN	=> TMP_EXP_OUT,
-				FINAL		=> TMP_FINAL
-				);
 
 
 begin
@@ -133,30 +96,59 @@ begin
 		
 		--reset pipeline
 		if (RESET ='1') then 
-		
-		-- reset first stage
-		
-		TMP_GRT_MAN			<=(others=>'0'); 
-		TMP_SML_MAN 	  	<=(others=>'0'); 
-		TMP_GRT_EXP			<=(others=>'0');
-		TMP_OFF				<=(others=>'0');
-		TMP_OP_OUT			<='0';
-		TMP_SIG_OUT			<='0';
-		TMP_ERR 				<='0';
-	
-		-- reset second stage
-		
-		TMP_MAN_OUT			<='0';
-		TMP_EXP_OUT			<=(others=>'0');
-		TMP_EXP_OF			<=(others=>'0');
-		
-		--reset third stage
-		
-		TMP_FINAL			<=(others=>'0');
+		S_grt			<='0'; 
+		S_in			<='0'; 
+		E_grt			<=(others=>'0');
+		E_in			<=(others=>'0');
+		OFFSET_E		<=(others=>'0');
+		M1_in			<=(others=>'0');
+		M2_in 		<=(others=>'0');
+		tmp1			<='0';
+		tmp2			<=(others=>'0');
+		tmp3			<=(others=>'0');
+		tmp_norm		<=(others=>'0');
+		tmp_exp_adj	<=(others=>'0');
+		tmp_ALU		<=(others=>'0');
+		S_out			<='0';
+		E_out			<=(others=>'0');
+		M_out			<=(others=>'0');
 		
 		--clock
 		elsif (CLK'event and CLK ='1') then
-						
+		
+		--STAGE 1
+		S1:	FirstStageTOP
+			port map(
+				INPUT1	=> INPUT1,	
+				INPUT2	=> INPUT2,	
+				OP_IN		=> OP_IN,
+				
+				GRT_MAN	=> 
+				SML_MAN	
+				GRT_EXP	
+
+				OP_OUT	
+				
+				OFF		
+				
+				ERR
+				);
+			S_in		<= S_grt;
+			E_in		<= E_grt;
+			OFFSET_E <= OFFSET_rslt; --signal offset_rslt is obtained internally
+			M1_in		<= M1;
+			M2_in		<= M2;
+			
+		--stage 2
+			tmp1		<= S_in;
+			tmp2		<= E_in;
+			tmp3     <= tmp_ALU; --signal from ALU is obtained at previous clock with OFFSET_E, M1_in and M2_in
+			
+		--stage 3
+			S_out		<= tmp1;
+			E_out	   <= tmp_exp_adj; --signal from adjuster is obtained at previous clock
+			M_out 	<= tmp_norm; --signal from normalizer is obtained at previous clock
+			
 		end if;
 		end process;
 

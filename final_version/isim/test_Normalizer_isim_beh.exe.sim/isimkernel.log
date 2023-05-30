@@ -1,0 +1,29 @@
+Command line:
+   test_Normalizer_isim_beh.exe
+     -simmode  gui
+     -simrunnum  3
+     -socket  51307
+
+Wed May 24 18:20:51 2023
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 184.25 Meg
+
+ Total Signals          : 119
+ Total Nets             : 132
+ Total Signal Drivers   : 61
+ Total Blocks           : 33
+ Total Primitive Blocks : 21
+ Total Processes        : 60
+ Total Traceable Variables  : 25
+ Total Scalar Nets and Variables : 509
+Total Line Count : 58
+
+ Total Simulation Time: 0.02 sec
+
+ Current Memory Usage: 259.752 Meg
+
+Wed May 24 18:22:46 2023
+

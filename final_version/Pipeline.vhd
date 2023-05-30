@@ -1,6 +1,5 @@
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
 
 entity Pipeline is
 	port(
@@ -20,7 +19,7 @@ architecture RTL of Pipeline is
 	--REGION SIGNALS
 	
 	--REG0 
-	signal REG0_INPUT1_OUT, REG_INPUT2_OUT				: std_logic_vector(31 downto 0);
+	signal REG0_INPUT1_OUT, REG0_INPUT2_OUT				: std_logic_vector(31 downto 0);
 	signal REG0_OP_OUT										: std_logic;
 	
 	--REG1
@@ -29,14 +28,14 @@ architecture RTL of Pipeline is
 	signal REG1_GRT_EXP_IN, REG1_GRT_EXP_OUT			: std_logic_vector(7 downto 0);
 	signal REG1_OP_IN, REG1_OP_OUT						: std_logic;
 	signal REG1_SIG_IN, REG1_SIG_OUT						: std_logic; --propagate to reg2 out
-	signal REG1_OFF_IN, REG1_OFF_OUT						: std_logic(4 downto 0);
-	signal REG1_ERR_IN, REG1_ERR_OUT						: std_logic; 
-	signal REG1_SKIP_IN, REG1_SKIP_OUT						: std_logic_vector(31 downto 0); --propagate to reg 2 out
+	signal REG1_OFF_IN, REG1_OFF_OUT						: std_logic_vector(4 downto 0);
+	signal REG1_ERR_IN, REG1_ERR_OUT						: std_logic_vector(2 downto 0); 
+	signal REG1_SKIP_IN, REG1_SKIP_OUT					: std_logic_vector(31 downto 0); --propagate to reg 2 out
 	
 	--REG2
 	signal REG2_MAN_IN, REG2_MAN_OUT						: std_logic_vector(23 downto 0);
 	signal REG2_EXP_IN, REG2_EXP_OUT						: std_logic_vector(7 downto 0);
-	signal REG2_ERR_IN, REG2_ERR_OUT						: std_logic;
+	signal REG2_ERR_IN, REG2_ERR_OUT						: std_logic_vector(2 downto 0);
 	signal REG2_SIG_OUT										: std_logic;
 	signal REG2_SKIP_OUT										: std_logic_vector(31 downto 0);
 	
@@ -76,13 +75,11 @@ architecture RTL of Pipeline is
         OP_IN        : in    std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
         OFF        : in    std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
 
-        SKIP_IN    : in    std_logic_vector(31 downto 0);
         ERR_IN    : in    std_logic_vector(2 downto 0);
 
         MAN_OUT    : out    std_logic_vector(23 downto 0);
         EXP_OUT    : out    std_logic_vector(7 downto 0);
 
-        SKIP_OUT    : out    std_logic_vector(31 downto 0);
         ERR_OUT    : out    std_logic_vector(2 downto 0)
     );
 	end component;
@@ -104,9 +101,9 @@ architecture RTL of Pipeline is
 	
 	--REGION MAPPING 
 	
-	begin
+begin
 	
-		--stage 1	
+		--STAGE 1
 		S1: FirstStageTOP
 			port map(
 				INPUT1	=> REG0_INPUT1_OUT,	
@@ -124,7 +121,7 @@ architecture RTL of Pipeline is
 				
 				SKIP		=> REG1_SKIP_IN,
 				ERR		=> REG1_ERR_IN
-				);	
+			);	
 			
 		--stage 2
 		S2: SecondStageTOP
@@ -136,13 +133,11 @@ architecture RTL of Pipeline is
 				OP_IN		=> REG1_OP_OUT,
 				OFF		=> REG1_OFF_OUT,
 				ERR_IN	=> REG1_ERR_OUT,
-				-- SKIP IS FORWARDED BY REGISTERS
 				
 				MAN_OUT	=> REG2_MAN_IN,
 				EXP_OUT	=> REG2_EXP_IN,
 				ERR_OUT	=> REG2_ERR_IN
-				--SKIP IS FORWARDED BY REGISTERS
-				);
+			);
 				
 			
 		--stage 3
@@ -156,7 +151,7 @@ architecture RTL of Pipeline is
 				ERR		=> REG2_ERR_OUT,
 				
 				FINAL		=> REG3_FINAL_IN 
-				);			
+			);			
 				
 	--ENDREGION
 	
@@ -169,13 +164,13 @@ architecture RTL of Pipeline is
 		if (RESET ='1') then 
 		
 			REG0_INPUT1_OUT	<= (others =>'0');
-			REG_INPUT2_OUT	 	<= (others =>'0');
+			REG0_INPUT2_OUT	 	<= (others =>'0');
 			REG0_OP_OUT 		<= '0';
 		
 		elsif (CLK'event and CLK ='1') then
 		
 			REG0_INPUT1_OUT	<= INPUT1;
-			REG_INPUT2_OUT	 	<= INPUT2;
+			REG0_INPUT2_OUT	 	<= INPUT2;
 			REG0_OP_OUT 		<= OP_IN;
 						
 		end if;
@@ -193,7 +188,7 @@ architecture RTL of Pipeline is
 			REG1_OP_OUT				<= '0';
 			REG1_SIG_OUT			<= '0';
 			REG1_OFF_OUT	 		<= (others =>'0');	
-			REG1_ERR_OUT			<= '0';
+			REG1_ERR_OUT			<= (others =>'0');
 			REG1_SKIP_OUT			<= (others =>'0');
 			
 			
@@ -221,7 +216,7 @@ architecture RTL of Pipeline is
 			REG2_MAN_OUT			<= (others =>'0');
 			REG2_EXP_OUT			<= (others =>'0');
 			REG2_SKIP_OUT			<= (others =>'0');
-			REG2_ERR_OUT			<= '0';
+			REG2_ERR_OUT			<= (others =>'0');
 			REG2_SIG_OUT			<= '0';
 			
 		elsif (CLK'event and CLK ='1') then
@@ -252,6 +247,6 @@ architecture RTL of Pipeline is
 
 	--ENDREGION
 	
-	REG3_FINAL_OUT <= OUTPUT; -- connect REG3_FINAL_OUT to toplevel 
+	OUTPUT <= REG3_FINAL_OUT; -- connect REG3_FINAL_OUT to toplevel 
 
 end RTL;
