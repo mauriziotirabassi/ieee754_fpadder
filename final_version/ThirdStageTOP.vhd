@@ -12,8 +12,8 @@ entity ThirdStageTOP is
 	
 		--Inputs for the normalization of the result mantissa
 		SIG_IN	: in	std_logic;
-		MAN_IN	: in	std_logic_vector(23 downto 0);
 		EXP_IN	: in	std_logic_vector(7 downto 0);
+		MAN_IN	: in	std_logic_vector(23 downto 0);
 		
 		--Special case management inputs
 		SKIP		: in	std_logic_vector(31 downto 0);

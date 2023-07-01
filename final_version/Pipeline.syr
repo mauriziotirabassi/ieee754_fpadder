@@ -174,12 +174,6 @@ Elaborating entity <FourBitComparator> (architecture <RTL>) from library <work>.
 Elaborating entity <MantissaComparator> (architecture <RTL>) from library <work>.
 
 Elaborating entity <CaseManager> (architecture <RTL>) from library <work>.
-WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 53: Assignment to man1_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 54: Assignment to man2_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 56: Assignment to exp1_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 57: Assignment to exp2_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 58: Assignment to exp1_one ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 59: Assignment to exp2_one ignored, since the identifier is never used
 
 Elaborating entity <RCA> (architecture <RTL>) with generics from library <work>.
 
@@ -289,7 +283,7 @@ Unit <SecondStageTOP> synthesized.
 
 Synthesizing Unit <ShifterR>.
     Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterR.vhd".
-    Found 24-bit 28-to-1 multiplexer for signal <SHIFTED> created at line 16.
+    Found 24-bit 25-to-1 multiplexer for signal <SHIFTED> created at line 15.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <ShifterR> synthesized.
@@ -297,7 +291,7 @@ Unit <ShifterR> synthesized.
 Synthesizing Unit <RCA_2>.
     Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd".
         N = 24
-INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd" line 48: Output port <Cout> of the instance <GEN[23].U> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd" line 49: Output port <Cout> of the instance <GEN[23].U> is unconnected or connected to loadless signal.
     Summary:
 Unit <RCA_2> synthesized.
 
@@ -309,9 +303,9 @@ Unit <ThirdStageTOP> synthesized.
 
 Synthesizing Unit <Normalizer>.
     Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd".
-INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 86: Output port <EQ> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 86: Output port <GRT> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 96: Output port <COUT> of the instance <OP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 90: Output port <EQ> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 90: Output port <GRT> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 100: Output port <COUT> of the instance <OP> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <Normalizer> synthesized.
@@ -324,7 +318,7 @@ Unit <ReversePriorityEncoder> synthesized.
 
 Synthesizing Unit <ShifterL>.
     Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterL.vhd".
-    Found 24-bit 25-to-1 multiplexer for signal <SHIFTED> created at line 18.
+    Found 24-bit 25-to-1 multiplexer for signal <SHIFTED> created at line 15.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <ShifterL> synthesized.
@@ -352,8 +346,7 @@ Macro Statistics
 # Multiplexers                                         : 39
  1-bit 2-to-1 multiplexer                              : 2
  24-bit 2-to-1 multiplexer                             : 1
- 24-bit 25-to-1 multiplexer                            : 1
- 24-bit 28-to-1 multiplexer                            : 1
+ 24-bit 25-to-1 multiplexer                            : 2
  3-bit 2-to-1 multiplexer                              : 7
  32-bit 2-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 23
@@ -376,8 +369,7 @@ Macro Statistics
 # Multiplexers                                         : 39
  1-bit 2-to-1 multiplexer                              : 2
  24-bit 2-to-1 multiplexer                             : 1
- 24-bit 25-to-1 multiplexer                            : 1
- 24-bit 28-to-1 multiplexer                            : 1
+ 24-bit 25-to-1 multiplexer                            : 2
  3-bit 2-to-1 multiplexer                              : 7
  32-bit 2-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 23
@@ -436,11 +428,10 @@ INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_29> in Unit <Pipeline> is equivalent
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block Pipeline, actual ratio is 26.
-FlipFlop REG1_OFF_OUT_0 has been replicated 2 time(s)
+FlipFlop REG1_OFF_OUT_0 has been replicated 3 time(s)
 FlipFlop REG1_OFF_OUT_1 has been replicated 2 time(s)
-FlipFlop REG1_OFF_OUT_2 has been replicated 2 time(s)
+FlipFlop REG1_OFF_OUT_2 has been replicated 1 time(s)
 FlipFlop REG1_OFF_OUT_3 has been replicated 1 time(s)
-FlipFlop REG1_OFF_OUT_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -448,8 +439,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 238
- Flip-Flops                                            : 238
+# Registers                                            : 237
+ Flip-Flops                                            : 237
 
 =========================================================================
 
@@ -472,15 +463,15 @@ Top Level Output File Name         : Pipeline.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 525
-#      LUT2                        : 17
-#      LUT3                        : 62
-#      LUT4                        : 40
-#      LUT5                        : 136
-#      LUT6                        : 249
-#      MUXF7                       : 21
-# FlipFlops/Latches                : 239
-#      FDC                         : 238
+# BELS                             : 495
+#      LUT2                        : 14
+#      LUT3                        : 60
+#      LUT4                        : 43
+#      LUT5                        : 130
+#      LUT6                        : 236
+#      MUXF7                       : 12
+# FlipFlops/Latches                : 238
+#      FDC                         : 237
 #      LD                          : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -495,15 +486,15 @@ Selected Device : 6slx4tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             239  out of   4800     4%  
- Number of Slice LUTs:                  504  out of   2400    21%  
-    Number used as Logic:               504  out of   2400    21%  
+ Number of Slice Registers:             238  out of   4800     4%  
+ Number of Slice LUTs:                  483  out of   2400    20%  
+    Number used as Logic:               483  out of   2400    20%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    606
-   Number with an unused Flip Flop:     367  out of    606    60%  
-   Number with an unused LUT:           102  out of    606    16%  
-   Number of fully used LUT-FF pairs:   137  out of    606    22%  
+ Number of LUT Flip Flop pairs used:    589
+   Number with an unused Flip Flop:     351  out of    589    59%  
+   Number with an unused LUT:           106  out of    589    17%  
+   Number of fully used LUT-FF pairs:   132  out of    589    22%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -534,7 +525,7 @@ Clock Information:
 ---------------------------------------------------------------+-------------------------+-------+
 Clock Signal                                                   | Clock buffer(FF name)   | Load  |
 ---------------------------------------------------------------+-------------------------+-------+
-CLK                                                            | BUFGP                   | 238   |
+CLK                                                            | BUFGP                   | 237   |
 S1/COMP/M1_GRT_M1_SML_OR_12_o(S1/COMP/M1_GRT_M1_SML_OR_12_o1:O)| NONE(*)(S1/COMP/OUT_SIG)| 1     |
 ---------------------------------------------------------------+-------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
@@ -550,7 +541,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 14.198ns (Maximum Frequency: 70.432MHz)
+   Minimum period: 14.197ns (Maximum Frequency: 70.436MHz)
    Minimum input arrival time before clock: 3.714ns
    Maximum output required time after clock: 3.597ns
    Maximum combinational path delay: No path found
@@ -561,24 +552,24 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 14.198ns (frequency: 70.432MHz)
-  Total number of paths / destination ports: 417698 / 172
+  Clock period: 14.197ns (frequency: 70.436MHz)
+  Total number of paths / destination ports: 413054 / 171
 -------------------------------------------------------------------------
-Delay:               14.198ns (Levels of Logic = 15)
-  Source:            REG1_SML_MAN_OUT_9 (FF)
+Delay:               14.197ns (Levels of Logic = 15)
+  Source:            REG1_OFF_OUT_0_1 (FF)
   Destination:       REG2_MAN_OUT_22 (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: REG1_SML_MAN_OUT_9 to REG2_MAN_OUT_22
+  Data Path: REG1_OFF_OUT_0_1 to REG2_MAN_OUT_22
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              7   0.447   1.118  REG1_SML_MAN_OUT_9 (REG1_SML_MAN_OUT_9)
-     LUT6:I1->O            2   0.203   0.721  REG1_OFF_OUT<1>91 (REG1_OFF_OUT<1>_mmx_out2)
-     LUT6:I4->O            1   0.203   0.580  S2/SHFT/Mmux_SHIFTED21 (S2/SHFT/Mmux_SHIFTED2)
-     LUT5:I4->O            3   0.205   0.755  S2/SHFT/Mmux_SHIFTED24 (S2/SHFT_M2<0>)
-     LUT5:I3->O            4   0.203   0.684  S2/OP/GEN[1].U/Cout1 (S2/OP/C<2>)
+     FDC:C->Q             11   0.447   0.883  REG1_OFF_OUT_0_1 (REG1_OFF_OUT_0_1)
+     LUT3:I2->O            1   0.205   0.827  S2/SHFT/Mmux_SHIFTED142 (S2/SHFT/Mmux_SHIFTED141)
+     LUT6:I2->O            1   0.203   0.808  S2/SHFT/Mmux_SHIFTED143 (S2/SHFT/Mmux_SHIFTED142)
+     LUT5:I2->O            3   0.205   0.651  S2/SHFT/Mmux_SHIFTED144 (S2/SHFT_M2<1>)
+     LUT5:I4->O            4   0.205   0.684  S2/OP/GEN[1].U/Cout1 (S2/OP/C<2>)
      LUT6:I5->O            4   0.205   0.684  S2/OP/GEN[3].U/Cout1 (S2/OP/C<4>)
      LUT6:I5->O            5   0.205   0.715  S2/OP/GEN[5].U/Cout1 (S2/OP/C<6>)
      LUT6:I5->O            1   0.205   0.580  S2/OP/GEN[7].U/Cout1_1 (S2/OP/GEN[7].U/Cout1)
@@ -592,12 +583,12 @@ Delay:               14.198ns (Levels of Logic = 15)
      LUT6:I5->O            1   0.205   0.000  S2/Mmux_MAN_OUT151 (REG2_MAN_IN<22>)
      FDC:D                     0.102          REG2_MAN_OUT_22
     ----------------------------------------
-    Total                     14.198ns (3.618ns logic, 10.580ns route)
+    Total                     14.197ns (3.622ns logic, 10.575ns route)
                                        (25.5% logic, 74.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 303 / 303
+  Total number of paths / destination ports: 302 / 302
 -------------------------------------------------------------------------
 Offset:              3.714ns (Levels of Logic = 1)
   Source:            RESET (PAD)
@@ -608,7 +599,7 @@ Offset:              3.714ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           238   1.222   2.062  RESET_IBUF (RESET_IBUF)
+     IBUF:I->O           237   1.222   2.062  RESET_IBUF (RESET_IBUF)
      FDC:CLR                   0.430          REG0_OP_OUT
     ----------------------------------------
     Total                      3.714ns (1.652ns logic, 2.062ns route)
@@ -643,7 +634,7 @@ Clock to Setup on destination clock CLK
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-CLK                          |   14.198|         |         |         |
+CLK                          |   14.197|         |         |         |
 S1/COMP/M1_GRT_M1_SML_OR_12_o|         |    1.179|         |         |
 -----------------------------+---------+---------+---------+---------+
 
@@ -658,15 +649,15 @@ CLK            |         |         |    6.356|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.47 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.74 secs
  
 --> 
 
 
-Total memory usage is 374800 kilobytes
+Total memory usage is 374616 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :   41 (   0 filtered)
 

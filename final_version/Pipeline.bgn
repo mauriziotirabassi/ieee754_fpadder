@@ -5,7 +5,7 @@ Loading device for application Rf_Device from file '6slx4.nph' in environment
    "Pipeline" is an NCD, version 3.2, device xc6slx4, package tqg144, speed -3
 Opened constraints file Pipeline.pcf.
 
-Tue May 30 12:01:10 2023
+Sat Jul  1 11:50:12 2023
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g Reset_on_err:No -g ConfigRate:2 -g ProgPin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:No -g SPI_buswidth:1 -g TIMER_CFG:0xFFFF -g multipin_wakeup:No -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No -g en_sw_gsr:No -g drive_awake:No -g sw_clk:Startupclk -g sw_gwe_cycle:5 -g sw_gts_cycle:4 Pipeline.ncd 
 
@@ -129,7 +129,7 @@ There were 0 CONFIG constraint(s) processed from Pipeline.pcf.
 
 Running DRC.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   S1/COMP/M1_GRT_M1_SML_OR_14_o is sourced by a combinatorial pin. This is not
+   S1/COMP/M1_GRT_M1_SML_OR_12_o is sourced by a combinatorial pin. This is not
    good design practice. Use the CE pin to control the loading of data into the
    flip-flop.
 DRC detected 0 errors and 1 warnings.  Please see the previously displayed

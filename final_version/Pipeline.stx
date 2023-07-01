@@ -1,0 +1,106 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/kryzha/Documents/proj-reti-2023/final_version/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/kryzha/Documents/proj-reti-2023/final_version/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Reading design: Pipeline.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FourBitComparator.vhd" into library work
+Parsing entity <FourBitComparator>.
+Parsing architecture <RTL> of entity <fourbitcomparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FullAdder.vhd" into library work
+Parsing entity <FullAdder>.
+Parsing architecture <RTL> of entity <fulladder>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/EightBitComparator.vhd" into library work
+Parsing entity <EightBitComparator>.
+Parsing architecture <RTL> of entity <eightbitcomparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterL.vhd" into library work
+Parsing entity <ShifterL>.
+Parsing architecture <RTL> of entity <shifterl>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ReversePriorityEncoder.vhd" into library work
+Parsing entity <ReversePriorityEncoder>.
+Parsing architecture <RTL> of entity <reversepriorityencoder>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd" into library work
+Parsing entity <RCA>.
+Parsing architecture <RTL> of entity <rca>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd" into library work
+Parsing entity <MantissaComparator>.
+Parsing architecture <RTL> of entity <mantissacomparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/SpecialOutput.vhd" into library work
+Parsing entity <SpecialOutput>.
+Parsing architecture <RTL> of entity <specialoutput>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterR.vhd" into library work
+Parsing entity <ShifterR>.
+Parsing architecture <RTL> of entity <shifterr>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" into library work
+Parsing entity <Normalizer>.
+Parsing architecture <RTL> of entity <normalizer>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Comparator.vhd" into library work
+Parsing entity <Comparator>.
+Parsing architecture <Behavioral> of entity <comparator>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" into library work
+Parsing entity <CaseManager>.
+Parsing architecture <RTL> of entity <casemanager>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ThirdStageTOP.vhd" into library work
+Parsing entity <ThirdStageTOP>.
+Parsing architecture <RTL> of entity <thirdstagetop>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/SecondStageTOP.vhd" into library work
+Parsing entity <SecondStageTOP>.
+Parsing architecture <RTL> of entity <secondstagetop>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FirstStageTOP.vhd" into library work
+Parsing entity <FirstStageTOP>.
+Parsing architecture <RTL> of entity <firststagetop>.
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.vhd" into library work
+Parsing entity <Pipeline>.
+Parsing architecture <RTL> of entity <pipeline>.
+
+
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 2.03 secs
+ 
+--> 
+
+
+Total memory usage is 284328 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

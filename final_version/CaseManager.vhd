@@ -48,17 +48,6 @@ begin
     EXP2  <= INPUT2(30 downto 23);
 	 MAN1  <= INPUT1(22 downto 0);
 	 MAN2  <= INPUT2(22 downto 0);
-
-	--Identifying ones and zeros
-	MAN1_ZERO	<=	'1' when MAN1	= "00000000000000000000000"	else '0';
-	MAN2_ZERO	<=	'1' when MAN2	= "00000000000000000000000"	else '0';
-	
-	EXP1_ZERO	<= '1' when EXP1	= "00000000"	else '0';
-	EXP2_ZERO	<= '1' when EXP2	= "00000000"	else '0';
-	EXP1_ONE		<= '1' when EXP1	= "11111111"	else '0';
-	EXP2_ONE		<= '1' when EXP2	= "11111111"	else '0';
-	
-	--TODO: Problema sequenzialità se uso segnali precedentemente attribuiti? Stazionarietà istantanea?
 	
 	--Identifying zero
 	ZERO1			<= '1' when (EXP1	= "00000000" and MAN1 = "00000000000000000000000") else '0';
