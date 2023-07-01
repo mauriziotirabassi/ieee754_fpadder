@@ -1,7 +1,0 @@
-vhdl work "FullAdder.vhd"
-vhdl work "FourBitComparator.vhd"
-vhdl work "ShifterL.vhd"
-vhdl work "ReversePriorityEncoder.vhd"
-vhdl work "RCA.vhd"
-vhdl work "EightBitComparator.vhd"
-vhdl work "Normalizer.vhd"

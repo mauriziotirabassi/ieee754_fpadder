@@ -1,9 +1,0 @@
-[Inputs]
-CLK
-RESET
-OP_IN
-=INPUT1[31:0]=
-=INPUT2[31:0]=
-[Outputs]
-=OUTPUT[31:0]=
-[BiDir]
