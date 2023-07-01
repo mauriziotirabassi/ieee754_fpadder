@@ -20,7 +20,7 @@ entity FirstStageTOP is
 		GRT_EXP	: out	std_logic_vector(7 downto 0);
 		GRT_MAN	: out	std_logic_vector(22 downto 0);
 		SML_MAN	: out	std_logic_vector(22 downto 0);
-		OFF		: out	std_logic_vector(4 downto 0); --The offset for the eventual shift of the smaller mantissa
+		OFF		: out	std_logic_vector(4 downto 0); --Offset for the eventual shift of the smaller mantissa
 		OP_OUT	: out	std_logic; --0 sum, 1 diff
 		
 		--Output forwared to the third stage

@@ -1,7 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
---Mi dice di quanto deve shiftare la mantissa risultato per essere normalizzata
+--Behavior of the module:
+--1. Counting the number of positions from the left to the first '1'
+
 entity ReversePriorityEncoder is
 	port(
 			INPUT 	: in 	std_logic_vector(23 downto 0);
@@ -36,6 +38,6 @@ begin
 					else	"10101"	when INPUT(23 downto 2)  = "0000000000000000000001"
 					else	"10110"	when INPUT(23 downto 1)  = "00000000000000000000001"
 					else	"10111"	when INPUT(23 downto 0)  = "000000000000000000000001"
-					else	"11000"	when INPUT(23 downto 0)  = "000000000000000000000000" --Gestione eccezione(?)
+					else	"11000"	when INPUT(23 downto 0)  = "000000000000000000000000" --TODO: exception?
 					else	"-----";
 end RTL;

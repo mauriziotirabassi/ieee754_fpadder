@@ -1,19 +1,25 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
---Terzo stadio della pipeline si occupa di:
---1. Correggere il risultato
---2. Gestire casi eccezionali come (?)
+--Behavior of the module:
+--1. Normalizing the result mantissa
+--2. Checking for the eventual underflow of the corrected exponent
+--3. Translating the encoded special output signal ERR
+--4. Generating the final result
 
 entity ThirdStageTOP is
 	port(
-		SIG_IN	: in	std_logic; --TODO: Forwardarla ttraverso gli stage
+	
+		--Inputs for the normalization of the result mantissa
+		SIG_IN	: in	std_logic;
 		MAN_IN	: in	std_logic_vector(23 downto 0);
 		EXP_IN	: in	std_logic_vector(7 downto 0);
 		
+		--Special case management inputs
 		SKIP		: in	std_logic_vector(31 downto 0);
 		ERR		: in	std_logic_vector(2 downto 0);
 		
+		--Final result of the operation
 		FINAL		: out	std_logic_vector(31 downto 0)
 	);	
 end ThirdStageTOP;
@@ -53,7 +59,7 @@ architecture RTL of ThirdStageTOP is
 
 begin
 
-	--Normalizzo il risultato dell'operazione fatta nello stage precedente
+	--Normalizing the result mantissa
 	NORM:	Normalizer
 		port map(
 			MAN_IN	=> MAN_IN,
@@ -63,10 +69,10 @@ begin
 			EXP_UF	=> TMP_UF
 		);
 		
-	--Caso underflow esponente oppure segnale di errore da stage precedente
+	--Checking for the underflow of the corrected exponent
 	TMP_ERR <= "011" when TMP_UF = '1' else ERR; --TODO: ora NaN, capire che caso è
 
-	--Decido l'output speciale nel caso in cui ERR sia diverso da "000" e setto la flag per comandare la forzatura dell'output
+	--Translating the encoded special output signal ERR and eventually signaling the abnormality
 	SPCL:	SpecialOutput
 		port map(
 			ERR				=> TMP_ERR,
@@ -75,7 +81,7 @@ begin
 			SPECIAL_FLAG	=> TMP_FLAG
 		);
 		
-	--Output è forzato a speciale oppure è il risultato della normalizzazione (rendendo nuovamente il significand 1 implicio: slicing mantissa)
+	--Generating the final result (if no abnormality occurred then the hidden bit of the normalized result mantissa is made implicit by slicing)
 	FINAL	<= (SIG_IN & TMP_EXP & TMP_MAN(22 downto 0)) when TMP_FLAG = '0' else TMP_SPECIAL;
 
 end RTL;

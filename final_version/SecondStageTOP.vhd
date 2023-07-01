@@ -1,25 +1,29 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
---Il secondo stadio della pipeline si occupa di:
---1. Shiftare la mantissa più piccola
---2. Effettuare l'operazione
---3. Gestire casi di overflow
+--Behavior of the module:
+--1. Shifting the smaller mantissa
+--2. Implementing the actual operation between the two numbers
+--3. Checking for the eventual overflow of the corrected exponent
 
 entity SecondStageTOP is
 	port(
-		GRT_MAN	: in	std_logic_vector(22 downto 0); 
-		SML_MAN	: in	std_logic_vector(22 downto 0); --Mantissa da shiftare
+	
+		--Inputs for the implementation of the operation
 		GRT_EXP	: in	std_logic_vector(7 downto 0);
+		GRT_MAN	: in	std_logic_vector(22 downto 0); 
+		SML_MAN	: in	std_logic_vector(22 downto 0);
+		OP_IN		: in	std_logic; -- 0 sum, 1 diff
+		OFF		: in	std_logic_vector(4 downto 0); --Offset for the eventual shift of the smaller mantissa
 		
-		OP_IN		: in	std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
-		OFF		: in	std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
-		
+		--Special case management input
 		ERR_IN	: in	std_logic_vector(2 downto 0);
 		
+		--Outputs forwarded to the third stage
 		MAN_OUT	: out	std_logic_vector(23 downto 0);
 		EXP_OUT	: out	std_logic_vector(7 downto 0);
 		
+		--Special case management output
 		ERR_OUT	: out	std_logic_vector(2 downto 0)
 	);
 end SecondStageTOP;
@@ -28,8 +32,9 @@ architecture RTL of SecondStageTOP is
 
 	--REGION SIGNALS
 	signal EXT_M1, EXT_M2, SHFT_M2, RESULT	: std_logic_vector(23 downto 0);
-	signal PLUS_ONE, CORR_EXP	: std_logic_vector(7 downto 0);
-	signal REM_MAN, REM_EXP, EXP_OF	: std_logic; --TODO: Gestire caso overflow
+	
+	signal PLUS_ONE	: std_logic_vector(7 downto 0);
+	signal REM_MAN, REM_EXP, EXP_OF	: std_logic;
 	--ENDREGION
 
 	--REGION COMPONENTS
@@ -49,24 +54,20 @@ architecture RTL of SecondStageTOP is
 		port( 
 			INPUT1	: in	std_logic_vector(N-1 downto 0);
 			INPUT2	: in	std_logic_vector(N-1 downto 0);
-			OP			: in	std_logic; --1 se sottrazione, 0 se addizione
+			OP			: in	std_logic; --0 sum, 1 diff
 			OUTPUT	: out	std_logic_vector(N-1 downto 0);
-			COUT		: out	std_logic --sgn control for overflow of mantissa module ...shift R
+			COUT		: out	std_logic
 		);
 	end component;
 	--ENDREGION
 
 begin
 
-	--Estendere di un bit la mantissa più grande in quanto RCA/CLA prende input di 24 bit
+	--Making the hidden bit explicit
 	EXT_M1	<= '1'	& GRT_MAN;
-	
-	--Esplicitare il significant della mantissa più piccola perché shifter prende input di 24 bit perché RCA/CLA prende input di 24 bit
 	EXT_M2	<= '1'	& SML_MAN;
 	
-	--TODO: Check se mantissa shiftabile non è più necessario perché ho ispezionato cause precedentemente con ERR
-	
-	--Shift mantissa più piccola
+	--Shifting the smaller mantissa by the difference of the two exponents
 	SHFT:	ShifterR
 		port map(
 			INPUT		=> EXT_M2,
@@ -74,7 +75,7 @@ begin
 			SHIFTED	=> SHFT_M2
 		);
 		
-	--Operazione effettiva tra mantisse
+	--Implementing the operation between the two numbers
 	OP:	RCA
 		generic map(
 			N	=> 24
@@ -88,12 +89,13 @@ begin
 			COUT		=> REM_MAN
 		);
 		
-	--Gestione overflow mantissa
-	MAN_OUT	<=	RESULT	when REM_MAN	= '0'	else	('1' &	RESULT(23 downto 1));
+	--Managing the eventual overflow of the result mantissa
+	MAN_OUT	<=	RESULT	when REM_MAN	= '0'	else	('1' &	RESULT(23 downto 1)); --MODULE OUTPUT
 		
-	--Correzione esponente
-	PLUS_ONE	<= "0000000"	& REM_MAN; -- Input somma con esponente prende parole di 8 bit
+	--Extending the exponent correcting signal to 8 bits
+	PLUS_ONE	<= "0000000"	& REM_MAN;
 	
+	--Correcting the exponent (if the mantissa overflow happened then +1, otherwise +0)
 	P1:	RCA
 		generic map(
 			N	=> 8
@@ -102,16 +104,13 @@ begin
 		port map(
 			INPUT1	=> GRT_EXP,
 			INPUT2	=> PLUS_ONE,
-			OP			=> '0', --Addizione
-			OUTPUT	=> CORR_EXP,
+			OP			=> '0', --sum
+			OUTPUT	=> EXP_OUT, --MODULE OUTPUT
 			COUT		=> EXP_OF		
 		);
-		
-	--TODO: Gestione overflow esponente (per il momento sputo fuori il risultato)
-	EXP_OUT	<= CORR_EXP;
 	
-	--Selezione erroe exp overflow --TODO: Decidere che erroe è effettivamente
-	ERR_OUT	<= "100" when EXP_OF = '1' else ERR_IN;
+	--Checking for the overflow of the corrected exponent
+	ERR_OUT	<= "100" when EXP_OF = '1' else ERR_IN; --MODULE OUTPUT
 	
 end RTL;
 

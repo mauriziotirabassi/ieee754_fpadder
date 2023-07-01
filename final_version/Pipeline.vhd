@@ -70,9 +70,9 @@ architecture RTL of Pipeline is
 	
 	component SecondStageTOP is
     port(
+			GRT_EXP    : in    std_logic_vector(7 downto 0);
         GRT_MAN    : in    std_logic_vector(22 downto 0); 
         SML_MAN    : in    std_logic_vector(22 downto 0); --Mantissa da shiftare
-        GRT_EXP    : in    std_logic_vector(7 downto 0);
 
         OP_IN        : in    std_logic; --Operazione che deve effettivamente fare l'RCA/CLA
         OFF        : in    std_logic_vector(4 downto 0); --Offset per lo shift della mantissa più piccola
