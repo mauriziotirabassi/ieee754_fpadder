@@ -1,30 +1,22 @@
-Running: /opt/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.exe -prj /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_beh.prj work.test_pipeline 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_isim_beh.exe -prj /home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_beh.prj work.test_stage1 
 ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 16
+Turning on mult-threading, number of parallel sub-compilation jobs: 32 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FourBitComparator.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FullAdder.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/EightBitComparator.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterL.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ReversePriorityEncoder.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/RCA.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SpecialOutput.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterR.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/OpPicker.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Comparator.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ThirdStageTOP.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SecondStageTOP.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.vhd" into library work
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FourBitComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/EightBitComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FullAdder.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/OpPicker.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Comparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FirstStageTOP.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/test_stage1.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 84640 KB
-Fuse CPU Usage: 1100 ms
+Fuse Memory Usage: 83756 KB
+Fuse CPU Usage: 1080 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling architecture rtl of entity OpPicker [oppicker_default]
@@ -36,20 +28,11 @@ Compiling architecture rtl of entity CaseManager [casemanager_default]
 Compiling architecture rtl of entity FullAdder [fulladder_default]
 Compiling architecture rtl of entity RCA [\RCA(8)\]
 Compiling architecture rtl of entity FirstStageTOP [firststagetop_default]
-Compiling architecture rtl of entity ShifterR [shifterr_default]
-Compiling architecture rtl of entity RCA [\RCA(24)\]
-Compiling architecture rtl of entity SecondStageTOP [secondstagetop_default]
-Compiling architecture rtl of entity ReversePriorityEncoder [reversepriorityencoder_default]
-Compiling architecture rtl of entity ShifterL [shifterl_default]
-Compiling architecture rtl of entity Normalizer [normalizer_default]
-Compiling architecture rtl of entity SpecialOutput [specialoutput_default]
-Compiling architecture rtl of entity ThirdStageTOP [thirdstagetop_default]
-Compiling architecture rtl of entity Pipeline [pipeline_default]
-Compiling architecture behavior of entity test_pipeline
+Compiling architecture behavior of entity test_stage1
 Time Resolution for simulation is 1ps.
-Waiting for 4 sub-compilation(s) to finish...
-Compiled 39 VHDL Units
-Built simulation executable /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.exe
-Fuse Memory Usage: 1174812 KB
-Fuse CPU Usage: 1210 ms
-GCC CPU Usage: 2430 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 21 VHDL Units
+Built simulation executable /home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_isim_beh.exe
+Fuse Memory Usage: 2222436 KB
+Fuse CPU Usage: 1130 ms
+GCC CPU Usage: 480 ms

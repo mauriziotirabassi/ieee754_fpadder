@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.wdb 
+Running: /home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_isim_beh.wdb 
 INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.

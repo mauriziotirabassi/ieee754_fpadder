@@ -1,0 +1,8 @@
+[Inputs]
+=MAN_IN[23:0]=
+=EXP_IN[7:0]=
+[Outputs]
+EXP_UF
+=MAN_OUT[23:0]=
+=EXP_OUT[7:0]=
+[BiDir]

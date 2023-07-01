@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/OpPicker.vhd";
+static const char *ng0 = "/home/kryzha/Documents/proj-reti-2023/final_version/OpPicker.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_3488768497506413324_503743352(char *, unsigned char , unsigned char );

@@ -63,10 +63,7 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="11"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
-    <file xil_pn:name="ThirdStageTOP.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="14"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-    </file>
+    <file xil_pn:name="ThirdStageTOP.vhd" xil_pn:type="FILE_VHDL"/>
     <file xil_pn:name="ReversePriorityEncoder.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="5"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -89,18 +86,8 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="17"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
-    <file xil_pn:name="test_pipeline.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="18"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="34"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="34"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="34"/>
-    </file>
-    <file xil_pn:name="test_stage1.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="43"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="43"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="43"/>
-    </file>
+    <file xil_pn:name="test_pipeline.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="test_stage1.vhd" xil_pn:type="FILE_VHDL"/>
     <file xil_pn:name="test_CaseManager.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="47"/>
@@ -125,30 +112,15 @@
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="102"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="102"/>
     </file>
-    <file xil_pn:name="test_stage2.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="130"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="130"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="130"/>
-    </file>
-    <file xil_pn:name="test_stage3.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="134"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="134"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="134"/>
-    </file>
+    <file xil_pn:name="test_stage2.vhd" xil_pn:type="FILE_VHDL"/>
+    <file xil_pn:name="test_stage3.vhd" xil_pn:type="FILE_VHDL"/>
     <file xil_pn:name="test_Normalizer.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="63"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="63"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="63"/>
     </file>
-    <file xil_pn:name="test_ReversePriorityEncoder.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="68"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="68"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="68"/>
-    </file>
+    <file xil_pn:name="test_ReversePriorityEncoder.vhd" xil_pn:type="FILE_VHDL"/>
   </files>
 
   <properties>

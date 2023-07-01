@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.02 secs
  
 --> 
 Reading design: Pipeline.prj
@@ -108,55 +108,52 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FourBitComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FourBitComparator.vhd" into library work
 Parsing entity <FourBitComparator>.
 Parsing architecture <RTL> of entity <fourbitcomparator>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FullAdder.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FullAdder.vhd" into library work
 Parsing entity <FullAdder>.
 Parsing architecture <RTL> of entity <fulladder>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/EightBitComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/EightBitComparator.vhd" into library work
 Parsing entity <EightBitComparator>.
 Parsing architecture <RTL> of entity <eightbitcomparator>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterL.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterL.vhd" into library work
 Parsing entity <ShifterL>.
 Parsing architecture <RTL> of entity <shifterl>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ReversePriorityEncoder.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ReversePriorityEncoder.vhd" into library work
 Parsing entity <ReversePriorityEncoder>.
 Parsing architecture <RTL> of entity <reversepriorityencoder>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/RCA.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd" into library work
 Parsing entity <RCA>.
 Parsing architecture <RTL> of entity <rca>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd" into library work
 Parsing entity <MantissaComparator>.
 Parsing architecture <RTL> of entity <mantissacomparator>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SpecialOutput.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/SpecialOutput.vhd" into library work
 Parsing entity <SpecialOutput>.
 Parsing architecture <RTL> of entity <specialoutput>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterR.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterR.vhd" into library work
 Parsing entity <ShifterR>.
 Parsing architecture <RTL> of entity <shifterr>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/OpPicker.vhd" into library work
-Parsing entity <OpPicker>.
-Parsing architecture <RTL> of entity <oppicker>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" into library work
 Parsing entity <Normalizer>.
 Parsing architecture <RTL> of entity <normalizer>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Comparator.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Comparator.vhd" into library work
 Parsing entity <Comparator>.
 Parsing architecture <Behavioral> of entity <comparator>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" into library work
 Parsing entity <CaseManager>.
 Parsing architecture <RTL> of entity <casemanager>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ThirdStageTOP.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/ThirdStageTOP.vhd" into library work
 Parsing entity <ThirdStageTOP>.
 Parsing architecture <RTL> of entity <thirdstagetop>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SecondStageTOP.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/SecondStageTOP.vhd" into library work
 Parsing entity <SecondStageTOP>.
 Parsing architecture <RTL> of entity <secondstagetop>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/FirstStageTOP.vhd" into library work
 Parsing entity <FirstStageTOP>.
 Parsing architecture <RTL> of entity <firststagetop>.
-Parsing VHDL file "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.vhd" into library work
+Parsing VHDL file "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.vhd" into library work
 Parsing entity <Pipeline>.
 Parsing architecture <RTL> of entity <pipeline>.
 
@@ -168,8 +165,6 @@ Elaborating entity <Pipeline> (architecture <RTL>) from library <work>.
 
 Elaborating entity <FirstStageTOP> (architecture <RTL>) from library <work>.
 
-Elaborating entity <OpPicker> (architecture <RTL>) from library <work>.
-
 Elaborating entity <Comparator> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <EightBitComparator> (architecture <RTL>) from library <work>.
@@ -179,17 +174,16 @@ Elaborating entity <FourBitComparator> (architecture <RTL>) from library <work>.
 Elaborating entity <MantissaComparator> (architecture <RTL>) from library <work>.
 
 Elaborating entity <CaseManager> (architecture <RTL>) from library <work>.
-WARNING:HDLCompiler:1127 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" Line 53: Assignment to man1_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" Line 54: Assignment to man2_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" Line 56: Assignment to exp1_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" Line 57: Assignment to exp2_zero ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" Line 58: Assignment to exp1_one ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd" Line 59: Assignment to exp2_one ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 53: Assignment to man1_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 54: Assignment to man2_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 56: Assignment to exp1_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 57: Assignment to exp2_zero ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 58: Assignment to exp1_one ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd" Line 59: Assignment to exp2_one ignored, since the identifier is never used
 
 Elaborating entity <RCA> (architecture <RTL>) with generics from library <work>.
 
 Elaborating entity <FullAdder> (architecture <RTL>) from library <work>.
-WARNING:HDLCompiler:634 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd" Line 47: Net <TMP_GRT_EXP[7]> does not have a driver.
 
 Elaborating entity <SecondStageTOP> (architecture <RTL>) from library <work>.
 
@@ -206,14 +200,13 @@ Elaborating entity <ReversePriorityEncoder> (architecture <RTL>) from library <w
 Elaborating entity <ShifterL> (architecture <RTL>) from library <work>.
 
 Elaborating entity <SpecialOutput> (architecture <RTL>) from library <work>.
-WARNING:Xst:2972 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" line 96. All outputs of instance <OP> of block <RCA> are unconnected in block <Normalizer>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <Pipeline>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.vhd".
     Found 1-bit register for signal <REG0_OP_OUT>.
     Found 1-bit register for signal <REG1_OP_OUT>.
     Found 1-bit register for signal <REG1_SIG_OUT>.
@@ -236,119 +229,108 @@ Synthesizing Unit <Pipeline>.
 Unit <Pipeline> synthesized.
 
 Synthesizing Unit <FirstStageTOP>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd".
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd" line 127: Output port <SIG_OUT> of the instance <COMP> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FirstStageTOP.vhd" line 171: Output port <COUT> of the instance <ESub> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <TMP_GRT_EXP> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <TMP_SML_EXP> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/FirstStageTOP.vhd".
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/FirstStageTOP.vhd" line 127: Output port <COUT> of the instance <ESub> is unconnected or connected to loadless signal.
     Summary:
-	inferred   3 Multiplexer(s).
+	inferred   1 Multiplexer(s).
 Unit <FirstStageTOP> synthesized.
 
-Synthesizing Unit <OpPicker>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/OpPicker.vhd".
-    Summary:
-Unit <OpPicker> synthesized.
-
 Synthesizing Unit <Comparator>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Comparator.vhd".
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Comparator.vhd" line 69: Output port <EQ> of the instance <MComp> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <SIG_OUT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/Comparator.vhd".
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Comparator.vhd" line 74: Output port <EQ> of the instance <MComp> is unconnected or connected to loadless signal.
 WARNING:Xst:737 - Found 1-bit latch for signal <OUT_SIG>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   1 Latch(s).
-	inferred   6 Multiplexer(s).
+	inferred   4 Multiplexer(s).
 Unit <Comparator> synthesized.
 
 Synthesizing Unit <EightBitComparator>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/EightBitComparator.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/EightBitComparator.vhd".
     Summary:
 	no macro.
 Unit <EightBitComparator> synthesized.
 
 Synthesizing Unit <FourBitComparator>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FourBitComparator.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/FourBitComparator.vhd".
     Summary:
 Unit <FourBitComparator> synthesized.
 
 Synthesizing Unit <MantissaComparator>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd".
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd" line 55: Output port <EQ> of the instance <G_1[0].U> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd" line 55: Output port <EQ> of the instance <G_1[1].U> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/MantissaComparator.vhd" line 66: Output port <EQ> of the instance <U3> is unconnected or connected to loadless signal.
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd".
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd" line 55: Output port <EQ> of the instance <G_1[0].U> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd" line 55: Output port <EQ> of the instance <G_1[1].U> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/MantissaComparator.vhd" line 66: Output port <EQ> of the instance <U3> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <MantissaComparator> synthesized.
 
 Synthesizing Unit <CaseManager>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/CaseManager.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/CaseManager.vhd".
     Summary:
 	inferred   5 Multiplexer(s).
 Unit <CaseManager> synthesized.
 
 Synthesizing Unit <RCA_1>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/RCA.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd".
         N = 8
     Summary:
 Unit <RCA_1> synthesized.
 
 Synthesizing Unit <FullAdder>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/FullAdder.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/FullAdder.vhd".
     Summary:
 Unit <FullAdder> synthesized.
 
 Synthesizing Unit <SecondStageTOP>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SecondStageTOP.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/SecondStageTOP.vhd".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <SecondStageTOP> synthesized.
 
 Synthesizing Unit <ShifterR>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterR.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterR.vhd".
     Found 24-bit 28-to-1 multiplexer for signal <SHIFTED> created at line 16.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <ShifterR> synthesized.
 
 Synthesizing Unit <RCA_2>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/RCA.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd".
         N = 24
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/RCA.vhd" line 48: Output port <Cout> of the instance <GEN[23].U> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/RCA.vhd" line 48: Output port <Cout> of the instance <GEN[23].U> is unconnected or connected to loadless signal.
     Summary:
 Unit <RCA_2> synthesized.
 
 Synthesizing Unit <ThirdStageTOP>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ThirdStageTOP.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/ThirdStageTOP.vhd".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <ThirdStageTOP> synthesized.
 
 Synthesizing Unit <Normalizer>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd".
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" line 86: Output port <EQ> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" line 86: Output port <GRT> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" line 96: Output port <OUTPUT> of the instance <OP> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd" line 96: Output port <COUT> of the instance <OP> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <EXP_OUT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd".
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 86: Output port <EQ> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 86: Output port <GRT> of the instance <CMP_EXP> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd" line 96: Output port <COUT> of the instance <OP> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <Normalizer> synthesized.
 
 Synthesizing Unit <ReversePriorityEncoder>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ReversePriorityEncoder.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/ReversePriorityEncoder.vhd".
     Summary:
 	inferred  23 Multiplexer(s).
 Unit <ReversePriorityEncoder> synthesized.
 
 Synthesizing Unit <ShifterL>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ShifterL.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/ShifterL.vhd".
     Found 24-bit 25-to-1 multiplexer for signal <SHIFTED> created at line 18.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <ShifterL> synthesized.
 
 Synthesizing Unit <SpecialOutput>.
-    Related source file is "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SpecialOutput.vhd".
+    Related source file is "/home/kryzha/Documents/proj-reti-2023/final_version/SpecialOutput.vhd".
     Summary:
 	no macro.
 Unit <SpecialOutput> synthesized.
@@ -367,18 +349,16 @@ Macro Statistics
  8-bit register                                        : 2
 # Latches                                              : 1
  1-bit latch                                           : 1
-# Multiplexers                                         : 43
- 1-bit 2-to-1 multiplexer                              : 4
- 23-bit 2-to-1 multiplexer                             : 2
+# Multiplexers                                         : 39
+ 1-bit 2-to-1 multiplexer                              : 2
  24-bit 2-to-1 multiplexer                             : 1
  24-bit 25-to-1 multiplexer                            : 1
  24-bit 28-to-1 multiplexer                            : 1
  3-bit 2-to-1 multiplexer                              : 7
- 32-bit 2-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 23
- 8-bit 2-to-1 multiplexer                              : 2
-# Xors                                                 : 166
- 1-bit xor2                                            : 166
+# Xors                                                 : 190
+ 1-bit xor2                                            : 190
 
 =========================================================================
 
@@ -393,18 +373,16 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Registers                                            : 261
  Flip-Flops                                            : 261
-# Multiplexers                                         : 43
- 1-bit 2-to-1 multiplexer                              : 4
- 23-bit 2-to-1 multiplexer                             : 2
+# Multiplexers                                         : 39
+ 1-bit 2-to-1 multiplexer                              : 2
  24-bit 2-to-1 multiplexer                             : 1
  24-bit 25-to-1 multiplexer                            : 1
  24-bit 28-to-1 multiplexer                            : 1
  3-bit 2-to-1 multiplexer                              : 7
- 32-bit 2-to-1 multiplexer                             : 2
+ 32-bit 2-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 23
- 8-bit 2-to-1 multiplexer                              : 2
-# Xors                                                 : 166
- 1-bit xor2                                            : 166
+# Xors                                                 : 190
+ 1-bit xor2                                            : 190
 
 =========================================================================
 
@@ -418,28 +396,11 @@ Optimizing unit <FirstStageTOP> ...
 
 Optimizing unit <Comparator> ...
 
+Optimizing unit <CaseManager> ...
+
 Optimizing unit <RCA_1> ...
 
 Optimizing unit <RCA_2> ...
-WARNING:Xst:1710 - FF/Latch <REG2_ERR_OUT_1> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_ERR_OUT_2> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_ERR_OUT_1> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_30> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_29> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_28> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_27> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_26> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_25> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_24> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG1_SKIP_OUT_23> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_23> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_24> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_25> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_26> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_27> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_28> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_29> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <REG2_SKIP_OUT_30> (without init value) has a constant value of 0 in block <Pipeline>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_0> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_0> 
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_1> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_1> 
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_2> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_2> 
@@ -462,12 +423,19 @@ INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_21> in Unit <Pipeline> is equivalent
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_17> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_17> 
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_22> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_22> 
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_18> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_18> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_23> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_0> 
 INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_19> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_MAN_OUT_19> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_24> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_1> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_25> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_2> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_30> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_7> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_26> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_3> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_27> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_4> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_28> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_5> 
+INFO:Xst:2261 - The FF/Latch <REG1_SKIP_OUT_29> in Unit <Pipeline> is equivalent to the following FF/Latch, which will be removed : <REG1_GRT_EXP_OUT_6> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <REG3_FINAL_OUT_23> in Unit <Pipeline> is equivalent to the following 7 FFs/Latches, which will be removed : <REG3_FINAL_OUT_24> <REG3_FINAL_OUT_25> <REG3_FINAL_OUT_26> <REG3_FINAL_OUT_27> <REG3_FINAL_OUT_28> <REG3_FINAL_OUT_29> <REG3_FINAL_OUT_30> 
-Found area constraint ratio of 100 (+ 5) on block Pipeline, actual ratio is 23.
+Found area constraint ratio of 100 (+ 5) on block Pipeline, actual ratio is 26.
 FlipFlop REG1_OFF_OUT_0 has been replicated 2 time(s)
 FlipFlop REG1_OFF_OUT_1 has been replicated 2 time(s)
 FlipFlop REG1_OFF_OUT_2 has been replicated 2 time(s)
@@ -480,8 +448,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 220
- Flip-Flops                                            : 220
+# Registers                                            : 238
+ Flip-Flops                                            : 238
 
 =========================================================================
 
@@ -504,15 +472,15 @@ Top Level Output File Name         : Pipeline.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 455
+# BELS                             : 525
 #      LUT2                        : 17
-#      LUT3                        : 87
-#      LUT4                        : 26
-#      LUT5                        : 71
-#      LUT6                        : 231
-#      MUXF7                       : 23
-# FlipFlops/Latches                : 221
-#      FDC                         : 220
+#      LUT3                        : 62
+#      LUT4                        : 40
+#      LUT5                        : 136
+#      LUT6                        : 249
+#      MUXF7                       : 21
+# FlipFlops/Latches                : 239
+#      FDC                         : 238
 #      LD                          : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -527,15 +495,15 @@ Selected Device : 6slx4tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             221  out of   4800     4%  
- Number of Slice LUTs:                  432  out of   2400    18%  
-    Number used as Logic:               432  out of   2400    18%  
+ Number of Slice Registers:             239  out of   4800     4%  
+ Number of Slice LUTs:                  504  out of   2400    21%  
+    Number used as Logic:               504  out of   2400    21%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    526
-   Number with an unused Flip Flop:     305  out of    526    57%  
-   Number with an unused LUT:            94  out of    526    17%  
-   Number of fully used LUT-FF pairs:   127  out of    526    24%  
+ Number of LUT Flip Flop pairs used:    606
+   Number with an unused Flip Flop:     367  out of    606    60%  
+   Number with an unused LUT:           102  out of    606    16%  
+   Number of fully used LUT-FF pairs:   137  out of    606    22%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -566,8 +534,8 @@ Clock Information:
 ---------------------------------------------------------------+-------------------------+-------+
 Clock Signal                                                   | Clock buffer(FF name)   | Load  |
 ---------------------------------------------------------------+-------------------------+-------+
-CLK                                                            | BUFGP                   | 220   |
-S1/COMP/M1_GRT_M1_SML_OR_14_o(S1/COMP/M1_GRT_M1_SML_OR_14_o1:O)| NONE(*)(S1/COMP/OUT_SIG)| 1     |
+CLK                                                            | BUFGP                   | 238   |
+S1/COMP/M1_GRT_M1_SML_OR_12_o(S1/COMP/M1_GRT_M1_SML_OR_12_o1:O)| NONE(*)(S1/COMP/OUT_SIG)| 1     |
 ---------------------------------------------------------------+-------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -583,8 +551,8 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 14.198ns (Maximum Frequency: 70.432MHz)
-   Minimum input arrival time before clock: 3.710ns
-   Maximum output required time after clock: 3.820ns
+   Minimum input arrival time before clock: 3.714ns
+   Maximum output required time after clock: 3.597ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -594,7 +562,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
   Clock period: 14.198ns (frequency: 70.432MHz)
-  Total number of paths / destination ports: 193496 / 154
+  Total number of paths / destination ports: 417698 / 172
 -------------------------------------------------------------------------
 Delay:               14.198ns (Levels of Logic = 15)
   Source:            REG1_SML_MAN_OUT_9 (FF)
@@ -629,9 +597,9 @@ Delay:               14.198ns (Levels of Logic = 15)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 285 / 285
+  Total number of paths / destination ports: 303 / 303
 -------------------------------------------------------------------------
-Offset:              3.710ns (Levels of Logic = 1)
+Offset:              3.714ns (Levels of Logic = 1)
   Source:            RESET (PAD)
   Destination:       REG0_OP_OUT (FF)
   Destination Clock: CLK rising
@@ -640,30 +608,30 @@ Offset:              3.710ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           220   1.222   2.058  RESET_IBUF (RESET_IBUF)
+     IBUF:I->O           238   1.222   2.062  RESET_IBUF (RESET_IBUF)
      FDC:CLR                   0.430          REG0_OP_OUT
     ----------------------------------------
-    Total                      3.710ns (1.652ns logic, 2.058ns route)
+    Total                      3.714ns (1.652ns logic, 2.062ns route)
                                        (44.5% logic, 55.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
   Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              3.820ns (Levels of Logic = 1)
-  Source:            REG3_FINAL_OUT_23 (FF)
-  Destination:       OUTPUT<30> (PAD)
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            REG3_FINAL_OUT_31 (FF)
+  Destination:       OUTPUT<31> (PAD)
   Source Clock:      CLK rising
 
-  Data Path: REG3_FINAL_OUT_23 to OUTPUT<30>
+  Data Path: REG3_FINAL_OUT_31 to OUTPUT<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              8   0.447   0.802  REG3_FINAL_OUT_23 (REG3_FINAL_OUT_23)
-     OBUF:I->O                 2.571          OUTPUT_23_OBUF (OUTPUT<23>)
+     FDC:C->Q              1   0.447   0.579  REG3_FINAL_OUT_31 (REG3_FINAL_OUT_31)
+     OBUF:I->O                 2.571          OUTPUT_31_OBUF (OUTPUT<31>)
     ----------------------------------------
-    Total                      3.820ns (3.018ns logic, 0.802ns route)
-                                       (79.0% logic, 21.0% route)
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
 
 =========================================================================
 
@@ -676,29 +644,29 @@ Clock to Setup on destination clock CLK
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
 CLK                          |   14.198|         |         |         |
-S1/COMP/M1_GRT_M1_SML_OR_14_o|         |    1.179|         |         |
+S1/COMP/M1_GRT_M1_SML_OR_12_o|         |    1.179|         |         |
 -----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock S1/COMP/M1_GRT_M1_SML_OR_14_o
+Clock to Setup on destination clock S1/COMP/M1_GRT_M1_SML_OR_12_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |         |         |    6.720|         |
+CLK            |         |         |    6.356|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.40 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.47 secs
  
 --> 
 
 
-Total memory usage is 380348 kilobytes
+Total memory usage is 374800 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   32 (   0 filtered)
-Number of infos    :   36 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :   41 (   0 filtered)
 

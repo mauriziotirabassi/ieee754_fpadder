@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SpecialOutput.vhd";
+static const char *ng0 = "/home/kryzha/Documents/proj-reti-2023/final_version/SpecialOutput.vhd";
 
 
 
@@ -36,7 +36,7 @@ static void work_a_1808525663_1516540902_p_0(char *t0)
 
 LAB0:    xsi_set_current_line(24, ng0);
 
-LAB3:    t1 = (t0 + 7923);
+LAB3:    t1 = (t0 + 7971);
     t3 = (t0 + 4960);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
@@ -62,7 +62,7 @@ static void work_a_1808525663_1516540902_p_1(char *t0)
 
 LAB0:    xsi_set_current_line(25, ng0);
 
-LAB3:    t1 = (t0 + 7955);
+LAB3:    t1 = (t0 + 8003);
     t3 = (t0 + 5024);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
@@ -88,7 +88,7 @@ static void work_a_1808525663_1516540902_p_2(char *t0)
 
 LAB0:    xsi_set_current_line(26, ng0);
 
-LAB3:    t1 = (t0 + 7987);
+LAB3:    t1 = (t0 + 8035);
     t3 = (t0 + 5088);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
@@ -114,7 +114,7 @@ static void work_a_1808525663_1516540902_p_3(char *t0)
 
 LAB0:    xsi_set_current_line(27, ng0);
 
-LAB3:    t1 = (t0 + 8019);
+LAB3:    t1 = (t0 + 8067);
     t3 = (t0 + 5152);
     t4 = (t3 + 56U);
     t5 = *((char **)t4);
@@ -160,22 +160,22 @@ LAB3:    goto *t2;
 LAB2:    xsi_set_current_line(30, ng0);
     t2 = (t0 + 1032U);
     t3 = *((char **)t2);
-    t2 = (t0 + 8051);
+    t2 = (t0 + 8099);
     t5 = xsi_mem_cmp(t2, t3, 3U);
     if (t5 == 1)
         goto LAB5;
 
-LAB10:    t6 = (t0 + 8054);
+LAB10:    t6 = (t0 + 8102);
     t8 = xsi_mem_cmp(t6, t3, 3U);
     if (t8 == 1)
         goto LAB6;
 
-LAB11:    t9 = (t0 + 8057);
+LAB11:    t9 = (t0 + 8105);
     t11 = xsi_mem_cmp(t9, t3, 3U);
     if (t11 == 1)
         goto LAB7;
 
-LAB12:    t12 = (t0 + 8060);
+LAB12:    t12 = (t0 + 8108);
     t14 = xsi_mem_cmp(t12, t3, 3U);
     if (t14 == 1)
         goto LAB8;
@@ -289,7 +289,7 @@ LAB0:    xsi_set_current_line(38, ng0);
     t4 = (t3 * 1U);
     t5 = (0 + t4);
     t1 = (t2 + t5);
-    t6 = (t0 + 8063);
+    t6 = (t0 + 8111);
     t8 = 1;
     if (3U == 3U)
         goto LAB5;

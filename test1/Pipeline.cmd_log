@@ -29,3 +29,4 @@ xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst
 xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.syr" 
 xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.syr" 
 xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.syr" 
+xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.syr" 

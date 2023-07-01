@@ -71,34 +71,10 @@
     <transform xil_pn:end_ts="1684945248" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1684945248">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="CaseManager.vhd"/>
-      <outfile xil_pn:name="Comparator.vhd"/>
-      <outfile xil_pn:name="EightBitComparator.vhd"/>
-      <outfile xil_pn:name="FirstStageTOP.vhd"/>
-      <outfile xil_pn:name="FourBitComparator.vhd"/>
-      <outfile xil_pn:name="FullAdder.vhd"/>
-      <outfile xil_pn:name="MantissaComparator.vhd"/>
-      <outfile xil_pn:name="Normalizer.vhd"/>
-      <outfile xil_pn:name="OpPicker.vhd"/>
-      <outfile xil_pn:name="Pipeline.vhd"/>
-      <outfile xil_pn:name="RCA.vhd"/>
-      <outfile xil_pn:name="ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="SecondStageTOP.vhd"/>
-      <outfile xil_pn:name="ShifterL.vhd"/>
-      <outfile xil_pn:name="ShifterR.vhd"/>
-      <outfile xil_pn:name="SpecialOutput.vhd"/>
-      <outfile xil_pn:name="TB_Normalizer.vhd"/>
-      <outfile xil_pn:name="ThirdStageTOP.vhd"/>
-      <outfile xil_pn:name="test_CaseManager.vhd"/>
-      <outfile xil_pn:name="test_Comparator.vhd"/>
-      <outfile xil_pn:name="test_EightBitComparator.vhd"/>
-      <outfile xil_pn:name="test_MantissaComparator.vhd"/>
-      <outfile xil_pn:name="test_Normalizer.vhd"/>
-      <outfile xil_pn:name="test_ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="test_pipeline.vhd"/>
-      <outfile xil_pn:name="test_stage1.vhd"/>
-      <outfile xil_pn:name="test_stage2.vhd"/>
-      <outfile xil_pn:name="test_stage3.vhd"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1684945405" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2896652762859843829" xil_pn:start_ts="1684945405">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -115,53 +91,30 @@
     <transform xil_pn:end_ts="1684945248" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1684945248">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="CaseManager.vhd"/>
-      <outfile xil_pn:name="Comparator.vhd"/>
-      <outfile xil_pn:name="EightBitComparator.vhd"/>
-      <outfile xil_pn:name="FirstStageTOP.vhd"/>
-      <outfile xil_pn:name="FourBitComparator.vhd"/>
-      <outfile xil_pn:name="FullAdder.vhd"/>
-      <outfile xil_pn:name="MantissaComparator.vhd"/>
-      <outfile xil_pn:name="Normalizer.vhd"/>
-      <outfile xil_pn:name="OpPicker.vhd"/>
-      <outfile xil_pn:name="Pipeline.vhd"/>
-      <outfile xil_pn:name="RCA.vhd"/>
-      <outfile xil_pn:name="ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="SecondStageTOP.vhd"/>
-      <outfile xil_pn:name="ShifterL.vhd"/>
-      <outfile xil_pn:name="ShifterR.vhd"/>
-      <outfile xil_pn:name="SpecialOutput.vhd"/>
-      <outfile xil_pn:name="TB_Normalizer.vhd"/>
-      <outfile xil_pn:name="ThirdStageTOP.vhd"/>
-      <outfile xil_pn:name="test_CaseManager.vhd"/>
-      <outfile xil_pn:name="test_Comparator.vhd"/>
-      <outfile xil_pn:name="test_EightBitComparator.vhd"/>
-      <outfile xil_pn:name="test_MantissaComparator.vhd"/>
-      <outfile xil_pn:name="test_Normalizer.vhd"/>
-      <outfile xil_pn:name="test_ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="test_pipeline.vhd"/>
-      <outfile xil_pn:name="test_stage1.vhd"/>
-      <outfile xil_pn:name="test_stage2.vhd"/>
-      <outfile xil_pn:name="test_stage3.vhd"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1684945411" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1566036496520057622" xil_pn:start_ts="1684945405">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="test_pipeline_beh.prj"/>
-      <outfile xil_pn:name="test_pipeline_isim_beh.exe"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1684945411" xil_pn:in_ck="6032048899524527081" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7173077445446084893" xil_pn:start_ts="1684945411">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="test_pipeline_isim_beh.wdb"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1684340333" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1684340333">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -198,18 +151,9 @@
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Pipeline.lso"/>
-      <outfile xil_pn:name="Pipeline.ngc"/>
-      <outfile xil_pn:name="Pipeline.ngr"/>
-      <outfile xil_pn:name="Pipeline.prj"/>
-      <outfile xil_pn:name="Pipeline.stx"/>
-      <outfile xil_pn:name="Pipeline.syr"/>
-      <outfile xil_pn:name="Pipeline.xst"/>
-      <outfile xil_pn:name="Pipeline_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
   </transforms>
 

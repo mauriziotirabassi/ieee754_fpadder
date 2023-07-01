@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.vhd";
+static const char *ng0 = "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.vhd";
 
 
 

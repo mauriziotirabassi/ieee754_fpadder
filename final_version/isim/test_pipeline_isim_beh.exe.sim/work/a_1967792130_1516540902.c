@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/SecondStageTOP.vhd";
+static const char *ng0 = "/home/kryzha/Documents/proj-reti-2023/final_version/SecondStageTOP.vhd";
 extern char *IEEE_P_2592010699;
 
 
@@ -47,7 +47,7 @@ LAB0:    xsi_set_current_line(62, ng0);
 LAB3:    t1 = (t0 + 1032U);
     t2 = *((char **)t1);
     t4 = ((IEEE_P_2592010699) + 4000);
-    t5 = (t0 + 10792U);
+    t5 = (t0 + 10880U);
     t1 = xsi_base_array_concat(t1, t3, t4, (char)99, (unsigned char)3, (char)97, t2, t5, (char)101);
     t6 = (1U + 23U);
     t7 = (24U != t6);
@@ -94,7 +94,7 @@ LAB0:    xsi_set_current_line(65, ng0);
 LAB3:    t1 = (t0 + 1192U);
     t2 = *((char **)t1);
     t4 = ((IEEE_P_2592010699) + 4000);
-    t5 = (t0 + 10808U);
+    t5 = (t0 + 10896U);
     t1 = xsi_base_array_concat(t1, t3, t4, (char)99, (unsigned char)3, (char)97, t2, t5, (char)101);
     t6 = (1U + 23U);
     t7 = (24U != t6);
@@ -237,7 +237,7 @@ static void work_a_1967792130_1516540902_p_3(char *t0)
 
 LAB0:    xsi_set_current_line(95, ng0);
 
-LAB3:    t1 = (t0 + 11139);
+LAB3:    t1 = (t0 + 11227);
     t3 = (t0 + 3432U);
     t4 = *((char **)t3);
     t5 = *((unsigned char *)t4);
@@ -351,7 +351,7 @@ LAB2:    t17 = (t0 + 6704);
     *((int *)t17) = 1;
 
 LAB1:    return;
-LAB3:    t1 = (t0 + 11146);
+LAB3:    t1 = (t0 + 11234);
     t6 = (t0 + 7104);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);

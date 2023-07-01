@@ -8,7 +8,7 @@ entity Pipeline is
 		
 		INPUT1	: in	std_logic_vector(31 downto 0);
 		INPUT2	: in	std_logic_vector(31 downto 0);
-		OP_IN 	: in	std_logic; --0 se somma, 1 se sottrazione
+		OP_IN 	: in	std_logic; --0 sum, 1 diff
 		
 		OUTPUT	: out	std_logic_vector(31 downto 0)
 	);
@@ -46,20 +46,22 @@ architecture RTL of Pipeline is
 	
 	--REGION COMPONENTS
 	component FirstStageTOP is
-    port(
-        INPUT1    : in    std_logic_vector(31 downto 0);
+		port(
+			INPUT1    : in    std_logic_vector(31 downto 0);
         INPUT2    : in    std_logic_vector(31 downto 0);
 
         OP_IN     : in    std_logic; --0 se somma, 1 se sottrazione
 
+			GRT_EXP    : out    std_logic_vector(7 downto 0);
         GRT_MAN    : out    std_logic_vector(22 downto 0);
         SML_MAN    : out    std_logic_vector(22 downto 0); --la mantissa più piccola verrà shiftata ed estesa di un bit da ShifterMANT
-        GRT_EXP    : out    std_logic_vector(7 downto 0);
+        
+		  OFF        : out    std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
 
         OP_OUT    : out    std_logic; --0 se somma, 1 se sottrazione
         SIG_OUT    : out std_logic;
 
-        OFF        : out    std_logic_vector(4 downto 0); --differenza tra gli esponenti (offset per lo shift in stage 2)
+        
 
         SKIP        : out std_logic_vector(31 downto 0); --uno dei due input originari caso in cui uno dei due è 0
         ERR        : out    std_logic_vector(2 downto 0) --1 se la differenza tra gli esponenti eccede 24

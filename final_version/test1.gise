@@ -29,17 +29,58 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FirstStageTOP_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FirstStageTOP_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="MantissaComparator_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Normalizer.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Normalizer.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Normalizer.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Normalizer.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="Normalizer.vhi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Normalizer.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="Pipeline.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="Pipeline.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Pipeline.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Pipeline.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="Pipeline.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Pipeline.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Pipeline.ncd" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Pipeline.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="Pipeline.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Pipeline.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="Pipeline.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="Pipeline.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="Pipeline.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Pipeline.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="Pipeline.ptwx"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Pipeline.spl"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Pipeline.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Pipeline.sym" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Pipeline.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="Pipeline.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="Pipeline.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="Pipeline.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="Pipeline.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="Pipeline.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Pipeline.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Pipeline_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="Pipeline_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Pipeline_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Pipeline_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Pipeline_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="Pipeline_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Pipeline_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Pipeline_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="Pipeline_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="Pipeline_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Pipeline_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Pipeline_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Pipeline_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="Pipeline_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Pipeline_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
@@ -51,15 +92,19 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_MantissaComparator_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_Normalizer_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_ReversePriorityEncoder_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_pipeline_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_pipeline_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="test_pipeline_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_pipeline_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_stage1_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_stage1_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="test_stage1_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_stage1_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_stage2_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_stage3_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
@@ -71,40 +116,17 @@
     <transform xil_pn:end_ts="1684945248" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1684945248">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="CaseManager.vhd"/>
-      <outfile xil_pn:name="Comparator.vhd"/>
-      <outfile xil_pn:name="EightBitComparator.vhd"/>
-      <outfile xil_pn:name="FirstStageTOP.vhd"/>
-      <outfile xil_pn:name="FourBitComparator.vhd"/>
-      <outfile xil_pn:name="FullAdder.vhd"/>
-      <outfile xil_pn:name="MantissaComparator.vhd"/>
-      <outfile xil_pn:name="Normalizer.vhd"/>
-      <outfile xil_pn:name="OpPicker.vhd"/>
-      <outfile xil_pn:name="Pipeline.vhd"/>
-      <outfile xil_pn:name="RCA.vhd"/>
-      <outfile xil_pn:name="ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="SecondStageTOP.vhd"/>
-      <outfile xil_pn:name="ShifterL.vhd"/>
-      <outfile xil_pn:name="ShifterR.vhd"/>
-      <outfile xil_pn:name="SpecialOutput.vhd"/>
-      <outfile xil_pn:name="TB_Normalizer.vhd"/>
-      <outfile xil_pn:name="ThirdStageTOP.vhd"/>
-      <outfile xil_pn:name="test_CaseManager.vhd"/>
-      <outfile xil_pn:name="test_Comparator.vhd"/>
-      <outfile xil_pn:name="test_EightBitComparator.vhd"/>
-      <outfile xil_pn:name="test_MantissaComparator.vhd"/>
-      <outfile xil_pn:name="test_Normalizer.vhd"/>
-      <outfile xil_pn:name="test_ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="test_pipeline.vhd"/>
-      <outfile xil_pn:name="test_stage1.vhd"/>
-      <outfile xil_pn:name="test_stage2.vhd"/>
-      <outfile xil_pn:name="test_stage3.vhd"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1684945405" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2896652762859843829" xil_pn:start_ts="1684945405">
+    <transform xil_pn:end_ts="1685438098" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7818017101453313306" xil_pn:start_ts="1685438098">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1684945405" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="9222576429687757193" xil_pn:start_ts="1684945405">
+    <transform xil_pn:end_ts="1685438098" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8144121935976336792" xil_pn:start_ts="1685438098">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -115,53 +137,31 @@
     <transform xil_pn:end_ts="1684945248" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1684945248">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="CaseManager.vhd"/>
-      <outfile xil_pn:name="Comparator.vhd"/>
-      <outfile xil_pn:name="EightBitComparator.vhd"/>
-      <outfile xil_pn:name="FirstStageTOP.vhd"/>
-      <outfile xil_pn:name="FourBitComparator.vhd"/>
-      <outfile xil_pn:name="FullAdder.vhd"/>
-      <outfile xil_pn:name="MantissaComparator.vhd"/>
-      <outfile xil_pn:name="Normalizer.vhd"/>
-      <outfile xil_pn:name="OpPicker.vhd"/>
-      <outfile xil_pn:name="Pipeline.vhd"/>
-      <outfile xil_pn:name="RCA.vhd"/>
-      <outfile xil_pn:name="ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="SecondStageTOP.vhd"/>
-      <outfile xil_pn:name="ShifterL.vhd"/>
-      <outfile xil_pn:name="ShifterR.vhd"/>
-      <outfile xil_pn:name="SpecialOutput.vhd"/>
-      <outfile xil_pn:name="TB_Normalizer.vhd"/>
-      <outfile xil_pn:name="ThirdStageTOP.vhd"/>
-      <outfile xil_pn:name="test_CaseManager.vhd"/>
-      <outfile xil_pn:name="test_Comparator.vhd"/>
-      <outfile xil_pn:name="test_EightBitComparator.vhd"/>
-      <outfile xil_pn:name="test_MantissaComparator.vhd"/>
-      <outfile xil_pn:name="test_Normalizer.vhd"/>
-      <outfile xil_pn:name="test_ReversePriorityEncoder.vhd"/>
-      <outfile xil_pn:name="test_pipeline.vhd"/>
-      <outfile xil_pn:name="test_stage1.vhd"/>
-      <outfile xil_pn:name="test_stage2.vhd"/>
-      <outfile xil_pn:name="test_stage3.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1684945411" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1566036496520057622" xil_pn:start_ts="1684945405">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="test_pipeline_beh.prj"/>
-      <outfile xil_pn:name="test_pipeline_isim_beh.exe"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1684945411" xil_pn:in_ck="6032048899524527081" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7173077445446084893" xil_pn:start_ts="1684945411">
+    <transform xil_pn:end_ts="1685438100" xil_pn:in_ck="-7228563303065040621" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-8625595560859955820" xil_pn:start_ts="1685438098">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1685438100" xil_pn:in_ck="6032048899524527081" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4822003524820579775" xil_pn:start_ts="1685438100">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="test_pipeline_isim_beh.wdb"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1684340333" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1684340333">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -191,13 +191,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1684406267" xil_pn:in_ck="-1590660469828673283" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6250450539846377616" xil_pn:start_ts="1684406256">
+    <transform xil_pn:end_ts="1688199426" xil_pn:in_ck="-8371274355228305680" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6250450539846377616" xil_pn:start_ts="1688199419">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Pipeline.lso"/>
       <outfile xil_pn:name="Pipeline.ngc"/>
@@ -210,6 +208,70 @@
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1685440819" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-4922455171363778333" xil_pn:start_ts="1685440819">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1688199438" xil_pn:in_ck="4209529190896799484" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="462602365228927202" xil_pn:start_ts="1688199434">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Pipeline.bld"/>
+      <outfile xil_pn:name="Pipeline.ngd"/>
+      <outfile xil_pn:name="Pipeline_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1688199449" xil_pn:in_ck="4209529190896799485" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="304711778406361947" xil_pn:start_ts="1688199438">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Pipeline.pcf"/>
+      <outfile xil_pn:name="Pipeline_map.map"/>
+      <outfile xil_pn:name="Pipeline_map.mrp"/>
+      <outfile xil_pn:name="Pipeline_map.ncd"/>
+      <outfile xil_pn:name="Pipeline_map.ngm"/>
+      <outfile xil_pn:name="Pipeline_map.xrpt"/>
+      <outfile xil_pn:name="Pipeline_summary.xml"/>
+      <outfile xil_pn:name="Pipeline_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1688199456" xil_pn:in_ck="505907889019851926" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="417176447551133118" xil_pn:start_ts="1688199449">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Pipeline.ncd"/>
+      <outfile xil_pn:name="Pipeline.pad"/>
+      <outfile xil_pn:name="Pipeline.par"/>
+      <outfile xil_pn:name="Pipeline.ptwx"/>
+      <outfile xil_pn:name="Pipeline.unroutes"/>
+      <outfile xil_pn:name="Pipeline.xpi"/>
+      <outfile xil_pn:name="Pipeline_pad.csv"/>
+      <outfile xil_pn:name="Pipeline_pad.txt"/>
+      <outfile xil_pn:name="Pipeline_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1685440874" xil_pn:in_ck="4209529190896799353" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1685440867">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1685440910" xil_pn:in_ck="4209529190896786499" xil_pn:name="TRAN_analyzeDesignUsingChipscope" xil_pn:prop_ck="462602365228927202" xil_pn:start_ts="1685440910">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputRemoved"/>
+    </transform>
+    <transform xil_pn:end_ts="1688199456" xil_pn:in_ck="4209529190896799353" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1688199453">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Pipeline.twr"/>
+      <outfile xil_pn:name="Pipeline.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
   </transforms>
 

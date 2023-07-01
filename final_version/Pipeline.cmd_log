@@ -31,3 +31,17 @@ xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst
 xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/test1/Pipeline.syr" 
 xst -intstyle ise -ifn "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.xst" -ofn "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.syr" 
 xst -intstyle ise -ifn "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.xst" -ofn "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Pipeline.syr" 
+xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-tqg144-3 Pipeline.ngc Pipeline.ngd  
+map -intstyle ise -p xc6slx4-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Pipeline_map.ncd Pipeline.ngd Pipeline.pcf 
+par -w -intstyle ise -ol high -mt off Pipeline_map.ncd Pipeline.ncd Pipeline.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Pipeline.twx Pipeline.ncd -o Pipeline.twr Pipeline.pcf 
+bitgen -intstyle ise -f Pipeline.ut Pipeline.ncd 
+vhdtdtfi -lib work FourBitComparator.vhd -lib work FullAdder.vhd -lib work EightBitComparator.vhd -lib work ShifterL.vhd -lib work ReversePriorityEncoder.vhd -lib work RCA.vhd -lib work MantissaComparator.vhd -lib work SpecialOutput.vhd -lib work ShifterR.vhd -lib work OpPicker.vhd -lib work Normalizer.vhd -lib work Comparator.vhd -lib work CaseManager.vhd -lib work ThirdStageTOP.vhd -lib work SecondStageTOP.vhd -lib work FirstStageTOP.vhd -lib work Pipeline.vhd -prj test1 -o Pipeline.spl -module Pipeline -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 Pipeline.spl /home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.sym 
+xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.syr" 
+xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-tqg144-3 Pipeline.ngc Pipeline.ngd  
+map -intstyle ise -p xc6slx4-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Pipeline_map.ncd Pipeline.ngd Pipeline.pcf 
+par -w -intstyle ise -ol high -mt off Pipeline_map.ncd Pipeline.ncd Pipeline.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Pipeline.twx Pipeline.ncd -o Pipeline.twr Pipeline.pcf 

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_isim_beh.exe" -prj "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/test_pipeline_beh.prj" "work.test_pipeline" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_isim_beh.exe" -prj "/home/kryzha/Documents/proj-reti-2023/final_version/test_stage1_beh.prj" "work.test_stage1" 

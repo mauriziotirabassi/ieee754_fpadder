@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/ThirdStageTOP.vhd";
+static const char *ng0 = "/home/kryzha/Documents/proj-reti-2023/final_version/ThirdStageTOP.vhd";
 extern char *IEEE_P_2592010699;
 
 
@@ -68,7 +68,7 @@ LAB2:    t17 = (t0 + 4512);
     *((int *)t17) = 1;
 
 LAB1:    return;
-LAB3:    t1 = (t0 + 7649);
+LAB3:    t1 = (t0 + 7705);
     t6 = (t0 + 4608);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);
@@ -150,7 +150,7 @@ LAB3:    t1 = (t0 + 1032U);
     t1 = (t0 + 1992U);
     t7 = *((char **)t1);
     t9 = ((IEEE_P_2592010699) + 4000);
-    t10 = (t0 + 7440U);
+    t10 = (t0 + 7496U);
     t1 = xsi_base_array_concat(t1, t8, t9, (char)99, t6, (char)97, t7, t10, (char)101);
     t11 = (t0 + 2152U);
     t12 = *((char **)t11);

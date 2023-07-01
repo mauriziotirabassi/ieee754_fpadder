@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/Normalizer.vhd";
+static const char *ng0 = "/home/kryzha/Documents/proj-reti-2023/final_version/Normalizer.vhd";
 extern char *IEEE_P_2592010699;
 
 
@@ -48,7 +48,7 @@ static void work_a_2973918132_1516540902_p_0(char *t0)
 
 LAB0:    xsi_set_current_line(84, ng0);
 
-LAB3:    t1 = (t0 + 6374);
+LAB3:    t1 = (t0 + 6422);
     t3 = (t0 + 1992U);
     t4 = *((char **)t3);
     t6 = ((IEEE_P_2592010699) + 4000);
@@ -64,7 +64,7 @@ LAB3:    t1 = (t0 + 6374);
     t11 = (t11 + 1);
     t9 = (t8 + 12U);
     *((unsigned int *)t9) = t11;
-    t9 = (t0 + 6304U);
+    t9 = (t0 + 6352U);
     t3 = xsi_base_array_concat(t3, t5, t6, (char)97, t1, t7, (char)97, t4, t9, (char)101);
     t11 = (3U + 5U);
     t12 = (8U != t11);

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-05-24T18:10:10</DateModified>
+  <DateModified>2023-05-30T11:11:42</DateModified>
   <ModuleName>Pipeline</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/iseconfig/Pipeline.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ale/Desktop/VHDL/proj-reti-2023-main/test1/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/kryzha/Documents/proj-reti-2023/pipeline_tested/iseconfig/Pipeline.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/kryzha/Documents/proj-reti-2023/pipeline_tested/</ImplementationReportsDirectory>
   <DateInitialized>2023-05-18T12:30:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
