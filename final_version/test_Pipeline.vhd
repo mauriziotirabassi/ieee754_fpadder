@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
-
-ENTITY test_pipeline IS
-END test_pipeline;
  
-ARCHITECTURE behavior OF test_pipeline IS 
+ENTITY test_Pipeline IS
+END test_Pipeline;
+ 
+ARCHITECTURE behavior OF test_Pipeline IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -21,17 +21,17 @@ ARCHITECTURE behavior OF test_pipeline IS
     
 
    --Inputs
-   signal CLK : std_logic ;
-   signal RESET : std_logic ;
-   signal INPUT1 : std_logic_vector(31 downto 0) ;
-   signal INPUT2 : std_logic_vector(31 downto 0) ;
+   signal CLK : std_logic := '0';
+   signal RESET : std_logic := '0';
+   signal INPUT1 : std_logic_vector(31 downto 0) := (others => '0');
+   signal INPUT2 : std_logic_vector(31 downto 0) := (others => '0');
    signal OP_IN : std_logic := '0';
 
  	--Outputs
    signal OUTPUT : std_logic_vector(31 downto 0);
 
    -- Clock period definitions
-   constant CLK_period : time := 50 ns;
+   constant CLK_period : time := 10 ns;
  
 BEGIN
  
@@ -58,18 +58,12 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-		RESET <= '1';
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      --wait for CLK_period*10;
+      wait for CLK_period*10;
 
       -- insert stimulus here 
-		RESET  <= '0';
-		INPUT1 <= "11101111101111111111110111111111";
-		INPUT2 <= "11101111111111111111111101111111";
-		OP_IN  <= '0';
-		
 
       wait;
    end process;

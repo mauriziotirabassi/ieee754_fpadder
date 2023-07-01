@@ -1,7 +1,0 @@
-xst -intstyle ise -ifn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.xst" -ofn "/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.syr" 
-netgen -intstyle ise -ar Structure -tm Pipeline -w -dir netgen/synthesis -ofmt vhdl -sim Pipeline.ngc Pipeline_synthesis.vhd 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx4-tqg144-3 Pipeline.ngc Pipeline.ngd  
-map -intstyle ise -p xc6slx4-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Pipeline_map.ncd Pipeline.ngd Pipeline.pcf 
-par -w -intstyle ise -ol high -mt off Pipeline_map.ncd Pipeline.ncd Pipeline.pcf 
-trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Pipeline.twx Pipeline.ncd -o Pipeline.twr Pipeline.pcf 
-bitgen -intstyle ise -f Pipeline.ut Pipeline.ncd 

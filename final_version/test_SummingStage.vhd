@@ -1,24 +1,20 @@
 library ieee;
 use ieee.std_logic_1164.all;
  
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+ENTITY test_SummingStage IS
+END test_SummingStage;
  
-ENTITY test_stage2 IS
-END test_stage2;
- 
-ARCHITECTURE behavior OF test_stage2 IS 
+ARCHITECTURE behavior OF test_SummingStage IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT SecondStageTOP
+    COMPONENT SummingStage
     PORT(
+         GRT_EXP : IN  std_logic_vector(7 downto 0);
          GRT_MAN : IN  std_logic_vector(22 downto 0);
          SML_MAN : IN  std_logic_vector(22 downto 0);
-         GRT_EXP 	: IN  std_logic_vector(7 downto 0);
-         OP_IN 	: IN  std_logic;
-         OFF 		: IN  std_logic_vector(4 downto 0);
+         OP_IN : IN  std_logic;
+         OFF : IN  std_logic_vector(4 downto 0);
          ERR_IN : IN  std_logic_vector(2 downto 0);
          MAN_OUT : OUT  std_logic_vector(23 downto 0);
          EXP_OUT : OUT  std_logic_vector(7 downto 0);
@@ -28,9 +24,9 @@ ARCHITECTURE behavior OF test_stage2 IS
     
 
    --Inputs
+   signal GRT_EXP : std_logic_vector(7 downto 0) := (others => '0');
    signal GRT_MAN : std_logic_vector(22 downto 0) := (others => '0');
    signal SML_MAN : std_logic_vector(22 downto 0) := (others => '0');
-   signal GRT_EXP : std_logic_vector(7 downto 0) := (others => '0');
    signal OP_IN : std_logic := '0';
    signal OFF : std_logic_vector(4 downto 0) := (others => '0');
    signal ERR_IN : std_logic_vector(2 downto 0) := (others => '0');
@@ -39,14 +35,14 @@ ARCHITECTURE behavior OF test_stage2 IS
    signal MAN_OUT : std_logic_vector(23 downto 0);
    signal EXP_OUT : std_logic_vector(7 downto 0);
    signal ERR_OUT : std_logic_vector(2 downto 0);
-	
+ 
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: SecondStageTOP PORT MAP (
+   uut: SummingStage PORT MAP (
+          GRT_EXP => GRT_EXP,
           GRT_MAN => GRT_MAN,
           SML_MAN => SML_MAN,
-          GRT_EXP => GRT_EXP,
           OP_IN => OP_IN,
           OFF => OFF,
           ERR_IN => ERR_IN,
@@ -62,15 +58,6 @@ BEGIN
       wait for 100 ns;	
 
       -- insert stimulus here 
-		GRT_MAN	<= "11111111111111101111111";
-		SML_MAN	<= "01111111111110111111111";
-		GRT_EXP	<= "11011111";
-		OP_IN		<= '1';
-		OFF		<= "00000";
-		ERR_IN	<= "000";
-		
-		
-
 
       wait;
    end process;

@@ -45,7 +45,7 @@ architecture RTL of Pipeline is
 	--ENDREGION
 	
 	--REGION COMPONENTS
-	component FirstStageTOP is
+	component ComparingStage is
 		port(
 			INPUT1	: in	std_logic_vector(31 downto 0);
 			INPUT2	: in	std_logic_vector(31 downto 0);
@@ -61,7 +61,7 @@ architecture RTL of Pipeline is
 		);
 	end component;
 	
-	component SecondStageTOP is
+	component SummingStage is
 		port(
 			GRT_EXP	: in	std_logic_vector(7 downto 0);
 			GRT_MAN	: in	std_logic_vector(22 downto 0); 
@@ -76,7 +76,7 @@ architecture RTL of Pipeline is
 	end component;
 	
 	
-	component ThirdStageTOP is
+	component AdjustingStage is
 	port(
 			SIG_IN	: in	std_logic;
 			EXP_IN	: in	std_logic_vector(7 downto 0);
@@ -93,7 +93,7 @@ begin
 	--REGION MODULES
 	
 		--STAGE 1
-		S1: FirstStageTOP
+		S1: ComparingStage
 			port map(
 			
 				--Inputs
@@ -113,7 +113,7 @@ begin
 			);	
 			
 		--STAGE 2
-		S2: SecondStageTOP
+		S2: SummingStage
 			port map(
 			
 				--Inputs
@@ -132,7 +132,7 @@ begin
 				
 			
 		--STAGE 3
-		S3: ThirdStageTOP
+		S3: AdjustingStage
 			port map(
 			
 				--Inputs

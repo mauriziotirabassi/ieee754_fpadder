@@ -32,10 +32,6 @@ architecture RTL of CaseManager is
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
 	signal ZERO1, ZERO2	: std_logic;
-	signal MAN1_ZERO, MAN2_ZERO	: std_logic;
-	signal EXP1_ZERO, EXP2_ZERO	: std_logic;
-	signal EXP1_ONE, EXP2_ONE		: std_logic;
-	
 	signal INF1,INF2, PLUS_INF1, PLUS_INF2, MINUS_INF1, MINUS_INF2	: std_logic;
 	--ENDREGION
 
