@@ -106,7 +106,25 @@ BEGIN
 		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
 		INPUT2	<= "01000010000011001110101110000101"; -- 35.23
 		OP_IN		<= '1'; --diff
+		wait for 50 ns;
 
+		--TEST 9: (biggest + biggest)
+		--Expected binary:	"?"
+		--Expected decimal:	
+		INPUT1	<= "01111111011111111111111111111111"; -- biggest
+		INPUT2	<= "01111111011111111111111111111111"; -- biggest
+		OP_IN		<= '0'; --sum
+		wait for 50ns;
+		
+		--TEST 10: (bigger number + big number)
+		--Expected binary:	"?"
+		--Expected decimal:	
+		
+		INPUT1	<= "01111101011111110001000000000000"; -- 2.11897634797 × 10^37
+		INPUT2	<= "01110001111111110001000000000000"; -- 2.5260167 × 10^30
+		OP_IN		<= '0'; --sum
+		wait for 50ns;
+		
       wait;
    end process;
 

@@ -47,8 +47,13 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
-      -- insert stimulus here 
+		
+		--biggest + biggest
+      SIG_IN <= '0';
+      EXP_IN <="11111111";
+      MAN_IN <="111111111111111111111111";
+      SKIP <= "01111111011111111111111111111111";
+      ERR <= "000";
 
       wait;
    end process;

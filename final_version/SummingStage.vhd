@@ -33,7 +33,9 @@ architecture RTL of SummingStage is
 	--REGION SIGNALS
 	signal EXT_M1, EXT_M2, SHFT_M2, RESULT	: std_logic_vector(23 downto 0);
 	
-	signal PLUS_ONE	: std_logic_vector(7 downto 0);
+	signal PLUS_ONE		:	std_logic_vector(7 downto 0);
+	signal TMP_EXP_OUT	:	std_logic_vector(7 downto 0);
+	
 	signal REM_MAN, REM_EXP, EXP_OF	: std_logic;
 	--ENDREGION
 
@@ -105,12 +107,14 @@ begin
 			INPUT1	=> GRT_EXP,
 			INPUT2	=> PLUS_ONE,
 			OP			=> '0', --sum
-			OUTPUT	=> EXP_OUT, --MODULE OUTPUT
+			OUTPUT	=> TMP_EXP_OUT, 
 			COUT		=> EXP_OF		
 		);
 	
 	--Checking for the overflow of the corrected exponent
-	ERR_OUT	<= "001" when (EXP_OF = '1' and ERR_IN = "000") else ERR_IN; --MODULE OUTPUT
+	ERR_OUT	<= "100" when ((EXP_OF = '1' or TMP_EXP_OUT ="11111111") and ERR_IN = "000") else ERR_IN; --MODULE OUTPUT
+	
+	EXP_OUT	<= TMP_EXP_OUT; --connect to top level
 	
 end RTL;
 

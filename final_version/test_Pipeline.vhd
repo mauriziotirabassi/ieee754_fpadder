@@ -167,6 +167,53 @@ BEGIN
 		OP_IN		<= '1'; --diff
 		wait for CLK_period;
 		
+		--TEST 6: (smallest + biggest)
+		--Expected binary:	"0 11111110 11111111111111111111111"
+		--Expected decimal:	3.4028235 × 10^38
+		RESET		<= '0';
+		INPUT1	<= "00000000100000000000000000000000"; -- smallest
+		INPUT2	<= "01111111011111111111111111111111"; -- biggest
+		OP_IN		<= '0'; --sum
+		wait for CLK_period;
+		
+		--TEST 7: (smallest - biggest)
+		--Expected binary:	"1 11111110 11111111111111111111111"
+		--Expected decimal:	-3.4028235 × 10^38
+		RESET		<= '0';
+		INPUT1	<= "00000000100000000000000000000000"; -- smallest
+		INPUT2	<= "01111111011111111111111111111111"; -- biggest
+		OP_IN		<= '1'; --diff
+		wait for CLK_period;
+		
+		--TEST 8: (biggest + 17.2)
+		--Expected binary:	"01111111011111111111111111111111"
+		--Expected decimal:	3.4028235 × 10^38
+		RESET		<= '0';
+		INPUT1	<= "01111111011111111111111111111111"; -- biggest
+		INPUT2	<= "01000001100010011001100110011010"; -- 17.2
+		OP_IN		<= '0'; --sum
+		wait for CLK_period;
+		
+		--TEST 9: (biggest + biggest)
+		--Expected binary:	"?"
+		--Expected decimal:	
+		RESET		<= '0';
+		INPUT1	<= "01111111011111111111111111111111"; -- biggest
+		INPUT2	<= "01111111011111111111111111111111"; -- biggest
+		OP_IN		<= '0'; --sum
+		wait for CLK_period;
+		
+		--TEST 10: (bigger number + big number)
+		--Expected binary:	"?"
+		--Expected decimal:	
+		RESET		<= '0';
+		INPUT1	<= "01111101011111110001000000000000"; -- 2.11897634797 × 10^37
+		INPUT2	<= "01110001111111110001000000000000"; -- 2.5260167 × 10^30
+		OP_IN		<= '0'; --sum
+		wait for CLK_period;
+		
+		
+		
 		--ENDREGION
 
       wait;

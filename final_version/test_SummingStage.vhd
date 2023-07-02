@@ -56,6 +56,18 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+		
+		--TEST 9: (biggest + biggest)
+		--Expected binary:	"?"
+		--Expected decimal:	
+		GRT_EXP <= "11111110";
+         GRT_MAN <="11111111111111111111111";
+         SML_MAN <="11111111111111111111111";
+         OP_IN <='0';
+         OFF  <="00000";
+         ERR_IN <="000";
+		
+		wait for 50ns;
 
       -- insert stimulus here 
 
