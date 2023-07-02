@@ -90,7 +90,7 @@ BEGIN
 		OP_IN		<= '0'; --sum
 		wait for CLK_period;
 		
-		--TEST 4: (ZERO - 35.23)
+		--TEST 4: (+INF + -INF)
 		--Expected binary:	"01111111111111111111111111111111"
 		--Expected decimal:	NaN
 		RESET		<= '0';
@@ -130,8 +130,9 @@ BEGIN
 		OP_IN		<= '0'; --sum
 		wait for CLK_period;
 		
-		--TEST 2: (ZERO + 35.23)
-		--Expected binary:	"01000001101000000000000000000000"
+		
+		--TEST 3: (ZERO + 35.23)
+		--Expected binary:	"11000010000011001110101110000101"
 		--Expected decimal:	-35.23
 		RESET		<= '0';
 		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
