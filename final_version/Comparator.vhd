@@ -81,16 +81,16 @@ begin
 		);
 		
 	--The bigger input is the one with either the bigger exponent or equal exponent and bigger mantissa
-	GRT_IN	<= INPUT1	when (E1_GRT or (E1_EQ and M1_GRT)) = '1'	else INPUT2;
+	GRT_IN	<= INPUT1	when (E1_GRT or (E1_EQ and (M1_GRT or M1_EQ))) = '1'	else INPUT2;
 	
 	--The smaller input is the one with either the smaller exponent or equal exponent and smaller mantissa
-	SML_IN	<= INPUT1	when (E1_SML or (E1_EQ and M1_SML)) = '1'	else INPUT2;
+	SML_IN	<= INPUT1	when (E1_SML or (E1_EQ and (M1_SML or (not M1_EQ)))) = '1'	else INPUT2;
 	
 	--TODO: Più grande in assoluto non odvrebbe essere quello con exp e man più grandi?
 	
 	--Calculating the sign of the end result
-	OUT_SIG	<= SIG1	when M1_GRT = '1'	--Se il più grande in assoluto è il primo sig è segno del più grande indipendentemente dall'operazione
-					else	not SIG2	when (M1_SML = '1'	and OP_IN	= '1') --Se il più grande in abs è il secondo e l'op è la sottrazione
-					else	SIG2		when (M1_SML = '1'	and OP_IN	= '0'); --Se il più grande in abs è il secondo e l'op è l'addizione
+	OUT_SIG	<= SIG1	when (E1_GRT or (E1_EQ and (M1_GRT or M1_EQ))) = '1'	--Se il più grande in assoluto è il primo sig è segno del più grande indipendentemente dall'operazione
+		else	not SIG2	when (M1_SML = '1'	and OP_IN	= '1') --Se il più grande in abs è il secondo e l'op è la sottrazione
+		else	SIG2		when (M1_SML = '1'	and OP_IN	= '0'); --Se il più grande in abs è il secondo e l'op è l'addizione
 		
 end Behavioral;
