@@ -25,7 +25,7 @@ architecture Behavioral of Comparator is
 	signal EXP1, EXP2		: std_logic_vector(7 downto 0);
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
-	signal E1_GRT, E1_SML, E1_EQ, M1_GRT, M1_SML, M1_EQ	: std_logic;
+	signal E1_GRT, E1_SML, E1_EQ, M1_GRT, M1_SML, M1_EQ, IN1_GRT, IN1_SML	: std_logic;
 	--ENDREGION
 
 	--REGION COMPONENTS
@@ -80,17 +80,26 @@ begin
 			SML	=> M1_SML
 		);
 		
-	--The bigger input is the one with either the bigger exponent or equal exponent and bigger mantissa
-	GRT_IN	<= INPUT1	when (E1_GRT or (E1_EQ and (M1_GRT or M1_EQ))) = '1'	else INPUT2;
-	
-	--The smaller input is the one with either the smaller exponent or equal exponent and smaller mantissa
-	SML_IN	<= INPUT1	when (E1_SML or (E1_EQ and (M1_SML or (not M1_EQ)))) = '1'	else INPUT2;
-	
-	--TODO: Più grande in assoluto non odvrebbe essere quello con exp e man più grandi?
+	--Identifying the cases (by convention IN1 is considered greater than IN2 even if they are equal)
+	IN1_GRT	<= '1' when (E1_GRT or (E1_EQ and (M1_GRT or M1_EQ))) 		= '1' else '0'; 
+	IN1_SML	<= '1' when (E1_SML or (E1_EQ and (M1_SML or (not M1_EQ)))) = '1' else '0';
+		
+	--Ordering the two outputs by absolute value
+	GRT_IN	<= INPUT1	when IN1_GRT = '1'	else INPUT2; --MODULE OUTPUT
+	SML_IN	<= INPUT1	when IN1_SML = '1'	else INPUT2; --MODULE OUTPUT
 	
 	--Calculating the sign of the end result
-	OUT_SIG	<= SIG1	when (E1_GRT or (E1_EQ and (M1_GRT or M1_EQ))) = '1'	--Se il più grande in assoluto è il primo sig è segno del più grande indipendentemente dall'operazione
-		else	not SIG2	when (M1_SML = '1'	and OP_IN	= '1') --Se il più grande in abs è il secondo e l'op è la sottrazione
-		else	SIG2		when (M1_SML = '1'	and OP_IN	= '0'); --Se il più grande in abs è il secondo e l'op è l'addizione
+	OUT_SIG	<= 
+						--If the absolute value of the first input is the greater one then the sign of the end result 
+						--is the same as the one of the first input regardless of the operation
+						SIG1			when IN1_GRT = '1'
+					
+						--If the absolute value of the second input is the greater one and the operation is a difference
+						--then the sign of the end result is the reciprocal of the one of the second input
+				else	(not SIG2)	when (IN1_SML and OP_IN) = '1'
+				
+						--If the absolute value of the second input is the greater one and the operation is a sum
+						--then the sign of the end result is the same as the one of the second input
+				else	SIG2			when (IN1_SML and (not OP_IN)) = '1'; --MODULE OUTPUT
 		
 end Behavioral;

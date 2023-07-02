@@ -141,11 +141,7 @@ BEGIN
 		
 		--ENDREGION
 
-      wait for CLK_period;
-
-      -- insert stimulus here 
-
-      wait;
+      --wait;
    end process;
 
 END;
