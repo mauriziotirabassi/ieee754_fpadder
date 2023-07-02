@@ -22,8 +22,8 @@ Parsing VHDL file "/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/Pipel
 Parsing VHDL file "/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/test_Pipeline.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 84624 KB
-Fuse CPU Usage: 1070 ms
+Fuse Memory Usage: 84628 KB
+Fuse CPU Usage: 1030 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling architecture rtl of entity FourBitComparator [fourbitcomparator_default]
@@ -45,9 +45,9 @@ Compiling architecture rtl of entity AdjustingStage [adjustingstage_default]
 Compiling architecture rtl of entity Pipeline [pipeline_default]
 Compiling architecture behavior of entity test_pipeline
 Time Resolution for simulation is 1ps.
-Waiting for 4 sub-compilation(s) to finish...
+Waiting for 3 sub-compilation(s) to finish...
 Compiled 37 VHDL Units
 Built simulation executable /home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/test_Pipeline_isim_beh.exe
 Fuse Memory Usage: 1174804 KB
-Fuse CPU Usage: 1150 ms
-GCC CPU Usage: 2330 ms
+Fuse CPU Usage: 1120 ms
+GCC CPU Usage: 1900 ms

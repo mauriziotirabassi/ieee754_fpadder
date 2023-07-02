@@ -64,7 +64,7 @@ BEGIN
 		--REGION SPECIAL CASES
 		
 		--TEST 1: (+INF + ZERO)
-		--Expected binary:	"01111111100000000000000000000000"
+		--Expected binary:	"0 11111111 00000000000000000000000"
 		--Expected decimal:	+INF
 		RESET		<= '0';
 		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
@@ -73,7 +73,7 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 2: (+INF + -INF)
-		--Expected binary:	"01111111111111111111111111111111"
+		--Expected binary:	"0 11111111 11111111111111111111111"
 		--Expected decimal:	NaN
 		RESET		<= '0';
 		INPUT1	<= "01111111100000000000000000000000"; -- +INF
@@ -82,7 +82,7 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 3: (ZERO + ZERO)
-		--Expected binary:	"00000000000000000000000000000000"
+		--Expected binary:	"0 00000000 00000000000000000000000"
 		--Expected decimal:	ZERO
 		RESET		<= '0';
 		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
@@ -91,7 +91,7 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 4: (+INF + -INF)
-		--Expected binary:	"01111111111111111111111111111111"
+		--Expected binary:	"0 11111111 11111111111111111111111"
 		--Expected decimal:	NaN
 		RESET		<= '0';
 		INPUT1	<= "01111111100000000000000000000000"; -- +INF
@@ -100,7 +100,7 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 5: (NaN + 17.2)
-		--Expected binary:	"01111111111111111111111111111111"
+		--Expected binary:	"0 11111111 11111111111111111111111"
 		--Expected decimal:	NaN
 		RESET		<= '0';
 		INPUT1	<= "01111111111111111111111111111111"; -- NaN
@@ -109,7 +109,7 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 6: (+INF - +INF)
-		--Expected binary:	"01111111111111111111111111111111"
+		--Expected binary:	"0 11111111 11111111111111111111111"
 		--Expected decimal:	NaN
 		RESET		<= '0';
 		INPUT1	<= "01111111100000000000000000000000"; -- +INF
@@ -122,7 +122,7 @@ BEGIN
 		--REGION NORMAL CASES
 		
 		--TEST 1: (2.8 + 17.2)
-		--Expected binary:	"01000001101000000000000000000000"
+		--Expected binary:	"0 10000011 01000000000000000000000"
 		--Expected decimal:	20.0
 		RESET		<= '0';
 		INPUT1	<= "01000000001100110011001100110011"; -- 2.8
@@ -131,8 +131,8 @@ BEGIN
 		wait for CLK_period;
 		
 		
-		--TEST 3: (ZERO + 35.23)
-		--Expected binary:	"11000010000011001110101110000101"
+		--TEST 2: (ZERO + 35.23)
+		--Expected binary:	"1 10000100 00011001110101110000101"
 		--Expected decimal:	-35.23
 		RESET		<= '0';
 		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
@@ -140,9 +140,36 @@ BEGIN
 		OP_IN		<= '1'; --diff
 		wait for CLK_period;
 		
+		--TEST 3: (ZERO + biggest)
+		--Expected binary:	"0 11111110 11111111111111111111111"
+		--Expected decimal:	3.4028235 × 10^38
+		RESET		<= '0';
+		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
+		INPUT2	<= "01111111011111111111111111111111"; -- biggest
+		OP_IN		<= '0'; --sum
+		wait for CLK_period;
+		
+		--TEST 4: (ZERO - biggest)
+		--Expected binary:	"1 11111110 11111111111111111111111"
+		--Expected decimal:	-3.4028235 × 10^38
+		RESET		<= '0';
+		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
+		INPUT2	<= "01111111011111111111111111111111"; -- biggest
+		OP_IN		<= '1'; --diff
+		wait for CLK_period;
+		
+		--TEST 5: (ZERO - smallest)
+		--Expected binary:	"1 00000001 00000000000000000000000"
+		--Expected decimal:	 1.4012985 × 10^(-45)
+		RESET		<= '0';
+		INPUT1	<= "00000000000000000000000000000000"; -- ZERO
+		INPUT2	<= "00000000100000000000000000000000"; --smallest
+		OP_IN		<= '1'; --diff
+		wait for CLK_period;
+		
 		--ENDREGION
 
-      --wait;
+      wait;
    end process;
 
 END;

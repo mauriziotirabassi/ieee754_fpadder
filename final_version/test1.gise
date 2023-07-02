@@ -52,7 +52,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1688305235" xil_pn:in_ck="-4933848870420905086" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1688305235">
+    <transform xil_pn:end_ts="1688308973" xil_pn:in_ck="-4933848870420905086" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1688308973">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="AdjustingStage.vhd"/>
@@ -94,7 +94,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1688305235" xil_pn:in_ck="-4933848870420905086" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1688305235">
+    <transform xil_pn:end_ts="1688308973" xil_pn:in_ck="-4933848870420905086" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1688308973">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="AdjustingStage.vhd"/>
@@ -124,18 +124,19 @@
       <outfile xil_pn:name="test_ReversePriorityEncoder.vhd"/>
       <outfile xil_pn:name="test_SummingStage.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1688305237" xil_pn:in_ck="-4933848870420905086" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="184086970088838870" xil_pn:start_ts="1688305235">
+    <transform xil_pn:end_ts="1688308974" xil_pn:in_ck="-4933848870420905086" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="184086970088838870" xil_pn:start_ts="1688308973">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="test_Pipeline_beh.prj"/>
       <outfile xil_pn:name="test_Pipeline_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1688305864" xil_pn:in_ck="-5843756275029355676" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5386688769899425443" xil_pn:start_ts="1688305864">
+    <transform xil_pn:end_ts="1688308975" xil_pn:in_ck="-5843756275029355676" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5386688769899425443" xil_pn:start_ts="1688308974">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
