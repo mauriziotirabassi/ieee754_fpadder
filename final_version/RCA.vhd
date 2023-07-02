@@ -42,7 +42,7 @@ begin
 	end generate;
 
 	--top level connections
-	COUT	<= C(8);
+	COUT	<= C(N);
 	C(0)	<= OP;
 
 	GEN: for I in 0 to N-1 generate
