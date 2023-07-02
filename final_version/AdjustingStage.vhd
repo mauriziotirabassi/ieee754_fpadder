@@ -70,7 +70,7 @@ begin
 		);
 		
 	--Checking for the underflow of the corrected exponent
-	TMP_ERR <= "011" when TMP_UF = '1' else ERR; --TODO: ora NaN, capire che caso è
+	TMP_ERR <= "011" when (TMP_UF = '1' and ERR = "000") else ERR; --TODO: ora NaN, capire che caso è
 
 	--Translating the encoded special output signal ERR and eventually signaling the abnormality
 	SPCL:	SpecialOutput
