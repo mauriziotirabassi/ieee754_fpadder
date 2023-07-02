@@ -31,49 +31,62 @@ architecture RTL of CaseManager is
 	signal EXP1, EXP2		: std_logic_vector(7 downto 0);
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
+	signal E1_ZERO, E2_ZERO, E1_UNO, E2_UNO	: std_logic;
+	signal M1_ZERO, M2_ZERO, M1_UNO, M2_UNO	: std_logic;
+	
 	signal ZERO1, ZERO2	: std_logic;
 	signal INF1,INF2, PLUS_INF1, PLUS_INF2, MINUS_INF1, MINUS_INF2	: std_logic;
+	signal NAN1, NAN2		: std_logic;
+	signal N1, N2			: std_logic;
 	--ENDREGION
 
 begin
 
 	--Parsing the inputs
-    SIG1  <= INPUT1(31);
-    SIG2  <= INPUT2(31);
-    EXP1  <= INPUT1(30 downto 23);
-    EXP2  <= INPUT2(30 downto 23);
-	 MAN1  <= INPUT1(22 downto 0);
-	 MAN2  <= INPUT2(22 downto 0);
+   SIG1  <= INPUT1(31);
+   SIG2  <= INPUT2(31);
+   EXP1  <= INPUT1(30 downto 23);
+   EXP2  <= INPUT2(30 downto 23);
+	MAN1  <= INPUT1(22 downto 0);
+	MAN2  <= INPUT2(22 downto 0);
 	
 	--Identifying zero
 	ZERO1			<= '1' when (EXP1	= "00000000" and MAN1 = "00000000000000000000000") else '0';
 	ZERO2			<= '1' when (EXP2	= "00000000" and MAN2 = "00000000000000000000000") else '0';
 	
 	--Identifying infinity
-	INF1			<= '1' when (EXP1 = "11111111" and MAN1 = "00000000000000000000000") else '0';
-	INF2			<= '1' when (EXP2 = "11111111" and MAN2 = "00000000000000000000000") else '0';
+	INF1			<= '1' when (EXP1	= "11111111" and MAN1 = "00000000000000000000000") else '0';
+	INF2			<= '1' when (EXP2	= "11111111" and MAN2 = "00000000000000000000000") else '0';
 	
-	PLUS_INF1	<= '1' when (SIG1 = '0' and EXP1 = "11111111" and MAN1 = "00000000000000000000000") else '0';
-	PLUS_INF2	<= '1' when (SIG2 = '0' and EXP2 = "11111111" and MAN2 = "00000000000000000000000") else '0';
-	MINUS_INF1	<= '1' when (SIG1 = '1' and EXP1 = "11111111" and MAN1 = "00000000000000000000000") else '0';
-	MINUS_INF2	<= '1' when (SIG2 = '1' and EXP2 = "11111111" and MAN2 = "00000000000000000000000") else '0';
+	PLUS_INF1	<= '1' when (SIG1 = '0' and (EXP1	= "11111111" and MAN1 = "00000000000000000000000")) else '0';
+	PLUS_INF2	<= '1' when (SIG2 = '0' and (EXP2	= "11111111" and MAN2 = "00000000000000000000000")) else '0';
+	MINUS_INF1	<= '1' when (SIG1 = '1' and (EXP1	= "11111111" and MAN1 = "00000000000000000000000")) else '0';
+	MINUS_INF2	<= '1' when (SIG2 = '1' and (EXP2	= "11111111" and MAN2 = "00000000000000000000000")) else '0';
+	
+	--Identifying NaN
+	NAN1	<= '1' when (EXP1	= "11111111" and MAN1 = "11111111111111111111111") else '0';
+	NAN2	<= '1' when (EXP2	= "11111111" and MAN2 = "11111111111111111111111") else '0';
+	
+	--Making normal cases explicit
+	N1		<= '1' when ((not (EXP1	= "11111111" and MAN1 = "11111111111111111111111")) and (not (EXP1	= "11111111" and MAN1 = "00000000000000000000000"))) else '0';
+	N2		<= '1' when ((not (EXP2	= "11111111" and MAN2 = "11111111111111111111111")) and (not (EXP2	= "11111111" and MAN2 = "00000000000000000000000"))) else '0';
 
 	--Encoding the signal identifying the special case
 	ERR	<=	
-				--One of the two inputs is zero
-				"001" when ((ZERO1 and not(ZERO2))	or		(ZERO2 and not(ZERO1)))	= '1'
+				--Generate SKIP
+				"001" when ((not ZERO1) and ZERO2) = '1'
 				
-				--Both inputs are zero
-		else	"010" when (ZERO1	and	ZERO2)	= '1' --TODO: Ridondante?
+				--Generate zero
+		else	"010" when ZERO1 = '1'
 		
-				--Both inputs are infinite but with different sign
-		else	"011" when ((PLUS_INF1 and MINUS_INF2 and (not OP))	or	(MINUS_INF1	and PLUS_INF2 and (not OP)))	= '1'
+				--Generate NaN: either one of the inputs is NaN or sum between infinities with the same sign or subtraction between infinities with different sign
+		else	"011" when (NAN1 or NAN2 or (OP and ((PLUS_INF1 and PLUS_INF2) or (MINUS_INF1 and MINUS_INF2))) or ((not OP) and ((PLUS_INF1 and MINUS_INF2) or (MINUS_INF1 and PLUS_INF2))))	= '1'
 		
-				--Cases for which the result is +inf
-		else	"100" when ((PLUS_INF1 and (not INF2))	or ((not INF1) and PLUS_INF2) or (PLUS_INF1 and PLUS_INF2 and (not OP)) or (PLUS_INF1 and MINUS_INF2 and OP))	= '1'
+				--Generate +inf
+		else	"100" when (((not OP) and ((PLUS_INF1 and (PLUS_INF2 or N2)) or (N1 and PLUS_INF2))) or (OP and MINUS_INF2 and (N1 or PLUS_INF1))) = '1'
 		
-				--Cases for which the result is -inf
-		else	"101" when ((MINUS_INF1 and (not INF2))or ((not INF1) and MINUS_INF2) or (MINUS_INF1 and MINUS_INF2 and (not OP)) or (MINUS_INF1 and PLUS_INF2 and OP))	= '1'
+				--Generate -inf
+		else	"101" when (((not OP) and ((MINUS_INF1 and (MINUS_INF2 or N2)) or (N1 and MINUS_INF2))) or (OP and PLUS_INF2 and (N1 or MINUS_INF1))) = '1'
 		
 				--No abnormalities
 		else	"000";
