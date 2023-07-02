@@ -12,16 +12,16 @@ entity CaseManager is
 		
 		SKIP		: out	std_logic_vector(31 downto 0); --TODO: Decidere se spostare direttamente in first stage
 		ERR		: out	std_logic_vector(2 downto 0) 
+		
+		--Encoding:
+		--000: No abnormalities
+		--001: Generate SKIP (one of the two inputs because the other one is null)
+		--010: Generate ZERO
+		--011: Generate NaN
+		--100: Generate +INF
+		--101: Generate -INF
+	
 	);
-
-	--Encoding:
-	--000: No abnormalities
-	--001: Generate SKIP (one of the two inputs because the other one is null)
-	--010: Generate zero
-	--011: Generate NaN
-	--100: Generate +inf
-	--101: Generate -inf
-
 end CaseManager;
 
 architecture RTL of CaseManager is
@@ -32,12 +32,12 @@ architecture RTL of CaseManager is
 	signal MAN1, MAN2		: std_logic_vector(22 downto 0);
 	
 	signal E1_ZERO, E2_ZERO, E1_UNO, E2_UNO	: std_logic;
-	signal M1_ZERO, M2_ZERO, M1_UNO, M2_UNO	: std_logic;
+	signal M1_ZERO, M2_ZERO	: std_logic;
 	
 	signal ZERO1, ZERO2	: std_logic;
 	signal INF1,INF2, PLUS_INF1, PLUS_INF2, MINUS_INF1, MINUS_INF2	: std_logic;
 	signal NAN1, NAN2		: std_logic;
-	signal N1, N2			: std_logic;
+	signal NORM1, NORM2	: std_logic;
 	--ENDREGION
 
 begin
@@ -50,48 +50,57 @@ begin
 	MAN1  <= INPUT1(22 downto 0);
 	MAN2  <= INPUT2(22 downto 0);
 	
+	--Identifying special cases
+	E1_ZERO	<= '1' when EXP1	= "00000000"	else '0';
+	E2_ZERO	<= '1' when EXP2	= "00000000"	else '0';
+	E1_UNO	<= '1' when EXP1	= "11111111"	else '0';
+	E2_UNO	<= '1' when EXP2	= "11111111"	else '0';
+	
+	M1_ZERO	<= '1' when MAN1	= "00000000000000000000000"	else '0';
+	M2_ZERO	<= '1' when MAN2	= "00000000000000000000000"	else '0';
+	
 	--Identifying zero
-	ZERO1			<= '1' when (EXP1	= "00000000" and MAN1 = "00000000000000000000000") else '0';
-	ZERO2			<= '1' when (EXP2	= "00000000" and MAN2 = "00000000000000000000000") else '0';
+	ZERO1		<= '1' when (E1_ZERO and M1_ZERO)		= '1' else '0';
+	ZERO2		<= '1' when (E2_ZERO and M2_ZERO)		= '1' else '0';
 	
 	--Identifying infinity
-	INF1			<= '1' when (EXP1	= "11111111" and MAN1 = "00000000000000000000000") else '0';
-	INF2			<= '1' when (EXP2	= "11111111" and MAN2 = "00000000000000000000000") else '0';
+	INF1		<= '1' when (E1_UNO and M1_ZERO)			= '1' else '0';
+	INF2		<= '1' when (E2_UNO and M2_ZERO)			= '1' else '0';
 	
-	PLUS_INF1	<= '1' when (SIG1 = '0' and (EXP1	= "11111111" and MAN1 = "00000000000000000000000")) else '0';
-	PLUS_INF2	<= '1' when (SIG2 = '0' and (EXP2	= "11111111" and MAN2 = "00000000000000000000000")) else '0';
-	MINUS_INF1	<= '1' when (SIG1 = '1' and (EXP1	= "11111111" and MAN1 = "00000000000000000000000")) else '0';
-	MINUS_INF2	<= '1' when (SIG2 = '1' and (EXP2	= "11111111" and MAN2 = "00000000000000000000000")) else '0';
+	PLUS_INF1	<= '1' when ((not SIG1) and INF1)	= '1' else '0';
+	PLUS_INF2	<= '1' when ((not SIG2) and INF2)	= '1' else '0';
+	MINUS_INF1	<= '1' when (SIG1 and INF1)			= '1' else '0';
+	MINUS_INF2	<= '1' when (SIG2 and INF2)			= '1' else '0';
 	
 	--Identifying NaN
-	NAN1	<= '1' when (EXP1	= "11111111" and MAN1 = "11111111111111111111111") else '0';
-	NAN2	<= '1' when (EXP2	= "11111111" and MAN2 = "11111111111111111111111") else '0';
+	NAN1		<= '1' when (E1_UNO and (not M1_ZERO))	= '1' else '0';
+	NAN2		<= '1' when (E2_UNO and (not M2_ZERO))	= '1' else '0';
 	
 	--Making normal cases explicit
-	N1		<= '1' when ((not (EXP1	= "11111111" and MAN1 = "11111111111111111111111")) and (not (EXP1	= "11111111" and MAN1 = "00000000000000000000000"))) else '0';
-	N2		<= '1' when ((not (EXP2	= "11111111" and MAN2 = "11111111111111111111111")) and (not (EXP2	= "11111111" and MAN2 = "00000000000000000000000"))) else '0';
-
+	NORM1		<= '1' when ((not NAN1) and (not INF1))	= '1' else '0';
+	NORM2		<= '1' when ((not NAN2) and (not INF2))	= '1' else '0';
+	
 	--Encoding the signal identifying the special case
 	ERR	<=	
-				--Generate SKIP
-				"001" when ((not ZERO1) and ZERO2) = '1'
+				--Generate SKIP: one of the inputs is null
+				"001" when (((not ZERO1) and ZERO2) or (ZERO1 and (not ZERO2))) = '1'
 				
-				--Generate zero
-		else	"010" when ZERO1 = '1'
+				--Generate ZERO: both inputs are null
+		else	"010" when (ZERO1 and ZERO2) = '1'
 		
-				--Generate NaN: either one of the inputs is NaN or sum between infinities with the same sign or subtraction between infinities with different sign
+				--Generate NaN: either one of the inputs is NaN or it's a sum between infinities with the same sign or a subtraction between infinities with different sign
 		else	"011" when (NAN1 or NAN2 or (OP and ((PLUS_INF1 and PLUS_INF2) or (MINUS_INF1 and MINUS_INF2))) or ((not OP) and ((PLUS_INF1 and MINUS_INF2) or (MINUS_INF1 and PLUS_INF2))))	= '1'
 		
-				--Generate +inf
-		else	"100" when (((not OP) and ((PLUS_INF1 and (PLUS_INF2 or N2)) or (N1 and PLUS_INF2))) or (OP and MINUS_INF2 and (N1 or PLUS_INF1))) = '1'
+				--Generate +INF: it's either a sum between positive infinities or a difference where the first operand is a nomal number and the second one is negative infinity
+		else	"100" when (((not OP) and ((PLUS_INF1 and (PLUS_INF2 or NORM2)) or (NORM1 and PLUS_INF2))) or (OP and MINUS_INF2 and (NORM1 or PLUS_INF1))) = '1'
 		
-				--Generate -inf
-		else	"101" when (((not OP) and ((MINUS_INF1 and (MINUS_INF2 or N2)) or (N1 and MINUS_INF2))) or (OP and PLUS_INF2 and (N1 or MINUS_INF1))) = '1'
+				--Generate -INF: it's either a sum between negative infinities or a difference where the first operand is a normal number and the second one is a positive infinity
+		else	"101" when (((not OP) and ((MINUS_INF1 and (MINUS_INF2 or NORM2)) or (NORM1 and MINUS_INF2))) or (OP and PLUS_INF2 and (NORM1 or MINUS_INF1))) = '1'
 		
 				--No abnormalities
 		else	"000";
 	
 	--Setting the SKIP signal to one of the inputs if the other one is zero. If that is not the case, setting it to the greater one of the two.
-	SKIP	<= INPUT2	when ZERO1	= '1' else	INPUT1;
+	SKIP	<= INPUT2	when ZERO1	= '1' else	INPUT1; --If the bigger one of the two is null then the smaller one is also null therefore the condition is redundant
 	
 end RTL;
