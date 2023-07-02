@@ -17,6 +17,8 @@ end Pipeline;
 architecture RTL of Pipeline is
 
 	--REGION SIGNALS
+	--"IN"	: Signals entering the register
+	--"OUT"	: Signals exiting the register
 	
 	--REG0 
 	signal REG0_INPUT1_OUT, REG0_INPUT2_OUT	: std_logic_vector(31 downto 0);
@@ -107,7 +109,7 @@ begin
 				SML_MAN	=> REG1_SML_MAN_IN,
 				OFF		=> REG1_OFF_IN,
 				OP_OUT	=> REG1_OP_IN,
-				SIG_OUT	=> REG1_SIG_IN ,
+				SIG_OUT	=> REG1_SIG_IN,
 				SKIP		=> REG1_SKIP_IN,
 				ERR		=> REG1_ERR_IN
 			);	
