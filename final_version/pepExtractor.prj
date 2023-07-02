@@ -1,4 +1,2 @@
-work	"Comparator.vhd"
-work	"EightBitComparator.vhd"
-work	"FourBitComparator.vhd"
-work	"MantissaComparator.vhd"
+work	"FullAdder.vhd"
+work	"RCA.vhd"

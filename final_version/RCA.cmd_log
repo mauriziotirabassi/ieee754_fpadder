@@ -1,0 +1,2 @@
+vhdtdtfi -lib work FullAdder.vhd -lib work RCA.vhd -prj test1 -o RCA.spl -module RCA -template /opt/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 RCA.spl /home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/RCA.sym 

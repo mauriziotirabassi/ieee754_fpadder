@@ -31,7 +31,7 @@ ARCHITECTURE behavior OF test_Pipeline IS
    signal OUTPUT : std_logic_vector(31 downto 0);
 
    -- Clock period definitions
-   constant CLK_period : time := 50 ns;
+   constant CLK_period : time := 20 ns;
  
 BEGIN
  
@@ -195,7 +195,7 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 9: (biggest + biggest)
-		--Expected binary:	"?"
+		--Expected binary:	"+inf"
 		--Expected decimal:	
 		RESET		<= '0';
 		INPUT1	<= "01111111011111111111111111111111"; -- biggest
@@ -204,12 +204,30 @@ BEGIN
 		wait for CLK_period;
 		
 		--TEST 10: (bigger number + big number)
-		--Expected binary:	"?"
+		--Expected binary:	"01111101011111110001000000000001"
 		--Expected decimal:	
 		RESET		<= '0';
 		INPUT1	<= "01111101011111110001000000000000"; -- 2.11897634797 × 10^37
 		INPUT2	<= "01110001111111110001000000000000"; -- 2.5260167 × 10^30
 		OP_IN		<= '0'; --sum
+		wait for CLK_period;
+		
+		--TEST 11: (bigger number - big number)
+		--Expected binary:	"01111101011111110000111111111111"
+		--Expected decimal:	
+		RESET		<= '0';
+		INPUT1	<= "01111101011111110001000000000000"; -- 2.11897634797 × 10^37
+		INPUT2	<= "01110001111111110001000000000000"; -- 2.5260167 × 10^30
+		OP_IN		<= '1'; --diff
+		wait for CLK_period;
+		
+		--TEST 12: (small number - small number)
+		--Expected binary:	"underflow - ZERO"
+		--Expected decimal:	0
+		RESET		<= '0';
+		INPUT1	<= "00000000111000000000000000000010"; -- 2.0571154E-38
+		INPUT2	<= "00000000111000000000000000000011"; -- 2.0571155E-38
+		OP_IN		<= '1'; --diff
 		wait for CLK_period;
 		
 		
