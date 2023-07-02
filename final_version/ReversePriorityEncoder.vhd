@@ -14,8 +14,8 @@ end ReversePriorityEncoder;
 architecture RTL of ReversePriorityEncoder is
 
 begin
-		OUTPUT	<= 	"00000"		when INPUT(23) = '1' 
-					else	"00001"	when INPUT(23 downto 22) = "01" 
+		OUTPUT	<= 	--"00000"		when INPUT(23) = '1' 
+							"00001"	when INPUT(23 downto 22) = "01" 
 					else	"00010"	when INPUT(23 downto 21) = "001"
 					else	"00011"	when INPUT(23 downto 20) = "0001"
 					else	"00100"	when INPUT(23 downto 19) = "00001"
@@ -38,6 +38,6 @@ begin
 					else	"10101"	when INPUT(23 downto 2)  = "0000000000000000000001"
 					else	"10110"	when INPUT(23 downto 1)  = "00000000000000000000001"
 					else	"10111"	when INPUT(23 downto 0)  = "000000000000000000000001"
-					else	"11000"	when INPUT(23 downto 0)  = "000000000000000000000000" --TODO: exception?
-					else	"-----";
+					--else	"11000"	when INPUT(23 downto 0)  = "000000000000000000000000" --TODO: exception?
+					else	"00000";
 end RTL;
