@@ -37,9 +37,10 @@ architecture RTL of ComparingStage is
 	--REGION SIGNALS
 	signal SIG1_TMP, SIG2_TMP	:std_logic;
 	
-	signal GRT_TMP, SML_TMP		: std_logic_vector(31 downto 0);
+	signal GRT_TMP, SML_TMP				: std_logic_vector(31 downto 0);
 	signal GRT_EXP_TMP, SML_EXP_TMP	: std_logic_vector(7 downto 0);
-	signal GRT_MAN_TMP, SML_MAN_TMP		: std_logic_vector(22 downto 0);
+	signal GRT_MAN_TMP, SML_MAN_TMP	: std_logic_vector(22 downto 0);
+	signal SIG_OUT_TMP					: std_logic;
 	
 	signal EXP_DIFF	: std_logic_vector(7 downto 0);
 	signal ERR_TMP		: std_logic_vector(2 downto 0);
@@ -63,7 +64,6 @@ architecture RTL of ComparingStage is
 			INPUT1	: in	std_logic_vector(31 downto 0);
 			INPUT2	: in	std_logic_vector(31 downto 0);
 			OP			: in	std_logic;
-			SKIP		: out	std_logic_vector(31 downto 0);
 			ERR		: out	std_logic_vector(2 downto 0) 
 		);
 	end component;
@@ -101,17 +101,21 @@ begin
 		
 			GRT_IN	=> GRT_TMP,
 			SML_IN	=>	SML_TMP,
-			OUT_SIG	=> SIG_OUT --MODULE OUTPUT
+			OUT_SIG	=> SIG_OUT_TMP
 		);
+		
+	SIG_OUT	<= SIG_OUT_TMP; --MODULE OUTPUT
+	
+	--Generating the skip signal as the bigger input one with sign defined relatively to the operation
+	SKIP	<= SIG_OUT_TMP & GRT_TMP(30 downto 0); --MODULE OUTPUT
 	
 	--Checking for eventual special cases dependent on the input
-	 MAN:	CaseManager
+	MAN:	CaseManager
 		port map(
-			INPUT1	=> GRT_TMP,
-			INPUT2	=> SML_TMP,
+			INPUT1	=> INPUT1,
+			INPUT2	=> INPUT2,
 			OP			=> OP_IN,
 			
-			SKIP		=> SKIP, --MODULE OUTPUT
 			ERR		=>	ERR_TMP
 		);
 		

@@ -10,10 +10,9 @@ ARCHITECTURE behavior OF test_CaseManager IS
  
     COMPONENT CaseManager
     PORT(
-         INPUT1 : IN  std_logic_vector(31 downto 0); --greater of input2 by design
-         INPUT2 : IN  std_logic_vector(31 downto 0); --smaller of input1 by design
+         INPUT1 : IN  std_logic_vector(31 downto 0);
+         INPUT2 : IN  std_logic_vector(31 downto 0);
          OP : IN  std_logic;
-         SKIP : OUT  std_logic_vector(31 downto 0);
          ERR : OUT  std_logic_vector(2 downto 0)
         );
     END COMPONENT;
@@ -25,7 +24,6 @@ ARCHITECTURE behavior OF test_CaseManager IS
    signal OP : std_logic;
 
  	--Outputs
-   signal SKIP : std_logic_vector(31 downto 0);
    signal ERR : std_logic_vector(2 downto 0);
  
 BEGIN
@@ -35,7 +33,6 @@ BEGIN
           INPUT1 => INPUT1,
           INPUT2 => INPUT2,
           OP => OP,
-          SKIP => SKIP,
           ERR => ERR
         );
 

@@ -9,8 +9,7 @@ entity CaseManager is
 		INPUT1	: in	std_logic_vector(31 downto 0);
 		INPUT2	: in	std_logic_vector(31 downto 0);
 		OP			: in	std_logic;
-		
-		SKIP		: out	std_logic_vector(31 downto 0); --TODO: Decidere se spostare direttamente in first stage
+
 		ERR		: out	std_logic_vector(2 downto 0) 
 		
 		--Encoding:
@@ -99,8 +98,5 @@ begin
 		
 				--No abnormalities
 		else	"000";
-	
-	--Setting the SKIP signal to one of the inputs if the other one is zero. If that is not the case, setting it to the greater one of the two.
-	SKIP	<= INPUT2	when ZERO1	= '1' else	INPUT1; --If the bigger one of the two is null then the smaller one is also null therefore the condition is redundant
 	
 end RTL;

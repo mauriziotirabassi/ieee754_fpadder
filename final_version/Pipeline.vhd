@@ -17,32 +17,33 @@ end Pipeline;
 architecture RTL of Pipeline is
 
 	--REGION SIGNALS
-	--"IN"	: Signals entering the register
-	--"OUT"	: Signals exiting the register
+	--"IN"	: Signals going in the register
+	--"OUT"	: Signals going out of the register
 	
 	--REG0 
-	signal REG0_INPUT1_OUT, REG0_INPUT2_OUT	: std_logic_vector(31 downto 0);
+	signal REG0_INPUT1_OUT							: std_logic_vector(31 downto 0);
+	signal REG0_INPUT2_OUT							: std_logic_vector(31 downto 0);
 	signal REG0_OP_OUT								: std_logic;
 	
 	--REG1
 	signal REG1_GRT_MAN_IN, REG1_GRT_MAN_OUT	: std_logic_vector(22 downto 0);
 	signal REG1_SML_MAN_IN, REG1_SML_MAN_OUT	: std_logic_vector(22 downto 0);
 	signal REG1_GRT_EXP_IN, REG1_GRT_EXP_OUT	: std_logic_vector(7 downto 0);
-	signal REG1_OP_IN, REG1_OP_OUT				: std_logic;
-	signal REG1_SIG_IN, REG1_SIG_OUT				: std_logic; --Forward to reg2 out
-	signal REG1_OFF_IN, REG1_OFF_OUT				: std_logic_vector(4 downto 0);
-	signal REG1_ERR_IN, REG1_ERR_OUT				: std_logic_vector(2 downto 0); 
-	signal REG1_SKIP_IN, REG1_SKIP_OUT			: std_logic_vector(31 downto 0); --Forward to reg 2 out
+	signal REG1_OP_IN, 		REG1_OP_OUT			: std_logic;
+	signal REG1_SIG_IN, 		REG1_SIG_OUT		: std_logic;
+	signal REG1_OFF_IN, 		REG1_OFF_OUT		: std_logic_vector(4 downto 0);
+	signal REG1_ERR_IN, 		REG1_ERR_OUT		: std_logic_vector(2 downto 0); 
+	signal REG1_SKIP_IN, 	REG1_SKIP_OUT		: std_logic_vector(31 downto 0);
 	
 	--REG2
-	signal REG2_MAN_IN, REG2_MAN_OUT				: std_logic_vector(23 downto 0);
-	signal REG2_EXP_IN, REG2_EXP_OUT				: std_logic_vector(7 downto 0);
-	signal REG2_ERR_IN, REG2_ERR_OUT				: std_logic_vector(2 downto 0);
-	signal REG2_SIG_OUT								: std_logic;
-	signal REG2_SKIP_OUT								: std_logic_vector(31 downto 0);
+	signal REG2_MAN_IN,		REG2_MAN_OUT		: std_logic_vector(23 downto 0);
+	signal REG2_EXP_IN,		REG2_EXP_OUT		: std_logic_vector(7 downto 0);
+	signal REG2_ERR_IN,		REG2_ERR_OUT		: std_logic_vector(2 downto 0);
+	signal REG2_SIG_IN,		REG2_SIG_OUT		: std_logic;
+	signal REG2_SKIP_IN,		REG2_SKIP_OUT		: std_logic_vector(31 downto 0);
 	
 	--REG3
-	signal REG3_FINAL_IN, REG3_FINAL_OUT		: std_logic_vector(31 downto 0); 
+	signal REG3_FINAL_IN,	REG3_FINAL_OUT		: std_logic_vector(31 downto 0); 
 	
 	--ENDREGION
 	
@@ -131,8 +132,10 @@ begin
 				EXP_OUT	=> REG2_EXP_IN,
 				ERR_OUT	=> REG2_ERR_IN
 			);
-				
 			
+			REG2_SIG_IN		<= REG1_SIG_OUT;
+			REG2_SKIP_IN	<= REG1_SKIP_OUT;
+				
 		--STAGE 3
 		S3: AdjustingStage
 			port map(
@@ -210,9 +213,9 @@ begin
 			elsif (CLK'event and CLK = '1') then
 				REG2_MAN_OUT			<= REG2_MAN_IN;
 				REG2_EXP_OUT			<= REG2_EXP_IN;
-				REG2_SKIP_OUT			<= REG1_SKIP_OUT; --FORWARD
+				REG2_SKIP_OUT			<= REG2_SKIP_IN; --FORWARD
 				REG2_ERR_OUT			<= REG2_ERR_IN;
-				REG2_SIG_OUT			<= REG1_SIG_OUT;	--FORWARD
+				REG2_SIG_OUT			<= REG2_SIG_IN;	--FORWARD
 						
 			end if;
 		end process;
