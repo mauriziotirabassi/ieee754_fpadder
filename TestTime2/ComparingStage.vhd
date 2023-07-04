@@ -140,8 +140,6 @@ begin
 			OUTPUT	=> EXP_DIFF
 		);
 	
-	--TODO: Spostare gestione skip da case manager a first stage top
-	
 	--Checking for the special case in which the difference between the two inputs exceeds sensible magnitude (greater than 24)
 	ERR	<= ERR_TMP	when ((EXP_DIFF(7 downto 5) = "000") or (not (EXP_DIFF(4 downto 3) = "11")) or (not (ERR_TMP = "000")))	else "001"; --MODULE OUTPUT
 	

@@ -112,9 +112,9 @@ begin
 		);
 	
 	--Checking for the overflow of the corrected exponent
-	ERR_OUT	<= "100" when ((EXP_OF = '1' or TMP_EXP_OUT ="11111111") and ERR_IN = "000") else ERR_IN; --MODULE OUTPUT
+	ERR_OUT	<= "011" when ((EXP_OF = '1' or TMP_EXP_OUT = "11111111") and ERR_IN = "000") else ERR_IN; --MODULE OUTPUT
 	
-	EXP_OUT	<= TMP_EXP_OUT; --connect to top level
+	EXP_OUT	<= TMP_EXP_OUT; --MODULE OUTPUT
 	
 end RTL;
 
