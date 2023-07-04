@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ale/Desktop/VHDL_git/proj-reti-2023/TestTime2/test_Pipeline_isim_beh.exe" -prj "/home/ale/Desktop/VHDL_git/proj-reti-2023/TestTime2/test_Pipeline_beh.prj" "work.test_Pipeline" 

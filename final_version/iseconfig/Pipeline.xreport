@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-07-02T19:32:36</DateModified>
+  <DateModified>2023-07-03T10:36:11</DateModified>
   <ModuleName>Pipeline</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2023-07-03T10:31:44</SummaryTimeStamp>
   <SavedFilePath>/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/iseconfig/Pipeline.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/</ImplementationReportsDirectory>
   <DateInitialized>2023-05-30T11:11:54</DateInitialized>

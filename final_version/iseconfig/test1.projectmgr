@@ -7,6 +7,10 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Pipeline - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|Pipeline.vhd/S1 - ComparingStage - RTL/COMP - Comparator - Behavioral</ClosedNode>
+         <ClosedNode>/Pipeline - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|Pipeline.vhd/S1 - ComparingStage - RTL/ESub - RCA - RTL</ClosedNode>
+         <ClosedNode>/Pipeline - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|Pipeline.vhd/S2 - SummingStage - RTL</ClosedNode>
+         <ClosedNode>/Pipeline - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|Pipeline.vhd/S3 - AdjustingStage - RTL</ClosedNode>
          <ClosedNode>/Pipeline - RTL |home|kryzha|Documents|proj-reti-2023|final_version|Pipeline.vhd/S1 - ComparingStage - RTL/COMP - Comparator - Behavioral</ClosedNode>
          <ClosedNode>/Pipeline - RTL |home|kryzha|Documents|proj-reti-2023|final_version|Pipeline.vhd/S1 - ComparingStage - RTL/ESub - RCA - RTL</ClosedNode>
          <ClosedNode>/Pipeline - RTL |home|kryzha|Documents|proj-reti-2023|final_version|Pipeline.vhd/S1 - FirstStageTOP - RTL/COMP - Comparator - Behavioral</ClosedNode>
@@ -21,15 +25,17 @@
          <ClosedNode>/Pipeline - RTL |home|kryzha|Documents|proj-reti-2023|final_version|Pipeline.vhd/S3 - ThirdStageTOP - RTL/NORM - Normalizer - RTL</ClosedNode>
          <ClosedNode>/Pipeline - RTL |home|kryzha|Documents|proj-reti-2023|final_version|Pipeline.vhd/S3 - ThirdStageTOP - RTL/NORM - Normalizer - RTL/CMP_EXP - EightBitComparator - RTL</ClosedNode>
          <ClosedNode>/Pipeline - RTL |home|kryzha|Documents|proj-reti-2023|final_version|Pipeline.vhd/S3 - ThirdStageTOP - RTL/NORM - Normalizer - RTL/OP - RCA - RTL</ClosedNode>
+         <ClosedNode>/TimeComparingStage - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|TimeComparingStage.vhd</ClosedNode>
+         <ClosedNode>/TimeFirstStage - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|TimeFirstStage.vhd/S1 - ComparingStage - RTL</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>S1 - ComparingStage - RTL (/home/kryzha/Documents/proj-reti-2023/final_version/ComparingStage.vhd)</SelectedItem>
+         <SelectedItem>TimeFirstStage - RTL (/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/TimeFirstStage.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b5000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b50000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>S1 - ComparingStage - RTL (/home/kryzha/Documents/proj-reti-2023/final_version/ComparingStage.vhd)</CurrentItem>
+      <CurrentItem>TimeFirstStage - RTL (/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/TimeFirstStage.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -40,13 +46,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Design Utilities</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000135000000010000000100000000000000000000000064ffffffff000000810000000000000001000001350000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001c2000000010000000100000000000000000000000064ffffffff000000810000000000000001000001c20000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -55,7 +61,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000039c000000040101000100000000000000000000000064ffffffff000000810000000000000004000000ee00000001000000000000005d0000000100000000000000840000000100000000000001cd0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000390000000040101000100000000000000000000000064ffffffff000000810000000000000004000000ee00000001000000000000005d0000000100000000000000840000000100000000000001c10000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>CaseManager.vhd</CurrentItem>
    </ItemView>
@@ -67,7 +73,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000125000000010001000100000000000000000000000064ffffffff000000810000000000000001000001250000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000128000000010001000100000000000000000000000064ffffffff000000810000000000000001000001280000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>work</CurrentItem>
    </ItemView>
@@ -75,19 +81,36 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/TB_Normalizer - behavior |home|kryzha|Documents|proj-reti-2023|final_version|TB_Normalizer.vhd</ClosedNode>
+         <ClosedNode>/TimeFirstStage - RTL |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|TimeFirstStage.vhd</ClosedNode>
+         <ClosedNode>/test_AdjustingStage - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_AdjustingStage.vhd</ClosedNode>
+         <ClosedNode>/test_AdjustingStage - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_AdjustingStage.vhd/uut - AdjustingStage - RTL/NORM - Normalizer - RTL</ClosedNode>
          <ClosedNode>/test_AdjustingStage - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_AdjustingStage.vhd</ClosedNode>
+         <ClosedNode>/test_CaseManager - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_CaseManager.vhd</ClosedNode>
          <ClosedNode>/test_CaseManager - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_CaseManager.vhd</ClosedNode>
+         <ClosedNode>/test_Comparator - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Comparator.vhd</ClosedNode>
          <ClosedNode>/test_Comparator - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_Comparator.vhd</ClosedNode>
+         <ClosedNode>/test_ComparingStage - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_ComparingStage.vhd</ClosedNode>
          <ClosedNode>/test_ComparingStage - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_ComparingStage.vhd</ClosedNode>
+         <ClosedNode>/test_EightBitComparator - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_EightBitComparator.vhd</ClosedNode>
          <ClosedNode>/test_EightBitComparator - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_EightBitComparator.vhd</ClosedNode>
+         <ClosedNode>/test_MantissaComparator - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_MantissaComparator.vhd</ClosedNode>
          <ClosedNode>/test_MantissaComparator - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_MantissaComparator.vhd</ClosedNode>
+         <ClosedNode>/test_Normalizer - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Normalizer.vhd</ClosedNode>
          <ClosedNode>/test_Normalizer - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_Normalizer.vhd</ClosedNode>
+         <ClosedNode>/test_Pipeline - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Pipeline.vhd</ClosedNode>
+         <ClosedNode>/test_Pipeline - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S1 - ComparingStage - RTL</ClosedNode>
+         <ClosedNode>/test_Pipeline - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S2 - SummingStage - RTL/OP - RCA - RTL</ClosedNode>
+         <ClosedNode>/test_Pipeline - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S2 - SummingStage - RTL/P1 - RCA - RTL</ClosedNode>
+         <ClosedNode>/test_Pipeline - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S3 - AdjustingStage - RTL</ClosedNode>
          <ClosedNode>/test_Pipeline - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_Pipeline.vhd</ClosedNode>
          <ClosedNode>/test_Pipeline - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S1 - ComparingStage - RTL</ClosedNode>
          <ClosedNode>/test_Pipeline - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S2 - SummingStage - RTL</ClosedNode>
          <ClosedNode>/test_Pipeline - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_Pipeline.vhd/uut - Pipeline - RTL/S3 - AdjustingStage - RTL</ClosedNode>
+         <ClosedNode>/test_ReversePriorityEncoder - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_ReversePriorityEncoder.vhd</ClosedNode>
          <ClosedNode>/test_ReversePriorityEncoder - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_ReversePriorityEncoder.vhd</ClosedNode>
+         <ClosedNode>/test_SummingStage - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_SummingStage.vhd</ClosedNode>
          <ClosedNode>/test_SummingStage - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_SummingStage.vhd</ClosedNode>
+         <ClosedNode>/test_TimeFirstStage - behavior |home|ale|Desktop|VHDL_git|proj-reti-2023|final_version|test_TimeFirstStage.vhd</ClosedNode>
          <ClosedNode>/test_pipeline - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_pipeline.vhd</ClosedNode>
          <ClosedNode>/test_pipeline - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_pipeline.vhd/uut - Pipeline - RTL</ClosedNode>
          <ClosedNode>/test_stage1 - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_stage1.vhd</ClosedNode>
@@ -96,13 +119,13 @@
          <ClosedNode>/test_stage3 - behavior |home|kryzha|Documents|proj-reti-2023|final_version|test_stage3.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>test_ComparingStage - behavior (/home/kryzha/Documents/proj-reti-2023/final_version/test_ComparingStage.vhd)</SelectedItem>
+         <SelectedItem>test_TimeFirstStage - behavior (/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/test_TimeFirstStage.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000221000000020000000000000000000000000200000064ffffffff000000810000000300000002000002210000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>test_ComparingStage - behavior (/home/kryzha/Documents/proj-reti-2023/final_version/test_ComparingStage.vhd)</CurrentItem>
+      <CurrentItem>test_TimeFirstStage - behavior (/home/ale/Desktop/VHDL_git/proj-reti-2023/final_version/test_TimeFirstStage.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -110,29 +133,29 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000135000000010000000100000000000000000000000064ffffffff000000810000000000000001000001350000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001be000000010000000100000000000000000000000064ffffffff000000810000000000000001000001be0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem>ISim Simulator</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000135000000010000000100000000000000000000000064ffffffff000000810000000000000001000001350000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001c2000000010000000100000000000000000000000064ffffffff000000810000000000000001000001c20000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem>ISim Simulator</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000001510000012001000000060100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
@@ -147,4 +170,5 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
+   <CopyAdditionalFiles/>
 </Project>
