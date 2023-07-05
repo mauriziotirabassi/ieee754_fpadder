@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/kryzha/Documents/proj-reti-2023/test1/TB_Normalizer_isim_beh.exe" -prj "/home/kryzha/Documents/proj-reti-2023/test1/TB_Normalizer_beh.prj" "work.TB_Normalizer" 

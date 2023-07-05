@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.ncd
-OUTFILE=/home/kryzha/Documents/proj-reti-2023/final_version/Pipeline.bit
-FAMILY=Spartan6
-PART=xc6slx4-3tqg144
-WORKINGDIR=/home/kryzha/Documents/proj-reti-2023/final_version
-LICENSE=WebPack
-USER_INFO=212704814_0_0_237
