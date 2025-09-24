@@ -62,6 +62,3 @@ The design is **modular and pipelined**, featuring dedicated stages for comparis
 | 2.11897634797e37 | 2.5260167e30 | 2.1189762212e37 | Large number subtraction |
 | 2.0571154e-38 | 2.0571155e-38 | 0 | Underflow test |
 
-
----
-
