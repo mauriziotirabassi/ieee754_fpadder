@@ -10,13 +10,13 @@ The design is **modular and pipelined**, featuring dedicated stages for comparis
 ## Features
 
 - **IEEE754 Compliance:** Correct handling of sign, exponent, and mantissa.  
-- **Modular Design:** Comparators, Ripple Carry Adder, CaseManager, Normalizer, and SpecialOutput modules.  
+- **Modular Design:** Comparators, Ripple Carry Adder, CaseManager, Normalizer, and SpecialOutput modules.
 - **Three-Stage Pipeline:**  
   1. Comparing Stage – determines operation and handles special cases  
-  2. Summing Stage – aligns mantissas, adds/subtracts, detects overflow  
+  2. Summing Stage – aligns mantissas, adds/subtracts, detects overflow
   3. Adjusting Stage – normalizes result, detects underflow, produces final output  
-- **Special Case Handling:** `NaN`, `+∞`, `-∞`, zero, and rounding considerations.  
-- **Test Bench:** Covers normal and edge cases for correctness verification.  
+- **Special Case Handling:** `NaN`, `+∞`, `-∞`, zero, and rounding considerations.
+- **Test Bench:** Covers normal and edge cases for correctness verification.
 
 ## Key Modules
 
