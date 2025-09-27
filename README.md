@@ -1,7 +1,5 @@
 # IEEE754 Floating-Point Adder
 
-## Overview
-
 This project implements a **32-bit floating-point adder** compliant with the IEEE754 standard.  
 It supports addition and subtraction of single-precision numbers, handling edge cases like `NaN`, `+∞`, `-∞`, underflow, and overflow.  
 
